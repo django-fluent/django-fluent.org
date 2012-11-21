@@ -7,9 +7,9 @@ from .defaults import *
 DATABASES = {
     'default': {
         'ENGINE':   'django.db.backends.mysql',
-        'NAME':     'djangofluent',
+        'NAME':     'django-fluent.org',
         'USER':     'djangofluent',
-        'PASSWORD': '',
+        'PASSWORD': 'testtest',
     },
 }
 
