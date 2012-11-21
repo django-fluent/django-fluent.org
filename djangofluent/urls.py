@@ -1,12 +1,14 @@
 from django.conf.urls import *
 from django.conf import settings
 from django.contrib import admin
+from fluent_pages.sitemaps import PageSitemap
 from frontend.views import TextFileView
 
 admin.autodiscover()
 
 sitemaps = {
     # Place sitemaps here
+    'pages': PageSitemap,
 }
 
 urlpatterns = patterns('',
@@ -35,5 +37,5 @@ urlpatterns += patterns('',
     url(r'^robots.txt$', TextFileView.as_view(content_type='text/plain', template_name='robots.txt')),
 
     # CMS modules
-    # TODO: add your urls here
+    url(r'', include('fluent_pages.urls')),
 )

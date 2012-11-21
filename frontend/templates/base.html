@@ -1,4 +1,5 @@
-{% load analytics compress %}<!doctype html>
+{% load fluent_pages_tags analytics compress %}<!doctype html>
+{% get_fluent_page_vars %}{# for 404 and app pages #}
 <html xml:lang="{{ LANGUAGE_CODE|default:"nl" }}" lang="{{ LANGUAGE_CODE|default:"nl" }}">
   <head>
     <meta charset="utf-8" />
@@ -33,6 +34,7 @@
     <div id="wrapper">
 
       <header id="top">
+          {% render_menu max_depth=1 %}
       </header>
 
       <section id="content">

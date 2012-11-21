@@ -20,11 +20,22 @@ INSTALLED_APPS += (
     # Site parts
     'frontend',
 
+    # CMS
+    'fluent_pages',
+    'fluent_pages.pagetypes.fluentpage',
+    'fluent_contents',
+    'fluent_contents.plugins.text',
+
     # Support libs
     'crispy_forms',
+    'django_wysiwyg',
     'filebrowser',
     'google_analytics',
+    'mptt',
+    'polymorphic',
+    'polymorphic_tree',
     'sorl.thumbnail',
+    'tinymce',
 
     # and enable the admin
     'fluent_dashboard',
@@ -48,6 +59,9 @@ ADMIN_TOOLS_INDEX_DASHBOARD = 'fluent_dashboard.dashboard.FluentIndexDashboard'
 ADMIN_TOOLS_APP_INDEX_DASHBOARD = 'fluent_dashboard.dashboard.FluentAppIndexDashboard'
 ADMIN_TOOLS_MENU = 'fluent_dashboard.menu.FluentMenu'
 
+DJANGO_WYSIWYG_FLAVOR = 'tinymce_advanced'
+#DJANGO_WYSIWYG_MEDIA_URL = STATIC_URL + 'frontend/vendor/tiny_mce/'
+
 FLUENT_DASHBOARD_APP_ICONS = {}
 FLUENT_DASHBOARD_DEFAULT_MODULE = 'ModelList'
 
@@ -60,3 +74,5 @@ FILEBROWSER_EXTENSIONS = {
 }
 FILEBROWSER_MAX_UPLOAD_SIZE = '104857600'  # in bytes
 FILEBROWSER_SAVE_FULL_URL = False
+
+FLUENT_PAGES_TEMPLATE_DIR = os.path.join(PROJECT_DIR, 'frontend', 'templates')
