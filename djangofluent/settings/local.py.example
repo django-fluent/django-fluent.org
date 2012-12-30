@@ -3,6 +3,9 @@ Local settings for development.
 """
 from .project import INSTALLED_APPS, MIDDLEWARE_CLASSES
 
+# Disable caching
+FLUENT_CONTENTS_CACHE_OUTPUT = False
+
 # Output to console
 import logging, sys
 logging.basicConfig(level=logging.DEBUG, stream=sys.stderr)
