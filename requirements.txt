@@ -24,6 +24,13 @@ django-polymorphic==0.2
 -django-wysiwyg>=0.5
 django-tinymce==1.5.1b4
 
+# Blog
+django-categories==1.1.4
+-e git+https://github.com/edoburu/django-fluent-blogs.git#egg=django_fluent_blogs-dev
+django-fluent-comments==0.8.0
+django-taggit==0.9.3
+django-taggit-autocomplete-modified==0.1.0b4
+
 # Debugging
 django-debugtools==1.1.0
 bpython==0.11

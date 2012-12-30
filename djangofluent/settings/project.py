@@ -23,10 +23,18 @@ INSTALLED_APPS += (
     # CMS
     'fluent_pages',
     'fluent_pages.pagetypes.fluentpage',
+    'fluent_blogs.pagetypes.blogpage',
     'fluent_contents',
     'fluent_contents.plugins.text',
 
+    # Blog
+    'fluent_blogs',
+    'fluent_comments',
+    'django.contrib.comments',
+
     # Support libs
+    'categories',
+    'categories.editor',
     'crispy_forms',
     'django_wysiwyg',
     'filebrowser',
@@ -35,6 +43,8 @@ INSTALLED_APPS += (
     'polymorphic',
     'polymorphic_tree',
     'sorl.thumbnail',
+    'taggit',
+    'taggit_autocomplete_modified',
     'tinymce',
 
     # and enable the admin
@@ -59,6 +69,8 @@ ADMIN_TOOLS_INDEX_DASHBOARD = 'fluent_dashboard.dashboard.FluentIndexDashboard'
 ADMIN_TOOLS_APP_INDEX_DASHBOARD = 'fluent_dashboard.dashboard.FluentAppIndexDashboard'
 ADMIN_TOOLS_MENU = 'fluent_dashboard.menu.FluentMenu'
 
+COMMENTS_APP = 'fluent_comments'
+
 DJANGO_WYSIWYG_FLAVOR = 'tinymce_advanced'
 #DJANGO_WYSIWYG_MEDIA_URL = STATIC_URL + 'frontend/vendor/tiny_mce/'
 
@@ -71,6 +83,8 @@ FILEBROWSER_EXTENSIONS = {
 }
 FILEBROWSER_MAX_UPLOAD_SIZE = '104857600'  # in bytes
 FILEBROWSER_SAVE_FULL_URL = False
+
+FLUENT_COMMENTS_EXCLUDE_FIELDS = ('url',)
 
 FLUENT_DASHBOARD_APP_ICONS = {}
 FLUENT_DASHBOARD_DEFAULT_MODULE = 'ModelList'

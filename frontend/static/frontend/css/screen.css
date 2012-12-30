@@ -186,3 +186,7 @@ ul.messages {
   font-weight: bold;
   margin: 2px 0;
 }
+
+#div_id_honeypot {
+  display: none;
+}

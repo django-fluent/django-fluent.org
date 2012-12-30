@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% comment %}
+    Map the blocks of "base.html" to the blocks that django-fluent-blogs expects.
+{% endcomment %}
+
+{% block headtitle %}{% block title %}{% endblock %}{% endblock %}
+
+{% block main %}{% block content %}{% endblock %}{% endblock %}
