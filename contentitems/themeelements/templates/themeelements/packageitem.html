@@ -1,0 +1,11 @@
+{% load i18n %}
+<article class="packageitem{% if instance.is_external %} external{% endif %}">
+    <h3>{{ instance.slug }}{% if instance.is_external %} <span class="externalmarker">[external]</span>{% endif %}</h3>
+    {{ instance.description|linebreaks }}
+
+    <nav class="links">
+        <a href="{{ instance.repository_url }}">{% trans "Code" %}</a>
+        {% if instance.rtd_html_url %}<a href="{{ instance.rtd_html_url }}" rel="external">{% trans "Documentation" %}</a>{% endif %}
+        {% if instance.homepage %}<a href="{{ instance.homepage }}" rel="external">{% trans "Homepage" %}</a>{% endif %}
+    </nav>
+</article>

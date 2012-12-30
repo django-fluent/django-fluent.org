@@ -19,6 +19,7 @@ SECRET_KEY = '!k95k&amp;wn43_8b5rp*c$+9pzcl=$w9s9o&amp;t##x7os$3p3l%57&amp;w'
 INSTALLED_APPS += (
     # Site parts
     'frontend',
+    'contentitems.themeelements',
 
     # CMS
     'fluent_pages',
@@ -62,6 +63,7 @@ TEMPLATE_CONTEXT_PROCESSORS += (
 
 FORMAT_MODULE_PATH = 'djangofluent.settings.locale'  # Consistent date formatting
 
+
 # App specific settings
 ADMIN_MEDIA_PREFIX = STATIC_URL + 'admin/'  # for filebrowser
 
@@ -90,3 +92,7 @@ FLUENT_DASHBOARD_APP_ICONS = {}
 FLUENT_DASHBOARD_DEFAULT_MODULE = 'ModelList'
 
 FLUENT_PAGES_TEMPLATE_DIR = os.path.join(PROJECT_DIR, 'frontend', 'templates')
+
+
+# Site settings
+PACKAGEITEM_INTERNAL_GITHUB_ORG = 'edoburu'
