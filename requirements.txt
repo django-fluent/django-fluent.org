@@ -1,13 +1,13 @@
 # Install with: `pip install -r requirements.txt`
 
 # Essential files
-Django==1.4.3
+Django==1.4.5
 Pillow==1.7.8
 MySQL-python==1.2.3
 South==0.7.6
 django-compressor==1.2
 python-memcached==1.48
-pytz==2012h
+pytz==2012j
 sorl-thumbnail==11.12
 
 # Admin tools / dashboard
@@ -18,17 +18,17 @@ dashboardmods==0.2.2
 # CMS apps
 django-mptt==0.5.5
 django-polymorphic==0.2
-django-polymorphic-tree==0.8.3
-django-fluent-contents==0.8.3
-django-fluent-pages==0.8.0
-django-wysiwyg>=0.5
+-django-polymorphic-tree==0.8.3
+-django-fluent-contents==0.8.4
+-django-fluent-pages==0.8.0
+-django-wysiwyg>=0.5
 django-tinymce==1.5.1b4
 
 # Debugging
-django-debugtools>=1.1.0
-bpython>=0.11
+django-debugtools==1.1.0
+bpython==0.11
 
 # Extra apps for this site
--e git+https://github.com/clintecker/django-google-analytics.git@140787ba86ef4995b2cabf927bf0b56ec7728348#egg=google_analytics-0.2
--e git+https://github.com/wardi/django-filebrowser-no-grappelli.git@5b2bac4220fe7cd05b4f208da7f5478387e0ead0#egg=django_filebrowser_no_grappelli-3.1.1
+-e git+https://github.com/clintecker/django-google-analytics.git@140787ba86ef4995b2cabf927bf0b56ec7728348#egg=google_analytics-dev
+-e git+https://github.com/wardi/django-filebrowser-no-grappelli.git@5b2bac4220fe7cd05b4f208da7f5478387e0ead0#egg=django_filebrowser_no_grappelli-dev
 django-crispy-forms==1.2.3
