@@ -33,22 +33,71 @@
   </head>
 
   <body id="{% block bodyid %}page{% endblock %}" class="{% block bodyclass %}default{% endblock %}" itemscope itemtype="http://schema.org/WebPage">
-    <div id="wrapper">
+    <div id="templatemo_body_wrapper">
+      <div id="templatemo_wrapper">
 
-      <header id="top">
-          {% render_menu max_depth=1 %}
-      </header>
+        <header id="tempaltemo_header">
+          <span id="header_icon"></span>
+          <div id="header_content">
+            <div id="site_title">
+              <a href="/" target="_parent"><img src="{{ STATIC_URL }}frontend/img/web_design/templatemo_logo.png" alt="LOGO" /></a>
+            </div>
+            <p>This is a free CSS website layout from templatemo.com website.  Feel free to edit and apply for your websites. Duis vitae velit sed dui malesuad mollis aliquet ligula.</p>
+            <a href="#" class="detail float_r">Detail</a>
+          </div>
+        </header>
 
-      <section id="content">
-        <div id="main">
-          {% block main %}{% endblock %}
+        <div id="templatemo_main_top"></div>
+        <section id="templatemo_main"><!-- id="content" -->
+          <span id="main_top"></span><span id="main_bottom"></span>
+
+          <aside id="templatemo_sidebar">
+            <div id="templatemo_menu">
+              {% render_menu max_depth=1 %}
+            </div> <!-- end of templatemo_menu -->
+
+            <div class="sidebar_box">
+              <div class="sb_title">Latest Updates</div>
+              <div class="sb_content">
+
+                <div class="sb_news_box">
+                  <a href="#">Maecenas adipiscing elem sum ipsum.</a>
+                  <span>25 September 2048</span>
+                </div>
+
+                <div class="sb_news_box">
+                  <a href="#">Aser ecenas adipiscing de lorem ipsum.</a>
+                  <span>18 September 2048</span>
+                </div>
+
+                <a href="#"><strong>View All</strong></a>
+              </div>
+
+              <div class="sb_bottom"></div>
+            </div>
+
+            <div class="cleaner"></div>
+          </aside><!-- /sidebar -->
+
+          <section id="templatemo_content">
+            {% block main %}{% endblock %}
+          </section>
+
+          <div class="cleaner"></div>
+        </section>
+
+        <div id="templatemo_main_bottom">
         </div>
-      </section>
 
-      <footer id="bottom">
-        <p>Copyright © ... 2012-{% now "Y" %}</p>
-      </footer>
+      </div> <!-- end of wrapper -->
     </div>
+
+    <footer id="templatemo_footer_wrapper">
+      <div id="templatemo_footer">
+        Copyright © 2012-{% now "Y" %} <a href="#">Your Company Name</a> |
+        Designed by <a href="http://www.templatemo.com/page/1" target="_parent">Free CSS Templates</a>
+      </div>
+    </footer>
 
     {% compress js %}{% block bodyscripts %}{% endblock %}{% endcompress %}
     {% analytics_async %}
