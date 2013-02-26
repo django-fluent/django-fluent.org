@@ -69,6 +69,11 @@ class PackageItem(ContentItem):
         return _fetch_json(cachekey, 'http://readthedocs.org/api/v1/project/{slug}/?format=json'.format(slug=self.slug))
 
 
+    @property
+    def rtd_subdomain(self):
+        return self.rtd_info['subdomain'] if self.rtd_info else None
+
+
     @cached_property
     def github_info(self):
         """
