@@ -48,10 +48,10 @@
         </header>
 
         <div id="templatemo_main_top"></div>
-        <section id="templatemo_main"><!-- id="content" -->
+        <section id="templatemo_main" class="clearfix"><!-- id="content" -->
           <span id="main_top"></span><span id="main_bottom"></span>
 
-          <aside id="templatemo_sidebar">
+          <aside id="templatemo_sidebar" class="clearfix">
             <div id="templatemo_menu">
               {% render_menu max_depth=1 %}
             </div> <!-- end of templatemo_menu -->
@@ -75,15 +75,11 @@
                 <div class="sb_bottom"></div>
               </div>
             {% endif %}
-
-            <div class="cleaner"></div>
           </aside><!-- /sidebar -->
 
           <section id="templatemo_content">
             {% block main %}{% endblock %}
           </section>
-
-          <div class="cleaner"></div>
         </section>
 
         <div id="templatemo_main_bottom">
