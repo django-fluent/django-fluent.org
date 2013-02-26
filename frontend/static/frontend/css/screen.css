@@ -514,7 +514,7 @@ em {
 .sb_news_box a {
   color: #333;
 }
-.sb_news_box span {
+.sb_news_box time {
   display: block;
   color: #8e9924;
 }
@@ -533,7 +533,7 @@ em {
 .content_box {
   padding-bottom: 30px;
   margin-bottom: 30px;
-  background: url('../img/web_design/templatemo_horizontal_divider.jpg?1361837629') center bottom no-repeat;
+  background: url('../img/web_design/templatemo_horizontal_divider.jpg?1361837780') center bottom no-repeat;
 }
 
 h2.title_icon {
@@ -541,16 +541,16 @@ h2.title_icon {
   margin-bottom: 15px;
 }
 h2.why_choose_us {
-  background: url('../img/web_design/icon_01.png?1361837629') center left no-repeat;
+  background: url('../img/web_design/icon_01.png?1361837780') center left no-repeat;
 }
 h2.new_services {
-  background: url('../img/web_design/icon_02.png?1361837629') center left no-repeat;
+  background: url('../img/web_design/icon_02.png?1361837780') center left no-repeat;
 }
 
 .col_w290 {
   width: 260px;
   padding-right: 30px;
-  background: url('../img/web_design/templatemo_vertical_divider.jpg?1361837629') center right no-repeat;
+  background: url('../img/web_design/templatemo_vertical_divider.jpg?1361837780') center right no-repeat;
 }
 
 .cw290_last {

@@ -12,4 +12,4 @@ DATETIME_FORMAT = 'j F Y \o\m H:i'      # '20 januari 2009 om 15:23'
 
 ENTRY_DATETIME_FORMAT = 'l j F Y, H:i \u\u\\r'
 
-FOOTER_DATE_FORMAT = 'l j F Y'
+FOOTER_DATE_FORMAT = 'j F Y'

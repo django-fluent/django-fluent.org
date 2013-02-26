@@ -1,4 +1,4 @@
-{% load fluent_pages_tags analytics compress %}<!doctype html>
+{% load fluent_pages_tags fluent_blogs_tags analytics compress %}<!doctype html>
 {% get_fluent_page_vars %}{# for 404 and app pages #}
 <html xml:lang="{{ LANGUAGE_CODE|default:"nl" }}" lang="{{ LANGUAGE_CODE|default:"nl" }}">
   <head>
@@ -56,25 +56,25 @@
               {% render_menu max_depth=1 %}
             </div> <!-- end of templatemo_menu -->
 
-            <div class="sidebar_box">
-              <div class="sb_title">Latest Updates</div>
-              <div class="sb_content">
+            {% get_entries limit=1 as blog_entries %}
+            {% if blog_entries %}
+              <div class="sidebar_box">
+                <div class="sb_title">Latest Updates</div>
+                <div class="sb_content">
 
-                <div class="sb_news_box">
-                  <a href="#">Maecenas adipiscing elem sum ipsum.</a>
-                  <span>25 September 2048</span>
+                  {% for entry in blog_entries %}{% with entry_url=entry.get_absolute_url %}
+                  <div class="sb_news_box">
+                    <a href="{{ entry_url }}">{{ entry.title }}</a>
+                    <time datetime="{{ entry.publication_date|date:'Y-m-d' }}">{{ entry.publication_date|date:'FOOTER_DATE_FORMAT' }}</time>
+                  </div>
+                  {% endwith %}{% endfor %}
+
+                  <a href="{% blogurl 'entry_archive_index' %}"><strong>View All</strong></a>
                 </div>
 
-                <div class="sb_news_box">
-                  <a href="#">Aser ecenas adipiscing de lorem ipsum.</a>
-                  <span>18 September 2048</span>
-                </div>
-
-                <a href="#"><strong>View All</strong></a>
+                <div class="sb_bottom"></div>
               </div>
-
-              <div class="sb_bottom"></div>
-            </div>
+            {% endif %}
 
             <div class="cleaner"></div>
           </aside><!-- /sidebar -->
