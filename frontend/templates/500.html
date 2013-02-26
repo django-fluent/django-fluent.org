@@ -1,27 +1,60 @@
-{% load static %}{% get_static_prefix as STATIC_URL %}<!DOCTYPE html>
+{% load static %}{% get_static_prefix as STATIC_URL %}<!doctype html>
 
 <html xml:lang="{{ LANGUAGE_CODE|default:"nl" }}" lang="{{ LANGUAGE_CODE|default:"nl" }}">
   <head>
     <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="generator" content="Powered by Django" />
-    <title>Interne fout!</title>
+    <title>Internal error!</title>
+
+    <link href="{{ STATIC_URL }}frontend/css/bootstrap.css" rel="stylesheet" type="text/css" />
     <link href="{{ STATIC_URL }}frontend/css/screen.css" rel="stylesheet" type="text/css" />
-    {% block scripts %}{% endblock %}
+    <!--[if lt IE 9]>
+    <link href="{{ STATIC_URL }}frontend/css/msie.css" rel="stylesheet" type="text/css" />
+    <script src="{{ STATIC_URL }}frontend/vendor/html5shiv.js"></script>
+    <![endif]-->
   </head>
 
-  <body id="theme" class="page500">
-    <div id="container">
+  <body id="{% block bodyid %}page{% endblock %}" class="{% block bodyclass %}default{% endblock %}" itemscope itemtype="http://schema.org/WebPage">
+    <div id="templatemo_body_wrapper">
+      <div id="templatemo_wrapper">
 
-      <h2 class="pagetitle">Interne fout</h2>
-      <div id="content" class="clearfix">
-        <p>
-          Er is een fout opgetreden. Probeert u het later a.u.b. opnieuw.
-        </p>
-        <p>
-          Terug naar de <a href="/">start pagina</a>.
-        </p>
-      </div><!-- /content -->
+        <header id="tempaltemo_header">
+          <div id="header_content">
+            <div id="site_title">
+              <a href="/" target="_parent"><img src="{{ STATIC_URL }}frontend/img/web_design/templatemo_logo.png" alt="LOGO" /></a>
+            </div>
+          </div>
+        </header>
 
+        <div id="templatemo_main_top"></div>
+        <section id="templatemo_main" class="clearfix"><!-- id="content" -->
+          <section id="templatemo_content">
+
+              <h2 class="pagetitle">Internal error</h2>
+              <div id="content" class="clearfix">
+                  <p>
+                      An internal error occurred. Please try again later.
+                  </p>
+                  <p>
+                      Back to the <a href="/">home page</a>.
+                  </p>
+              </div><!-- /content -->
+
+          </section>
+        </section>
+
+        <div id="templatemo_main_bottom">
+        </div>
+
+      </div> <!-- end of wrapper -->
     </div>
+
+    <footer id="templatemo_footer_wrapper">
+      <div id="templatemo_footer">
+        Copyright © 2012-{% now "Y" %} <a href="#">Your Company Name</a> |
+        Designed by <a href="http://www.templatemo.com/page/1" target="_parent">Free CSS Templates</a>
+      </div>
+    </footer>
   </body>
 </html>
