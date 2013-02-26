@@ -190,7 +190,7 @@ em {
   left: 660px;
   width: 220px;
   height: 197px;
-  background: image-url("web_design/monitor_icon.png");
+  background: image-url("fluent_monitor.png");  // was: web_design/monitor_icon.png
 }
 
 #header_content {
@@ -420,6 +420,7 @@ h2 {
   border-left: none;
   border-right: none;
   background: #252525;
+  margin-top: 20px;
 }
 
 #templatemo_footer {

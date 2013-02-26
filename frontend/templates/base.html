@@ -7,10 +7,6 @@
     <meta name="generator" content="Powered by Django" />
     <meta name="keywords" content="{% block meta-keywords %}{% endblock %}" />
     <meta name="description" content="{% block meta-description %}{% endblock %}" />
-    <!--
-      Technical implementation by:
-      (TODO: fill this in)
-    -->
     <title>{% block headtitle %}{% endblock %} - {{ site.name|default:site.domain }}</title>
 
     <meta property="og:type" content="{% block og-type %}website{% endblock %}" />
@@ -40,10 +36,13 @@
           <span id="header_icon"></span>
           <div id="header_content">
             <div id="site_title">
-              <a href="/" target="_parent"><img src="{{ STATIC_URL }}frontend/img/web_design/templatemo_logo.png" alt="LOGO" /></a>
+              <a href="/" target="_parent"><img src="{{ STATIC_URL }}frontend/img/django-fluent.png" alt="LOGO" /></a>
             </div>
-            <p>This is a free CSS website layout from templatemo.com website.  Feel free to edit and apply for your websites. Duis vitae velit sed dui malesuad mollis aliquet ligula.</p>
-            <a href="#" class="detail float_r">Detail</a>
+            <p>
+              A smooth, flexible CMS to create the designs you like,<br/>
+              built on top of the powerful Django framework.
+            </p>
+            {# <a href="#" class="detail float_r">Detail</a> #}
           </div>
         </header>
 
@@ -90,8 +89,9 @@
 
     <footer id="templatemo_footer_wrapper">
       <div id="templatemo_footer">
-        Copyright © 2012-{% now "Y" %} <a href="#">Your Company Name</a> |
-        Designed by <a href="http://www.templatemo.com/page/1" target="_parent">Free CSS Templates</a>
+        Copyright © 2012-{% now "Y" %} <a href="http://www.edoburu.nl/" rel="external">Edoburu</a> |
+        Powered by <a href="http://www.djangoproject.com/">Django</a> |
+        Web design by <a href="http://www.templatemo.com/page/1" target="_parent">Free CSS Templates</a>
       </div>
     </footer>
 

@@ -1,0 +1,68 @@
+@import "partials/bootstrap_config";
+
+
+// Header color
+
+div#header {
+  background-image: none;  // Disable admin-tools image
+}
+
+#header {
+  #branding {
+    background: #909B19 image-url("web_design/templatemo_header.jpg") 90px -302px no-repeat;
+
+    h1#site-name {
+      // NOTE: when updating this, also check the login page.
+      // It might be needed to create an override for 'body.login <this selector>'.
+      padding: 7px 0 0 0;
+      color: #fff;
+      background: image-url("django-fluent-small.png") 10px 4px no-repeat;
+      width: 270px;
+    }
+  }
+}
+
+
+// Fieldset titles
+
+.module h2, .module caption, .inline-group h2  {
+  @include gradient-vertical(#8B961D, #939E1B);
+  //background: #8B961D;
+}
+
+
+// Form submit buttons
+
+.button.default,
+input.default[type="submit"],
+.submit-row input.default {
+  @include buttonBackground($btnPrimaryBackground, $btnPrimaryBackgroundHighlight);
+
+  // disable default Django colors
+  border-width: 1px;
+  &:active {
+    background-image: none;
+  }
+}
+
+
+// Footer
+
+html, body { height: 100%; }
+#container { min-height: 100%; }
+.login #container { min-height: 0; }
+
+#footerspace {
+  padding-bottom: 40px;
+}
+
+#footer {
+  color: #aaa;
+  position: absolute;
+  bottom: 5px;
+  left: 0;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}

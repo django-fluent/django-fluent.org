@@ -93,23 +93,3 @@ h1, h2, h3, h4, h5, h6 {
     }
   }
 }
-
-
-/* ---- plugins ---- */
-
-pre, code {
-  /* use something more modern then Courier New */
-  font-family: "Consolas", "Menlo", "Monaco", "Lucida Console", "Liberation Mono", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Courier New", monospace;
-}
-
-iframe {
-  border: 1px solid #ccc;
-
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
-#div_id_honeypot {
-  display: none;
-}
