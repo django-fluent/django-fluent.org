@@ -145,6 +145,7 @@ em {
   line-height: 30px;
 }
 
+#templatemo_content ul,
 .tmo_list {
   margin: 0 0 0 10px;
   padding: 0;
@@ -381,14 +382,8 @@ h2 {
   &.title_icon {
     padding: 15px 0 15px 60px;
     margin-bottom: 15px;
-  }
-
-  &.why_choose_us {
-    background: image-url("web_design/icon_01.png") center left no-repeat;
-  }
-
-  &.new_services {
-    background: image-url("web_design/icon_02.png") center left no-repeat;
+    background-repeat: no-repeat;
+    background-position: center left;
   }
 }
 
@@ -396,6 +391,14 @@ h2 {
   width: 260px;
   padding-right: 30px;
   background: image-url("web_design/templatemo_vertical_divider.jpg") center right no-repeat;
+
+  & + .col_w290 {
+    margin-left: 30px;  // as float_r
+  }
+
+  &:nth-child(2n+1) {
+    background: none;   // NOTE: quick fix for .cw290_last.
+  }
 }
 
 .cw290_last {

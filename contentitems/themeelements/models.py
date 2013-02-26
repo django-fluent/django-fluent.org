@@ -1,4 +1,6 @@
 from urllib2 import urlopen, HTTPError
+from any_imagefield.models import AnyImageField
+from any_urlfield.models import AnyUrlField
 from django.conf import settings
 from django.core.cache import cache
 from django.db import models
@@ -6,6 +8,53 @@ from django.utils import simplejson
 from django.utils.functional import cached_property
 from django.utils.translation import ugettext_lazy as _
 from fluent_contents.models import ContentItem
+
+
+class Col12Item(ContentItem):
+    """
+    A column that takes 1/2 of the width
+    """
+    title = models.CharField(_("Title"), max_length=200)
+    icon = AnyImageField(_("Icon"), blank=True)
+    body = models.TextField(_("Body"))
+
+    class Meta:
+        verbose_name = _("Column (1/2)")
+        verbose_name_plural = _("Columns (1/2)")
+
+    def __unicode__(self):
+        return self.title
+
+
+class ContentBoxItem(ContentItem):
+    """
+    The context box includes a divider.
+    """
+    class Meta:
+        verbose_name = _("Content box splitter")
+        verbose_name_plural = _("Content box splitters")
+
+    def __unicode__(self):
+        return u'splitter'
+
+
+class ImageTextItem(ContentItem):
+    """
+    A block with image + text
+    """
+    title = models.CharField(_("Title"), max_length=200)
+    image = AnyImageField(_("Image"))
+    body = models.TextField(_("Body"))
+
+    url = AnyUrlField(_("URL"), blank=True)
+    url_text = models.CharField(_("Text"), max_length=200, blank=True)
+
+    class Meta:
+        verbose_name = _("Image+text")
+        verbose_name_plural = _("Image+text items")
+
+    def __unicode__(self):
+        return self.title
 
 
 class PackageItem(ContentItem):

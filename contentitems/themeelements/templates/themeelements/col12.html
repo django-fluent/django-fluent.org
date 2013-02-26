@@ -1,0 +1,4 @@
+<div class="col_w290 float_l">
+    <h2{% if instance.icon %} class="title_icon" style="background-image: url({{ instance.icon.url_full }});"{% endif %}>{{ instance.title }}</h2>
+    {{ instance.body|safe }}
+</div>

@@ -34,6 +34,8 @@ INSTALLED_APPS += (
     'django.contrib.comments',
 
     # Support libs
+    'any_imagefield',
+    'any_urlfield',
     'categories',
     'categories.editor',
     'crispy_forms',

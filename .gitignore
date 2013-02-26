@@ -12,3 +12,4 @@
 dist/
 docs/_build/
 djangofluent/settings/local.py
+web/media/

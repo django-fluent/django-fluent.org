@@ -83,16 +83,16 @@ img, a img, object {
 }
 
 /* containers */
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4 {
   clear: both;
 }
-h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+h1 a, h2 a, h3 a, h4 a {
   text-decoration: none;
 }
-h1 a:link, h1 a:visited, h2 a:link, h2 a:visited, h3 a:link, h3 a:visited, h4 a:link, h4 a:visited, h5 a:link, h5 a:visited, h6 a:link, h6 a:visited {
+h1 a:link, h1 a:visited, h2 a:link, h2 a:visited, h3 a:link, h3 a:visited, h4 a:link, h4 a:visited {
   color: #252323;
 }
-h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover {
+h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover {
   color: #0066FF;
 }
 
@@ -346,20 +346,24 @@ em {
   line-height: 30px;
 }
 
+#templatemo_content ul,
 .tmo_list {
   margin: 0 0 0 10px;
   padding: 0;
   list-style: none;
 }
+#templatemo_content ul li,
 .tmo_list li {
   color: #666;
   margin: 0 0 2px;
   padding: 0 0 3px 25px;
   background: transparent url('../img/web_design/templatemo_list.png') no-repeat scroll 0 3px;
 }
+#templatemo_content ul li a,
 .tmo_list li a {
   color: #666;
 }
+#templatemo_content ul li a:hover,
 .tmo_list li a:hover {
   color: #666;
 }
@@ -565,18 +569,20 @@ em {
 h2.title_icon {
   padding: 15px 0 15px 60px;
   margin-bottom: 15px;
-}
-h2.why_choose_us {
-  background: url('../img/web_design/icon_01.png') center left no-repeat;
-}
-h2.new_services {
-  background: url('../img/web_design/icon_02.png') center left no-repeat;
+  background-repeat: no-repeat;
+  background-position: center left;
 }
 
 .col_w290 {
   width: 260px;
   padding-right: 30px;
   background: url('../img/web_design/templatemo_vertical_divider.jpg') center right no-repeat;
+}
+.col_w290 + .col_w290 {
+  margin-left: 30px;
+}
+.col_w290:nth-child(2n+1) {
+  background: none;
 }
 
 .cw290_last {

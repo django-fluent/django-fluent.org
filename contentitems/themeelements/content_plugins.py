@@ -1,7 +1,43 @@
 from django.contrib.admin.widgets import AdminTextareaWidget
 from django.utils.translation import ugettext_lazy as _
 from fluent_contents.extensions import ContentPlugin, plugin_pool
-from .models import PackageItem
+from .models import Col12Item, ContentBoxItem, ImageTextItem, PackageItem
+
+
+@plugin_pool.register
+class Col12Plugin(ContentPlugin):
+    model = Col12Item
+    render_template = "themeelements/col12.html"
+    category = _("Theme elements")
+
+    class Media:
+        js = ('themeelements/admin/wysiwyg_hack.js',)
+
+
+@plugin_pool.register
+class ContentBoxPlugin(ContentPlugin):
+    model = ContentBoxItem
+    render_template = "themeelements/contentbox.html"
+    category = _("Theme elements")
+
+
+@plugin_pool.register
+class ImageTextPlugin(ContentPlugin):
+    model = ImageTextItem
+    render_template = "themeelements/imagetext.html"
+    category = _("Theme elements")
+
+    fieldsets = (
+        (None, {
+            'fields': ('title', 'image', 'body',)
+        }),
+        (_("Read more link"), {
+            'fields': ('url', 'url_text',)
+        })
+    )
+
+    class Media:
+        js = ('themeelements/admin/wysiwyg_hack.js',)
 
 
 @plugin_pool.register
