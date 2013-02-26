@@ -173,7 +173,7 @@ body {
   font-family: Tahoma, Geneva, sans-serif;
   font-size: 12px;
   line-height: 1.7em;
-  background: url('../img/web_design/templatemo_body.jpg?1361837629');
+  background: url('../img/web_design/templatemo_body.jpg');
   background-color: #dbdbdd;
   background-position: top;
   background-repeat: repeat-x;
@@ -279,7 +279,7 @@ a.detail {
   text-align: center;
   color: #ffc;
   font-size: 18px;
-  background: url('../img/web_design/templatemo_button_01.png?1361837629');
+  background: url('../img/web_design/templatemo_button_01.png');
 }
 a.detail:hover {
   color: #fff;
@@ -341,7 +341,7 @@ em {
   color: #666;
   margin: 0 0 2px;
   padding: 0 0 3px 25px;
-  background: transparent url('../img/web_design/templatemo_list.png?1361837629') no-repeat scroll 0 3px;
+  background: transparent url('../img/web_design/templatemo_list.png') no-repeat scroll 0 3px;
 }
 .tmo_list li a {
   color: #666;
@@ -352,20 +352,20 @@ em {
 
 #templatemo_body_wrapper {
   width: 100%;
-  background: url('../img/web_design/templatemo_header.jpg?1361837629') center top no-repeat;
+  background: url('../img/web_design/templatemo_header.jpg') center top no-repeat;
 }
 
 #templatemo_wrapper {
   width: 984px;
   margin: 0 auto;
-  background: url('../img/web_design/templatemo_header.jpg?1361837629') center top no-repeat;
+  background: url('../img/web_design/templatemo_header.jpg') center top no-repeat;
 }
 
 #tempaltemo_header {
   position: relative;
   width: 984px;
   height: 325px;
-  background: url('../img/web_design/templatemo_header.jpg?1361837629') no-repeat center top;
+  background: url('../img/web_design/templatemo_header.jpg') no-repeat center top;
 }
 
 #header_icon {
@@ -374,7 +374,7 @@ em {
   left: 660px;
   width: 220px;
   height: 197px;
-  background: url('../img/web_design/monitor_icon.png?1361837629');
+  background: url('../img/web_design/monitor_icon.png');
 }
 
 #header_content {
@@ -401,20 +401,20 @@ em {
 #templatemo_main_top {
   width: 984px;
   height: 30px;
-  background: url('../img/web_design/templatemo_content_top.png?1361837629') no-repeat;
+  background: url('../img/web_design/templatemo_content_top.png') no-repeat;
 }
 
 #templatemo_main_bottom {
   width: 984px;
   height: 30px;
-  background: url('../img/web_design/templatemo_content_bottom.png?1361837629') no-repeat;
+  background: url('../img/web_design/templatemo_content_bottom.png') no-repeat;
 }
 
 #templatemo_main {
   position: relative;
   width: 900px;
   padding: 10px 42px;
-  background: url('../img/web_design/templatemo_content_middle.png?1361837629') repeat-y;
+  background: url('../img/web_design/templatemo_content_middle.png') repeat-y;
 }
 
 #main_top {
@@ -423,7 +423,7 @@ em {
   top: 0px;
   width: 13px;
   height: 364px;
-  background: url('../img/web_design/templatemo_sidebar_top.jpg?1361837629') 0 -30px no-repeat;
+  background: url('../img/web_design/templatemo_sidebar_top.jpg') 0 -30px no-repeat;
 }
 
 #main_bottom {
@@ -432,7 +432,7 @@ em {
   bottom: 0px;
   width: 13px;
   height: 364px;
-  background: url('../img/web_design/templatemo_sidebar_bottom.jpg?1361837629') 0 scroll no-repeat;
+  background: url('../img/web_design/templatemo_sidebar_bottom.jpg') 0 scroll no-repeat;
 }
 
 #templatemo_sidebar {
@@ -452,17 +452,17 @@ em {
   padding: 9px 30px;
   font-size: 18px;
   color: #666666;
-  background: url('../img/web_design/templatemo_sidebar_box_top.jpg?1361837629') no-repeat top left;
+  background: url('../img/web_design/templatemo_sidebar_box_top.jpg') no-repeat top left;
 }
 
 .sb_content {
   padding: 20px 30px;
-  background: url('../img/web_design/templatemo_sidebar_box_middle.jpg?1361837629') repeat-y left;
+  background: url('../img/web_design/templatemo_sidebar_box_middle.jpg') repeat-y left;
 }
 
 .sb_bottom {
   height: 8px;
-  background: url('../img/web_design/templatemo_sidebar_box_bottom.jpg?1361837629') no-repeat top left;
+  background: url('../img/web_design/templatemo_sidebar_box_bottom.jpg') no-repeat top left;
 }
 
 /* menu */
@@ -480,7 +480,7 @@ em {
   margin: 0;
   display: block;
   height: 36px;
-  background: url('../img/web_design/templatemo_menu_divider.jpg?1361837629') left bottom no-repeat;
+  background: url('../img/web_design/templatemo_menu_divider.jpg') left bottom no-repeat;
 }
 #templatemo_menu ul li a {
   display: block;
@@ -496,12 +496,12 @@ em {
 #templatemo_menu ul li a:hover {
   padding-left: 60px;
   color: #777700;
-  background: url('../img/web_design/templatemo_menu_hover.png?1361837629') left top no-repeat;
+  background: url('../img/web_design/templatemo_menu_hover.png') left top no-repeat;
 }
 #templatemo_menu ul .current {
   padding-left: 60px;
   color: #777700;
-  background: url('../img/web_design/templatemo_menu_hover.png?1361837629') left top no-repeat;
+  background: url('../img/web_design/templatemo_menu_hover.png') left top no-repeat;
 }
 
 /* end of menu */
@@ -509,7 +509,7 @@ em {
   border-bottom: 1px solid #cccccc;
   padding: 0 0 20px 25px;
   margin-bottom: 20px;
-  background: url('../img/web_design/templatemo_news.png?1361837629') top left no-repeat;
+  background: url('../img/web_design/templatemo_news.png') top left no-repeat;
 }
 .sb_news_box a {
   color: #333;
@@ -533,7 +533,7 @@ em {
 .content_box {
   padding-bottom: 30px;
   margin-bottom: 30px;
-  background: url('../img/web_design/templatemo_horizontal_divider.jpg?1361837780') center bottom no-repeat;
+  background: url('../img/web_design/templatemo_horizontal_divider.jpg') center bottom no-repeat;
 }
 
 h2.title_icon {
@@ -541,16 +541,16 @@ h2.title_icon {
   margin-bottom: 15px;
 }
 h2.why_choose_us {
-  background: url('../img/web_design/icon_01.png?1361837780') center left no-repeat;
+  background: url('../img/web_design/icon_01.png') center left no-repeat;
 }
 h2.new_services {
-  background: url('../img/web_design/icon_02.png?1361837780') center left no-repeat;
+  background: url('../img/web_design/icon_02.png') center left no-repeat;
 }
 
 .col_w290 {
   width: 260px;
   padding-right: 30px;
-  background: url('../img/web_design/templatemo_vertical_divider.jpg?1361837780') center right no-repeat;
+  background: url('../img/web_design/templatemo_vertical_divider.jpg') center right no-repeat;
 }
 
 .cw290_last {
