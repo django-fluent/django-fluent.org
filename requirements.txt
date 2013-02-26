@@ -36,9 +36,9 @@ django-debugtools==1.1.0
 bpython==0.11
 
 # Extra apps for this site
+django-any-imagefield==0.8.0
 django-any-urlfield==1.0.2
 django-crispy-forms==1.2.3
 
--e git+https://github.com/edoburu/django-any-imagefield.git@2dd650e83164c4eb27b4fdc255a0ece47ecc7be5#egg=django_any_imagefield-dev
 -e git+https://github.com/clintecker/django-google-analytics.git@140787ba86ef4995b2cabf927bf0b56ec7728348#egg=google_analytics-dev
 -e git+https://github.com/wardi/django-filebrowser-no-grappelli.git@5b2bac4220fe7cd05b4f208da7f5478387e0ead0#egg=django_filebrowser_no_grappelli-dev
