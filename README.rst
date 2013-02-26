@@ -53,7 +53,20 @@ And toggle the "LiveReload" button in the browser at the desired page.
 License
 -------
 
-The project code is licensed under the Apache License Version 2.0.
+Feel free to use parts of this code in your projects.
+
+.. image::  http://i.creativecommons.org/l/by/3.0/88x31.png
+   :target: http://creativecommons.org/licenses/by/3.0/
+   :alt: Creative Commons License
+
+Except otherwise noted, this project is © 2012-2013 Edoburu, under a `Creative Commons Attribution 3.0 Unported License <http://creativecommons.org/licenses/by/3.0/>`_.
+
+The django-fluent modules are licensed under the Apache License Version 2.0.
+
+The design is licensed from templatemo.com under a `Creative Commons Attribution 3.0 United States License <http://creativecommons.org/licenses/by/3.0/us/>`_.
+
+Contributing
+------------
 
 Patches are welcome and gratefully accepted, for this site and everything else on our `GitHub page <https://github.com/edoburu>`_.
 
