@@ -31,6 +31,18 @@ div#header {
 }
 
 
+// Field tweaks
+
+.vFileBrowseField {
+  width: 20em;
+}
+
+input.ac_input {
+  // django-taggit
+  width: 40em;
+}
+
+
 // Form submit buttons
 
 .button.default,

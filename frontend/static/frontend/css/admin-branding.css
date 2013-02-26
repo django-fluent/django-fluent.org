@@ -23,6 +23,14 @@ div#header {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FF8B961D', endColorstr='#FF939E1B', GradientType=0);
 }
 
+.vFileBrowseField {
+  width: 20em;
+}
+
+input.ac_input {
+  width: 40em;
+}
+
 .button.default,
 input.default[type="submit"],
 .submit-row input.default {
