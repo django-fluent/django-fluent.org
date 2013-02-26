@@ -475,7 +475,6 @@ em {
   padding: 10px 0 0;
   margin: 0;
   display: block;
-  height: 36px;
   background: url('../img/web_design/templatemo_menu_divider.jpg') left bottom no-repeat;
 }
 #templatemo_menu ul li a {
@@ -493,6 +492,19 @@ em {
   padding-left: 60px;
   color: #777700;
   background: url('../img/web_design/templatemo_menu_hover.png') left top no-repeat;
+}
+#templatemo_menu ul li ul {
+  padding: 0 0 2px 0;
+}
+#templatemo_menu ul li li {
+  text-indent: 20px;
+  background-image: none;
+  padding-top: 0px;
+  min-height: 34px;
+}
+#templatemo_menu ul li li a {
+  font-size: 14px;
+  line-height: 1;
 }
 #templatemo_menu ul .current {
   padding-left: 60px;
