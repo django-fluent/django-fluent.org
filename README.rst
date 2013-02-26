@@ -1,5 +1,5 @@
-www.django-fluent.org
-=====================
+django-fluent.org
+=================
 
 This is the source code of www.django-fluent.org
 You can use this freely as example how to use and run a django-fluent CMS site.
