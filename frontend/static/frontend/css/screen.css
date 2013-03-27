@@ -528,7 +528,7 @@ em {
   font-size: 14px;
   line-height: 1;
 }
-#templatemo_menu ul .current {
+#templatemo_menu ul .active > a {
   padding-left: 60px;
   color: #777700;
   background: url('../img/web_design/templatemo_menu_hover.png') left top no-repeat;
