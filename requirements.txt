@@ -17,11 +17,11 @@ dashboardmods==0.2.2
 
 # CMS apps
 django-mptt==0.5.5
-django-polymorphic==0.2
--django-polymorphic-tree==0.8.3
--django-fluent-contents==0.8.4
--django-fluent-pages==0.8.0
--django-wysiwyg>=0.5
+django-polymorphic==0.3.1
+django-polymorphic-tree==0.8.6
+django-fluent-contents==0.8.4
+django-fluent-pages==0.8.1
+django-wysiwyg==0.5.1
 django-tinymce==1.5.1b4
 
 # Blog
