@@ -28,7 +28,7 @@ SECRET_KEY = '!k95k&amp;wn43_8b5rp*c$+9pzcl=$w9s9o&amp;t##x7os$3p3l%57&amp;w'
 INSTALLED_APPS += (
     # Site parts
     'frontend',
-    'contentitems.themeelements',
+    'apps.themeelements',
 
     # CMS parts
     'fluent_blogs',

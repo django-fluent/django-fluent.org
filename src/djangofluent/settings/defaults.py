@@ -22,7 +22,7 @@ LANGUAGE_CODE = 'nl_NL'
 
 # Path autodetection
 SRC_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.realpath(__file__))))
-ROOT_DIR = SRC_DIR  # os.path.dirname(SRC_DIR)
+ROOT_DIR = os.path.dirname(SRC_DIR)
 
 # Paths
 MEDIA_ROOT   = ROOT_DIR + '/web/media/'

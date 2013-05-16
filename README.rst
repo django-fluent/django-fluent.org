@@ -21,6 +21,7 @@ To setup a local development environment::
 
     # Create the environment:
     mkvirtualenv django-fluent.org
+    cd src
     pip install -r requirements.txt
 
     # Configure MySQL:
