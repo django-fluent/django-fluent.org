@@ -77,7 +77,9 @@ TEMPLATE_CONTEXT_PROCESSORS += (
 
 FORMAT_MODULE_PATH = 'djangofluent.settings.locale'  # Consistent date formatting
 
-# App specific settings
+
+## -- Third party app settings
+
 ADMIN_TOOLS_INDEX_DASHBOARD = 'fluent_dashboard.dashboard.FluentIndexDashboard'
 ADMIN_TOOLS_APP_INDEX_DASHBOARD = 'fluent_dashboard.dashboard.FluentAppIndexDashboard'
 ADMIN_TOOLS_MENU = 'fluent_dashboard.menu.FluentMenu'
@@ -111,5 +113,10 @@ FLUENT_DASHBOARD_DEFAULT_MODULE = 'ModelList'
 
 FLUENT_PAGES_TEMPLATE_DIR = os.path.join(SRC_DIR, 'frontend', 'templates')
 
-# Site settings
+FLUENT_TEXT_CLEAN_HTML = True
+FLUENT_TEXT_SANITIZE_HTML = True
+
+
+## -- Site app settings
+
 PACKAGEITEM_INTERNAL_GITHUB_ORG = 'edoburu'
