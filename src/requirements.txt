@@ -16,7 +16,7 @@ django-fluent-comments >= 0.9.0
 
 # Support libs
 django-admin-tools >= 0.5.1, < 0.6
-django-any-imagefield==0.8.0
+django-any-imagefield==0.8.1
 django-any-urlfield==1.0.5
 django-categories==1.2.1
 django-crispy-forms==1.2.8
