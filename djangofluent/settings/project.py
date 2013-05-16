@@ -27,6 +27,8 @@ INSTALLED_APPS += (
     'fluent_blogs.pagetypes.blogpage',
     'fluent_contents',
     'fluent_contents.plugins.text',
+    'fluent_contents.plugins.oembeditem',
+    'fluent_contents.plugins.picture',
 
     # Blog
     'fluent_blogs',
@@ -95,6 +97,7 @@ FLUENT_DASHBOARD_DEFAULT_MODULE = 'ModelList'
 
 FLUENT_PAGES_TEMPLATE_DIR = os.path.join(PROJECT_DIR, 'frontend', 'templates')
 
+#FLUENT_OEMBED_SOURCE = 'noembed'
 
 # Site settings
 PACKAGEITEM_INTERNAL_GITHUB_ORG = 'edoburu'

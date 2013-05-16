@@ -1,6 +1,7 @@
 from django.conf.urls import *
 from django.conf import settings
 from django.contrib import admin
+from filebrowser.sites import site as fbsite
 from fluent_blogs.sitemaps import EntrySitemap, CategoryArchiveSitemap, AuthorArchiveSitemap, TagArchiveSitemap
 from fluent_pages.sitemaps import PageSitemap
 from frontend.views import TextFileView
@@ -18,7 +19,7 @@ sitemaps = {
 urlpatterns = patterns('',
     url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^admin/filebrowser/', include('filebrowser.urls')),
+    url(r'^admin/filebrowser/', include(fbsite.urls)),
     url(r'^admin/util/taggit_autocomplete_modified/', include('taggit_autocomplete_modified.urls')),
     url(r'^admin/util/tinymce/', include('tinymce.urls')),
     url(r'^admin/util/tools/', include('admin_tools.urls')),
