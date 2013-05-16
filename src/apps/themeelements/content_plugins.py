@@ -10,9 +10,6 @@ class Col12Plugin(ContentPlugin):
     render_template = "themeelements/col12.html"
     category = _("Theme elements")
 
-    class Media:
-        js = ('themeelements/admin/wysiwyg_hack.js',)
-
 
 @plugin_pool.register
 class ContentBoxPlugin(ContentPlugin):
@@ -35,9 +32,6 @@ class ImageTextPlugin(ContentPlugin):
             'fields': ('url', 'url_text',)
         })
     )
-
-    class Media:
-        js = ('themeelements/admin/wysiwyg_hack.js',)
 
 
 @plugin_pool.register

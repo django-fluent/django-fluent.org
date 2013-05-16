@@ -7,6 +7,7 @@ from django.db import models
 from django.utils import simplejson
 from django.utils.functional import cached_property
 from django.utils.translation import ugettext_lazy as _
+from fluent_contents.extensions import PluginImageField, PluginHtmlField, PluginUrlField
 from fluent_contents.models import ContentItem
 
 
@@ -15,8 +16,8 @@ class Col12Item(ContentItem):
     A column that takes 1/2 of the width
     """
     title = models.CharField(_("Title"), max_length=200)
-    icon = AnyImageField(_("Icon"), blank=True)
-    body = models.TextField(_("Body"))
+    icon = PluginImageField(_("Icon"), blank=True)
+    body = PluginHtmlField(_("Body"))
 
     class Meta:
         verbose_name = _("Column (1/2)")
@@ -43,10 +44,10 @@ class ImageTextItem(ContentItem):
     A block with image + text
     """
     title = models.CharField(_("Title"), max_length=200)
-    image = AnyImageField(_("Image"))
-    body = models.TextField(_("Body"))
+    image = PluginImageField(_("Image"))
+    body = PluginHtmlField(_("Body"))
 
-    url = AnyUrlField(_("URL"), blank=True)
+    url = PluginUrlField(_("URL"), blank=True)
     url_text = models.CharField(_("Text"), max_length=200, blank=True)
 
     class Meta:
