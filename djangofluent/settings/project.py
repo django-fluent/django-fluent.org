@@ -3,6 +3,15 @@ Project specific settings
 """
 from .defaults import *
 
+# Admins receive 500 errors, managers receive 404 errors.
+ADMINS = (
+    ('Edoburu', 'sysadmin@edoburu.nl'),
+)
+MANAGERS = ADMINS
+
+DEFAULT_FROM_EMAIL = 'sysadmin@edoburu.nl'
+EMAIL_SUBJECT_PREFIX = '[Django][djangofluent] '
+
 # Database to use
 DATABASES = {
     'default': {
@@ -21,19 +30,19 @@ INSTALLED_APPS += (
     'frontend',
     'contentitems.themeelements',
 
-    # CMS
+    # CMS parts
+    'fluent_blogs',
+    'fluent_blogs.pagetypes.blogpage',
     'fluent_pages',
     'fluent_pages.pagetypes.fluentpage',
-    'fluent_blogs.pagetypes.blogpage',
+    'fluent_pages.pagetypes.redirectnode',
+    'fluent_comments',
     'fluent_contents',
     'fluent_contents.plugins.text',
     'fluent_contents.plugins.oembeditem',
     'fluent_contents.plugins.picture',
-
-    # Blog
-    'fluent_blogs',
-    'fluent_comments',
-    'django.contrib.comments',
+    'fluent_contents.plugins.sharedcontent',
+    'fluent_contents.plugins.rawhtml',
 
     # Support libs
     'any_imagefield',
@@ -42,6 +51,7 @@ INSTALLED_APPS += (
     'categories.editor',
     'crispy_forms',
     'django_wysiwyg',
+    'django.contrib.comments',
     'filebrowser',
     'google_analytics',
     'mptt',
@@ -67,10 +77,7 @@ TEMPLATE_CONTEXT_PROCESSORS += (
 
 FORMAT_MODULE_PATH = 'djangofluent.settings.locale'  # Consistent date formatting
 
-
 # App specific settings
-ADMIN_MEDIA_PREFIX = STATIC_URL + 'admin/'  # for filebrowser
-
 ADMIN_TOOLS_INDEX_DASHBOARD = 'fluent_dashboard.dashboard.FluentIndexDashboard'
 ADMIN_TOOLS_APP_INDEX_DASHBOARD = 'fluent_dashboard.dashboard.FluentAppIndexDashboard'
 ADMIN_TOOLS_MENU = 'fluent_dashboard.menu.FluentMenu'
@@ -87,17 +94,22 @@ FILEBROWSER_EXTENSIONS = {
     'Document': ['.pdf', '.doc', '.xls', '.csv', '.docx', '.xlsx'],
     'Video': ['.swf', '.mp4', '.flv', '.f4v', '.mov', '.3gp'],
 }
-FILEBROWSER_MAX_UPLOAD_SIZE = '104857600'  # in bytes
-FILEBROWSER_SAVE_FULL_URL = False
+FILEBROWSER_EXCLUDE = ('cache',)  # sorl.thumbnail generated files
+FILEBROWSER_MAX_UPLOAD_SIZE = 100 * 1024 * 1024  # in bytes
+
+FLUENT_BLOGS_BASE_TEMPLATE = 'base_blog.html'
+FLUENT_BLOGS_ENTRY_LINK_STYLE = '/{year}/{month}/{slug}/'
+
+FLUENT_CONTENTS_CACHE_OUTPUT = True
 
 FLUENT_COMMENTS_EXCLUDE_FIELDS = ('url',)
 
 FLUENT_DASHBOARD_APP_ICONS = {}
 FLUENT_DASHBOARD_DEFAULT_MODULE = 'ModelList'
 
-FLUENT_PAGES_TEMPLATE_DIR = os.path.join(PROJECT_DIR, 'frontend', 'templates')
-
 #FLUENT_OEMBED_SOURCE = 'noembed'
+
+FLUENT_PAGES_TEMPLATE_DIR = os.path.join(SRC_DIR, 'frontend', 'templates')
 
 # Site settings
 PACKAGEITEM_INTERNAL_GITHUB_ORG = 'edoburu'

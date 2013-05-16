@@ -8,16 +8,6 @@ DEBUG          = True
 TEMPLATE_DEBUG = DEBUG
 TEMPLATE_STRING_IF_INVALID = ''
 
-# People who receive 500 errors
-ADMINS = (
-    ('djangofluent', 'sysadmin@edoburu.nl'),
-)
-
-DEFAULT_FROM_EMAIL = 'sysadmin@edoburu.nl'
-
-# People who receive 404 errors
-MANAGERS = ADMINS
-
 
 ## --- Internal settings
 
@@ -31,18 +21,19 @@ TIME_ZONE = 'Europe/Amsterdam'
 LANGUAGE_CODE = 'nl_NL'
 
 # Path autodetection
-PROJECT_DIR  = os.path.dirname(os.path.dirname(os.path.dirname(os.path.realpath(__file__))))
+SRC_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.realpath(__file__))))
+ROOT_DIR = SRC_DIR  # os.path.dirname(SRC_DIR)
 
 # Paths
-MEDIA_ROOT   = PROJECT_DIR + '/web/media/'
+MEDIA_ROOT   = ROOT_DIR + '/web/media/'
 MEDIA_URL    = '/media/'        # Must end with /
 ROOT_URLCONF = 'djangofluent.urls'
 
-STATIC_ROOT = PROJECT_DIR + '/web/static/'
+STATIC_ROOT = ROOT_DIR + '/web/static/'
 STATIC_URL  = '/static/'
 
 SESSION_COOKIE_HTTPONLY = True  # can't read cookie from JavaScript
-X_FRAME_OPTIONS = 'DENY'        # Prevent iframes. Can be overwritten per view using the @xframe_options_.. decorators
+X_FRAME_OPTIONS = 'SAMEORIGIN'  # Prevent iframes. Can be overwritten per view using the @xframe_options_.. decorators
 
 INTERNAL_IPS = ('127.0.0.1',)
 
@@ -52,8 +43,6 @@ IGNORABLE_404_URLS = (
 
 
 ## --- Plugin components
-
-WSGI_APPLICATION = 'djangofluent.wsgi.application'
 
 INSTALLED_APPS = (
     'django.contrib.auth',
