@@ -60,6 +60,7 @@ INSTALLED_APPS += (
     'sorl.thumbnail',
     'taggit',
     'taggit_autocomplete_modified',
+    'threadedcomments',
     'tinymce',
 
     # and enable the admin
