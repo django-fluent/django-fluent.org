@@ -73,7 +73,7 @@ INSTALLED_APPS += (
 )
 
 TEMPLATE_CONTEXT_PROCESSORS += (
-    'frontend.context_processors.site',
+    'frontend.context_processors.frontend',
 )
 
 FORMAT_MODULE_PATH = 'djangofluent.settings.locale'  # Consistent date formatting
