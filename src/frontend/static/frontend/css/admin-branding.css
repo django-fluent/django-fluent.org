@@ -51,13 +51,15 @@ input.default[type="submit"],
   filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
   border-width: 1px;
 }
-.button.default:hover, .button.default:active, .button.default.active, .button.default.disabled, .button.default[disabled],
+.button.default:hover, .button.default:focus, .button.default:active, .button.default.active, .button.default.disabled, .button.default[disabled],
 input.default[type="submit"]:hover,
+input.default[type="submit"]:focus,
 input.default[type="submit"]:active,
 input.default[type="submit"].active,
 input.default[type="submit"].disabled,
 input.default[type="submit"][disabled],
 .submit-row input.default:hover,
+.submit-row input.default:focus,
 .submit-row input.default:active,
 .submit-row input.default.active,
 .submit-row input.default.disabled,

@@ -130,6 +130,10 @@ a.btn {
   display: none;
 }
 
+.imagetext {
+  margin: 0 0 2em 0;
+}
+
 .packageitem {
   float: left;
   width: 20em;
@@ -175,7 +179,7 @@ pre, code {
 }
 
 iframe {
-  border: 1px solid #cccccc;
+  border: 1px solid #ccc;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -536,7 +540,7 @@ em {
 
 /* end of menu */
 .sb_news_box {
-  border-bottom: 1px solid #cccccc;
+  border-bottom: 1px solid #ccc;
   padding: 0 0 20px 25px;
   margin-bottom: 20px;
   background: url('../img/web_design/templatemo_news.png') top left no-repeat;
@@ -595,7 +599,7 @@ h2.title_icon {
   margin-right: 30px;
 }
 #gallery a img {
-  border: 5px solid #cccccc;
+  border: 5px solid #ccc;
 }
 
 /* footer */
