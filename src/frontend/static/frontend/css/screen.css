@@ -196,8 +196,11 @@ figure.picture.align-center {
   font-style: normal;
   margin: 2em 0 2em 2em;
 }
+.text kbd {
+  color: #888;
+}
 
-pre, code {
+pre, code, kbd {
   /* use something more modern then Courier New */
   font-family: "Consolas", "Menlo", "Monaco", "Lucida Console", "Liberation Mono", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Courier New", monospace;
 }
