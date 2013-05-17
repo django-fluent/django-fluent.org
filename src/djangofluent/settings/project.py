@@ -47,6 +47,7 @@ INSTALLED_APPS += (
     # Support libs
     'any_imagefield',
     'any_urlfield',
+    'axes',
     'categories',
     'categories.editor',
     'crispy_forms',
@@ -70,6 +71,10 @@ INSTALLED_APPS += (
     'admin_tools.menu',
     'admin_tools.dashboard',
     'django.contrib.admin',
+)
+
+MIDDLEWARE_CLASSES += (
+    'axes.middleware.FailedLoginMiddleware',
 )
 
 TEMPLATE_CONTEXT_PROCESSORS += (
