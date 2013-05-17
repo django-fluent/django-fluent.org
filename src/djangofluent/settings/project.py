@@ -29,6 +29,7 @@ INSTALLED_APPS += (
     # Site parts
     'frontend',
     'apps.themeelements',
+    'apps.wysiywg_config',
 
     # CMS parts
     'fluent_blogs',
