@@ -43,6 +43,30 @@
 }
 
 
+// Picture plugin
+
+figure.picture {
+  // Picture plugin in the CMS
+  margin: 1em;
+
+  &.align-left {
+    clear: left;
+    float: left;
+    margin: 0 1em 1em 0;
+  }
+
+  &.align-right {
+    clear: right;
+    float: right;
+    margin: 0 0 1em 1em;
+  }
+
+  &.align-center {
+    text-align: center;
+  }
+}
+
+
 // Text plugin
 
 .text {
@@ -50,16 +74,25 @@
   padding-top: 1px;
   margin-top: -1px;
 
-  h2 {
+  h2, h3 {
     margin-bottom: 10px;
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+    &:not(:first-child) {
+      margin-top: 30px;
+    }
   }
 
-  h2:first-child {
-    margin-top: 0;
+  ul {
+    margin: 0 0 1em 0;
   }
 
-  h2:not(:first-child) {
-    margin-top: 30px;
+  blockquote {
+    font-style: normal;
+    margin: 2em 0 2em 2em;
   }
 }
 

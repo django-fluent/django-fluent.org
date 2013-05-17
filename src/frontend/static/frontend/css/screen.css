@@ -158,19 +158,43 @@ a.btn {
   margin-bottom: 0.2em;
 }
 
+figure.picture {
+  margin: 1em;
+}
+figure.picture.align-left {
+  clear: left;
+  float: left;
+  margin: 0 1em 1em 0;
+}
+figure.picture.align-right {
+  clear: right;
+  float: right;
+  margin: 0 0 1em 1em;
+}
+figure.picture.align-center {
+  text-align: center;
+}
+
 .text {
   clear: both;
   padding-top: 1px;
   margin-top: -1px;
 }
-.text h2 {
+.text h2, .text h3 {
   margin-bottom: 10px;
 }
-.text h2:first-child {
+.text h2:first-child, .text h3:first-child {
   margin-top: 0;
 }
-.text h2:not(:first-child) {
+.text h2:not(:first-child), .text h3:not(:first-child) {
   margin-top: 30px;
+}
+.text ul {
+  margin: 0 0 1em 0;
+}
+.text blockquote {
+  font-style: normal;
+  margin: 2em 0 2em 2em;
 }
 
 pre, code {
