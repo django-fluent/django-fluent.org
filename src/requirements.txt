@@ -10,7 +10,7 @@ South==0.7.6
 # CMS libraries
 django-fluent-blogs >= 0.9.2
 django-fluent-pages >= 0.8.2
-django-fluent-contents[text,oembeditem] >= 0.9a1
+django-fluent-contents[code,text,oembeditem] >= 0.9a1
 django-fluent-dashboard >= 0.3.4
 django-fluent-comments >= 0.9.0
 
