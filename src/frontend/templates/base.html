@@ -1,4 +1,4 @@
-{% load fluent_pages_tags fluent_blogs_tags analytics compress i18n %}<!doctype html>
+{% load fluent_pages_tags fluent_blogs_tags sharedcontent_tags analytics compress i18n %}<!doctype html>
 {% language 'en' %}{% get_fluent_page_vars %}{# for 404 and app pages #}
 <html xml:lang="{{ LANGUAGE_CODE|default:"nl" }}" lang="{{ LANGUAGE_CODE|default:"nl" }}">
   <head>
@@ -43,10 +43,7 @@
             <div id="site_title">
               <a href="/" target="_parent"><img src="{{ STATIC_URL }}frontend/img/django-fluent.png" alt="LOGO" /></a>
             </div>
-            <p>
-              A smooth, flexible CMS to create the designs you like,<br/>
-              built on top of the powerful Django framework.
-            </p>
+            {% sharedcontent "top-quote" %}
             {# <a href="#" class="detail float_r">Detail</a> #}
           </div>
         </header>
