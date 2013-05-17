@@ -23,10 +23,13 @@ class ImageTextPlugin(ContentPlugin):
     model = ImageTextItem
     render_template = "themeelements/imagetext.html"
     category = _("Theme elements")
+    radio_fields = {
+        'align': ContentPlugin.HORIZONTAL,
+    }
 
     fieldsets = (
         (None, {
-            'fields': ('title', 'image', 'body',)
+            'fields': ('title', 'image', 'align', 'body',)
         }),
         (_("Read more link"), {
             'fields': ('url', 'url_text',)

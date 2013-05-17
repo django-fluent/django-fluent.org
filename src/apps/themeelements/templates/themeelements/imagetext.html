@@ -1,11 +1,7 @@
 {% load thumbnail %}
 <div class="imagetext clearfix">
     {% thumbnail instance.image "238x106" crop="center" as im %}
-      {% spaceless %}
-        {% if instance.url %}<a href="{{ instance.url }}">{% endif %}
-        <img class="image_wrapper image_fl" src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}" alt="" />
-        {% if instance.url %}</a>{% endif %}
-      {% endspaceless %}
+        <a href="{{ instance.image.url }}" class="screenshot"><img class="image_wrapper {{ instance.image_css_class }}" src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}" alt="" /></a>
     {% endthumbnail %}
 
     <h5>{{ instance.title }}</h5>

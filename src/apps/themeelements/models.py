@@ -43,8 +43,16 @@ class ImageTextItem(ContentItem):
     """
     A block with image + text
     """
+    ALIGN_LEFT = 'left'
+    ALIGN_RIGHT = 'right'
+    ALIGN_CHOICES = (
+        (ALIGN_LEFT, _("Left")),
+        (ALIGN_RIGHT, _("Right")),
+    )
+
     title = models.CharField(_("Title"), max_length=200)
     image = PluginImageField(_("Image"))
+    align = models.CharField(_("Align"), max_length=10, choices=ALIGN_CHOICES, default=ALIGN_LEFT)
     body = PluginHtmlField(_("Body"))
 
     url = PluginUrlField(_("URL"), blank=True)
@@ -56,6 +64,13 @@ class ImageTextItem(ContentItem):
 
     def __unicode__(self):
         return self.title
+
+    @property
+    def image_css_class(self):
+        if self.align == self.ALIGN_RIGHT:
+            return 'image_fr'
+        else:
+            return 'image_fl'
 
 
 class PackageItem(ContentItem):
