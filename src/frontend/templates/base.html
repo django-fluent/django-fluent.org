@@ -17,6 +17,7 @@
     {% compress css %}
     <link href="{{ STATIC_URL }}frontend/css/bootstrap.css" rel="stylesheet" type="text/css" />
     <link href="{{ STATIC_URL }}frontend/css/screen.css" rel="stylesheet" type="text/css" />
+    <link href="{{ STATIC_URL }}frontend/vendor/colorbox/colorbox.css" rel="stylesheet" type="text/css" />
     {% endcompress %}
     {% compress css %}{% block link %}{% endblock %}{% endcompress %}{# for django-fluent-blogs #}
     <!--[if lt IE 9]>
@@ -25,6 +26,8 @@
     <![endif]-->
     {% block extrahead %}{% endblock %}
     <script type="text/javascript" src="{{ STATIC_URL }}frontend/vendor/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}frontend/vendor/colorbox/jquery.colorbox-min.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}frontend/js/main.js"></script>
     {% block script %}{% endblock %}{# also used by django-fluent-blogs #}
   </head>
 
