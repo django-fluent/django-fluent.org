@@ -4,6 +4,9 @@ DEBUG = False
 TEMPLATE_DEBUG = DEBUG
 COMPRESS_ENABLED = True
 
+# See http://ponycheckup.com/
+SESSION_COOKIE_SECURE = True
+
 DATABASES = {
     'default': {
         'ENGINE':   'django.db.backends.mysql',
