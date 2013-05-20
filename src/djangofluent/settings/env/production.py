@@ -7,14 +7,16 @@ COMPRESS_ENABLED = True
 # See http://ponycheckup.com/
 SESSION_COOKIE_SECURE = True
 
-DATABASES = {
-    'default': {
-        'ENGINE':   'django.db.backends.mysql',
-        'NAME':     'django-fluent.org',
-        'USER':     'djangofluent',
-        'PASSWORD': 'mY0H8XTwo20gxGY2',
-    },
-}
+# Example:
+#
+#DATABASES = {
+#    'default': {
+#        'ENGINE':   'django.db.backends.postgresql_psycopg2',
+#        'NAME':     'django-fluent.org',
+#        'USER':     'djangofluent',
+#        'PASSWORD': 'mY0H8XTwo20gxGY2',
+#    },
+#}
 
 TEMPLATE_LOADERS = (
     ('django.template.loaders.cached.Loader', TEMPLATE_LOADERS),

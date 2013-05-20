@@ -15,14 +15,14 @@ EMAIL_SUBJECT_PREFIX = '[Django][djangofluent] '
 # Database to use
 DATABASES = {
     'default': {
-        'ENGINE':   'django.db.backends.mysql',
+        'ENGINE':   'django.db.backends.postgresql_psycopg2',  # or mysql
         'NAME':     'django-fluent.org',
         'USER':     'djangofluent',
         'PASSWORD': 'testtest',
     },
 }
 
-SECRET_KEY = '!k95k&amp;wn43_8b5rp*c$+9pzcl=$w9s9o&amp;t##x7os$3p3l%57&amp;w'
+SECRET_KEY = '!k95k&wn43_8b5rp*c$+9pzcl=$w9s9o&t##x7os$3p3l%57&w'
 
 # Apps to use
 INSTALLED_APPS += (
