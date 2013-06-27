@@ -36,6 +36,7 @@ INSTALLED_APPS += (
     'fluent_blogs.pagetypes.blogpage',
     'fluent_pages',
     'fluent_pages.pagetypes.fluentpage',
+    'fluent_pages.pagetypes.flatpage',
     'fluent_pages.pagetypes.redirectnode',
     'fluent_comments',
     'fluent_contents',
@@ -121,6 +122,7 @@ FLUENT_DASHBOARD_DEFAULT_MODULE = 'ModelList'
 
 #FLUENT_OEMBED_SOURCE = 'noembed'
 
+FLUENT_PAGES_BASE_TEMPLATE = 'base_flatpage.html'  # for fluent_pages.pagetypes.flatpage
 FLUENT_PAGES_TEMPLATE_DIR = os.path.join(SRC_DIR, 'frontend', 'templates')
 
 FLUENT_TEXT_CLEAN_HTML = True
