@@ -26,5 +26,8 @@ def bootstrap_wsgi_settings(wsgi_file, env_name=None):
         sys.path.append(src_folder)
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', project_name + '.settings.env.' + env_name)
 
+    # Fix file upload errors
+    os.environ['LC_ALL'] = "en_US.UTF-8"
+
     # Redirect print statements to apache log
     sys.stdout = sys.stderr
