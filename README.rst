@@ -4,15 +4,60 @@ django-fluent.org
 This is the source code of www.django-fluent.org
 You can use this freely as example how to use and run a django-fluent CMS site.
 
+Django Fluent CMS modules
+-------------------------
+
+The following modules are used in this site:
+
+* `django-fluent-pages <https://github.com/edoburu/django-fluent-pages>`_
+* `django-fluent-contents <https://github.com/edoburu/django-fluent-contents>`_
+* `django-fluent-blogs <https://github.com/edoburu/django-fluent-blogs>`_
+* `django-fluent-comments <https://github.com/edoburu/django-fluent-comments>`_
+* `django-fluent-dashboard <https://github.com/edoburu/django-fluent-dashboard>`_
+* `django-any-urlfield <https://github.com/edoburu/django-any-urlfield>`_
+* `django-any-imagefield <https://github.com/edoburu/django-any-imagefield>`_
+
+To create your own Django-Fluent project, use our template at:
+
+https://github.com/edoburu/django-project-template
+
+Project layout
+--------------
+
+This project uses the following layout:
+
+* ``design/`` design source files
+* ``src/`` all source code
+* ``src/manage.py`` Django management tool
+* ``src/Guardfile`` Guard configuration
+* ``src/config.rb`` Compass configuration
+* ``src/requirements.txt`` PIP requirements file
+* ``src/apps/`` the Django apps.
+* ``src/frontend/`` all frontend templates/JS/CSS code.
+* ``src/djangofluent/`` The project folder with settings, WSGI hook and URLconf.
+* ``src/djangofluent/settings/default.py`` configures default Django settings (same of all projects).
+* ``src/djangofluent/settings/project.py`` the settings for this project.
+* ``src/djangofluent/settings/local.py`` developer settings.
+* ``src/djangofluent/settings/env/*.py`` settings per host (beta/production) and production DB credentials.
+* ``src/djangofluent/wsgi/*.py`` WSGI start scripts per environment.
+* ``src/djangofluent/urls.py`` top level URLconf.
+* ``web/`` The public files exposed by the webserver.
+* ``web/static/`` Static files by Django apps.
+* ``web/media/`` Uploaded media files (JPG/PNG, etc..)
+
+
+Local development
+-----------------
+
 Prerequisites
--------------
+~~~~~~~~~~~~~
 
 - Python >= 2.6
 - pip
 - virtualenv (virtualenvwrapper is recommended)
 
 Installation
-------------
+~~~~~~~~~~~~
 
 To setup a local development environment::
 
