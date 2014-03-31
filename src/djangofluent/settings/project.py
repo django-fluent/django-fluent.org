@@ -15,7 +15,7 @@ EMAIL_SUBJECT_PREFIX = '[Django][djangofluent] '
 
 # Project language settings
 TIME_ZONE = 'Europe/Amsterdam'
-LANGUAGE_CODE = 'nl'
+LANGUAGE_CODE = 'en'
 
 # Database to use
 DATABASES = {
