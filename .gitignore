@@ -9,7 +9,9 @@
 .idea/workspace.xml
 .DS_Store
 .sass-cache/
-dist/
-docs/_build/
-src/djangofluent/settings/local.py
-web/media/
+/dist/
+/docs/_build/
+/src/djangofluent/settings/local.py
+/web/media/
+/logs/
+/stats/
