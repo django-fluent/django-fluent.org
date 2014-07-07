@@ -15,6 +15,7 @@ SESSION_COOKIE_SECURE = True
 #        'NAME':     'django-fluent.org',
 #        'USER':     'djangofluent',
 #        'PASSWORD': 'mY0H8XTwo20gxGY2',
+#        'CONN_MAX_AGE': 300,
 #    },
 #}
 
