@@ -74,7 +74,7 @@ INSTALLED_APPS += (
     'staff_toolbar',
     'sorl.thumbnail',
     'taggit',
-    'taggit_autocomplete_modified',
+    'taggit_autosuggest',
     'threadedcomments',
     'tinymce',
 

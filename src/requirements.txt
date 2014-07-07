@@ -27,7 +27,7 @@ django_compressor==1.3
 -e git+https://github.com/clintecker/django-google-analytics.git@140787ba86ef4995b2cabf927bf0b56ec7728348#egg=google_analytics-0.2
 -e git+https://github.com/vdboor/django-filebrowser-no-grappelli-django14.git@fd921ac1014e3a923a703679c5576969fa191f5b#egg=django-filebrowser-no-grappelli-django14
 django-taggit==0.11.2
-django-taggit-autocomplete-modified==0.1.0b4
+django-taggit-autosuggest=0.2.4
 django-threadedcomments==0.9.0
 django-tinymce >= 1.5.2
 django-wysiwyg >= 0.5.1, < 0.6

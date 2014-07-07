@@ -37,44 +37,73 @@ div#header {
   width: 20em;
 }
 
-input.ac_input {
-  // django-taggit
+.vTextField.as-selections {
+  // django-taggit-autosuggest
   width: 40em;
-}
 
-
-// Form submit buttons
-
-.button.default,
-input.default[type="submit"],
-.submit-row input.default {
-  @include buttonBackground($btnPrimaryBackground, $btnPrimaryBackgroundHighlight);
-
-  // disable default Django colors
-  border-width: 1px;
-  &:active {
-    background-image: none;
+  input {
+    border: 0;
+    width: 10em;
   }
 }
 
+form .aligned {
+  ul.as-selections {
+    padding: 4px 15px 4px 4px;
 
-// Footer
+    li {
+      list-style-type: none;
+    }
+  }
 
-html, body { height: 100%; }
-#container { min-height: 100%; }
-.login #container { min-height: 0; }
+  .as-results {
+    margin-left: 30px;
 
-#footerspace {
-  padding-bottom: 40px;
+    ul {
+      margin-top: 0;
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    li {
+      list-style-type: none;
+    }
 }
 
-#footer {
-  color: #aaa;
-  position: absolute;
-  bottom: 5px;
-  left: 0;
-  width: 100%;
-  padding: 0;
-  margin: 0;
-  text-align: center;
+
+  // Form submit buttons
+
+  .button.default,
+  input.default[type="submit"],
+  .submit-row input.default {
+    @include buttonBackground($btnPrimaryBackground, $btnPrimaryBackgroundHighlight);
+
+    // disable default Django colors
+    border-width: 1px;
+    &:active {
+      background-image: none;
+    }
+  }
+
+
+  // Footer
+
+  html, body { height: 100%; }
+  #container { min-height: 100%; }
+  .login #container { min-height: 0; }
+
+  #footerspace {
+    padding-bottom: 40px;
+  }
+
+  #footer {
+    color: #aaa;
+    position: absolute;
+    bottom: 5px;
+    left: 0;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+  }
 }

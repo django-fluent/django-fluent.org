@@ -27,13 +27,33 @@ div#header {
   width: 20em;
 }
 
-input.ac_input {
+.vTextField.as-selections {
   width: 40em;
 }
+.vTextField.as-selections input {
+  border: 0;
+}
 
-.button.default,
-input.default[type="submit"],
-.submit-row input.default {
+form .aligned ul.as-selections {
+  padding: 4px 15px 4px 4px;
+}
+form .aligned ul.as-selections li {
+  list-style-type: none;
+}
+form .aligned .as-results {
+  margin-left: 30px;
+}
+form .aligned .as-results ul {
+  margin-top: 0;
+  padding-left: 0;
+  padding-right: 0;
+}
+form .aligned .as-results li {
+  list-style-type: none;
+}
+form .aligned .button.default,
+form .aligned input.default[type="submit"],
+form .aligned .submit-row input.default {
   color: white;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
   background-color: #9fa933;
@@ -51,53 +71,48 @@ input.default[type="submit"],
   filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
   border-width: 1px;
 }
-.button.default:hover, .button.default:focus, .button.default:active, .button.default.active, .button.default.disabled, .button.default[disabled],
-input.default[type="submit"]:hover,
-input.default[type="submit"]:focus,
-input.default[type="submit"]:active,
-input.default[type="submit"].active,
-input.default[type="submit"].disabled,
-input.default[type="submit"][disabled],
-.submit-row input.default:hover,
-.submit-row input.default:focus,
-.submit-row input.default:active,
-.submit-row input.default.active,
-.submit-row input.default.disabled,
-.submit-row input.default[disabled] {
+form .aligned .button.default:hover, form .aligned .button.default:focus, form .aligned .button.default:active, form .aligned .button.default.active, form .aligned .button.default.disabled, form .aligned .button.default[disabled],
+form .aligned input.default[type="submit"]:hover,
+form .aligned input.default[type="submit"]:focus,
+form .aligned input.default[type="submit"]:active,
+form .aligned input.default[type="submit"].active,
+form .aligned input.default[type="submit"].disabled,
+form .aligned input.default[type="submit"][disabled],
+form .aligned .submit-row input.default:hover,
+form .aligned .submit-row input.default:focus,
+form .aligned .submit-row input.default:active,
+form .aligned .submit-row input.default.active,
+form .aligned .submit-row input.default.disabled,
+form .aligned .submit-row input.default[disabled] {
   color: white;
   background-color: #b2ba58;
   *background-color: #a7b049;
 }
-.button.default:active, .button.default.active,
-input.default[type="submit"]:active,
-input.default[type="submit"].active,
-.submit-row input.default:active,
-.submit-row input.default.active {
+form .aligned .button.default:active, form .aligned .button.default.active,
+form .aligned input.default[type="submit"]:active,
+form .aligned input.default[type="submit"].active,
+form .aligned .submit-row input.default:active,
+form .aligned .submit-row input.default.active {
   background-color: #969e41 \9;
 }
-.button.default:active,
-input.default[type="submit"]:active,
-.submit-row input.default:active {
+form .aligned .button.default:active,
+form .aligned input.default[type="submit"]:active,
+form .aligned .submit-row input.default:active {
   background-image: none;
 }
-
-html, body {
+form .aligned html, form .aligned body {
   height: 100%;
 }
-
-#container {
+form .aligned #container {
   min-height: 100%;
 }
-
-.login #container {
+form .aligned .login #container {
   min-height: 0;
 }
-
-#footerspace {
+form .aligned #footerspace {
   padding-bottom: 40px;
 }
-
-#footer {
+form .aligned #footer {
   color: #aaa;
   position: absolute;
   bottom: 5px;
