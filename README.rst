@@ -16,6 +16,7 @@ The following modules are used in this site:
 * `django-fluent-dashboard <https://github.com/edoburu/django-fluent-dashboard>`_
 * `django-any-urlfield <https://github.com/edoburu/django-any-urlfield>`_
 * `django-any-imagefield <https://github.com/edoburu/django-any-imagefield>`_
+* `django-staff-toolbar <https://github.com/edoburu/django-staff-toolbar>`_
 
 To create your own Django-Fluent project, use our template at:
 
