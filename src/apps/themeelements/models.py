@@ -1,10 +1,8 @@
+import json
 from urllib2 import urlopen, HTTPError
-from any_imagefield.models import AnyImageField
-from any_urlfield.models import AnyUrlField
 from django.conf import settings
 from django.core.cache import cache
 from django.db import models
-from django.utils import simplejson
 from django.utils.functional import cached_property
 from django.utils.translation import ugettext_lazy as _
 from fluent_contents.extensions import PluginImageField, PluginHtmlField, PluginUrlField
@@ -172,6 +170,6 @@ def _fetch_json(cachekey, url, ignore_status=(404,)):
                 return None
             raise
         else:
-            json = simplejson.loads(response.read())
+            json = json.loads(response.read())
             cache.set(cachekey, json)
     return json
