@@ -13,6 +13,7 @@ django-fluent-pages >= 0.8.6
 django-fluent-contents[code,text,oembeditem] >= 0.9
 django-fluent-dashboard >= 0.3.6
 django-fluent-comments >= 0.9.2
+django-staff-toolbar >= 1.0
 
 # Support libs
 django-admin-tools >= 0.5.1, < 0.6

@@ -1,4 +1,4 @@
-{% load fluent_pages_tags fluent_blogs_tags sharedcontent_tags analytics compress i18n %}<!doctype html>
+{% load fluent_pages_tags fluent_blogs_tags sharedcontent_tags staff_toolbar_tags analytics compress i18n %}<!doctype html>
 {% language 'en' %}{% get_fluent_page_vars %}{# for 404 and app pages #}
 <html xml:lang="{{ LANGUAGE_CODE|default:"nl" }}" lang="{{ LANGUAGE_CODE|default:"nl" }}">
   <head>
@@ -36,6 +36,7 @@
   </head>
 
   <body id="{% block bodyid %}page{% endblock %}" class="{% block bodyclass %}default{% endblock %}" itemscope itemtype="http://schema.org/WebPage">
+    {% block staff_toolbar %}{% staff_toolbar %}{% endblock %}
     <div id="templatemo_body_wrapper">
       <div id="templatemo_wrapper">
 

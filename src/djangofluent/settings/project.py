@@ -71,6 +71,7 @@ INSTALLED_APPS += (
     'mptt',
     'polymorphic',
     'polymorphic_tree',
+    'staff_toolbar',
     'sorl.thumbnail',
     'taggit',
     'taggit_autocomplete_modified',
