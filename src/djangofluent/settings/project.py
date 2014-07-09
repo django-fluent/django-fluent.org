@@ -69,6 +69,7 @@ INSTALLED_APPS += (
     'filebrowser',
     'google_analytics',
     'mptt',
+    'parler',
     'polymorphic',
     'polymorphic_tree',
     'staff_toolbar',
