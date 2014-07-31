@@ -8,9 +8,9 @@ python-memcached==1.53
 South==1.0
 
 # CMS libraries
-django-fluent-blogs >= 1.0b1
+django-fluent-blogs >= 1.0b2
 django-fluent-pages >= 0.9b2
-django-fluent-contents[code,text,oembeditem] >= 1.0c1
+django-fluent-contents[code,text,oembeditem] >= 1.0c2
 django-fluent-dashboard >= 0.3.6
 django-fluent-comments >= 1.0a2
 django-staff-toolbar >= 1.0
@@ -38,5 +38,5 @@ pytz>=2014.4
 sorl-thumbnail==11.12.1b
 
 # Debugging
-django-debugtools>=1.1.2
+django-debugtools >= 1.2
 bpython>=0.13
