@@ -32,6 +32,7 @@ div#header {
 }
 .vTextField.as-selections input {
   border: 0;
+  width: 10em;
 }
 
 form .aligned ul.as-selections {
@@ -51,9 +52,10 @@ form .aligned .as-results ul {
 form .aligned .as-results li {
   list-style-type: none;
 }
-form .aligned .button.default,
-form .aligned input.default[type="submit"],
-form .aligned .submit-row input.default {
+
+.button.default,
+input.default[type="submit"],
+.submit-row input.default {
   color: white;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
   background-color: #9fa933;
@@ -71,48 +73,53 @@ form .aligned .submit-row input.default {
   filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
   border-width: 1px;
 }
-form .aligned .button.default:hover, form .aligned .button.default:focus, form .aligned .button.default:active, form .aligned .button.default.active, form .aligned .button.default.disabled, form .aligned .button.default[disabled],
-form .aligned input.default[type="submit"]:hover,
-form .aligned input.default[type="submit"]:focus,
-form .aligned input.default[type="submit"]:active,
-form .aligned input.default[type="submit"].active,
-form .aligned input.default[type="submit"].disabled,
-form .aligned input.default[type="submit"][disabled],
-form .aligned .submit-row input.default:hover,
-form .aligned .submit-row input.default:focus,
-form .aligned .submit-row input.default:active,
-form .aligned .submit-row input.default.active,
-form .aligned .submit-row input.default.disabled,
-form .aligned .submit-row input.default[disabled] {
+.button.default:hover, .button.default:focus, .button.default:active, .button.default.active, .button.default.disabled, .button.default[disabled],
+input.default[type="submit"]:hover,
+input.default[type="submit"]:focus,
+input.default[type="submit"]:active,
+input.default[type="submit"].active,
+input.default[type="submit"].disabled,
+input.default[type="submit"][disabled],
+.submit-row input.default:hover,
+.submit-row input.default:focus,
+.submit-row input.default:active,
+.submit-row input.default.active,
+.submit-row input.default.disabled,
+.submit-row input.default[disabled] {
   color: white;
   background-color: #b2ba58;
   *background-color: #a7b049;
 }
-form .aligned .button.default:active, form .aligned .button.default.active,
-form .aligned input.default[type="submit"]:active,
-form .aligned input.default[type="submit"].active,
-form .aligned .submit-row input.default:active,
-form .aligned .submit-row input.default.active {
+.button.default:active, .button.default.active,
+input.default[type="submit"]:active,
+input.default[type="submit"].active,
+.submit-row input.default:active,
+.submit-row input.default.active {
   background-color: #969e41 \9;
 }
-form .aligned .button.default:active,
-form .aligned input.default[type="submit"]:active,
-form .aligned .submit-row input.default:active {
+.button.default:active,
+input.default[type="submit"]:active,
+.submit-row input.default:active {
   background-image: none;
 }
-form .aligned html, form .aligned body {
+
+html, body {
   height: 100%;
 }
-form .aligned #container {
+
+#container {
   min-height: 100%;
 }
-form .aligned .login #container {
+
+.login #container {
   min-height: 0;
 }
-form .aligned #footerspace {
+
+#footerspace {
   padding-bottom: 40px;
 }
-form .aligned #footer {
+
+#footer {
   color: #aaa;
   position: absolute;
   bottom: 5px;
