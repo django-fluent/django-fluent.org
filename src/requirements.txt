@@ -7,6 +7,10 @@ psycopg2==2.5.3
 python-memcached==1.53
 South==1.0
 
+# WSGI container, install in virtualenv to have latest features.
+# Needs `export UWSGI_PROFILE=default` to build python plugin (deploy scripts do this automatically)
+uwsgi >= 2.0.6
+
 # CMS libraries
 django-fluent-blogs >= 1.0b2
 django-fluent-pages >= 0.9b2
