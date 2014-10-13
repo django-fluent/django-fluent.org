@@ -26,6 +26,7 @@ django-crispy-forms==1.4.0
 django_compressor==1.4
 -e git+https://github.com/clintecker/django-google-analytics.git@140787ba86ef4995b2cabf927bf0b56ec7728348#egg=google_analytics-0.2
 -e git+https://github.com/smacker/django-filebrowser-no-grappelli.git@d68ffc7fa7c4096791cc6819ab2b2229b1661c68#egg=django-filebrowser-no-grappelli
+django-singleton-admin
 django-parler>=1.0
 django-taggit==0.12.1
 django-taggit-autosuggest==0.2.5
