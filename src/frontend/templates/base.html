@@ -7,7 +7,7 @@
     <meta name="generator" content="Powered by Django" />
     <meta name="keywords" content="{% block meta-keywords %}{% endblock %}" />
     <meta name="description" content="{% block meta-description %}{% endblock %}" />
-    <title>{% block headtitle %}{{ page.title }}{% endblock %} - {{ site.name|default:site.domain }}</title>
+    <title>{% block fullheadtitle %}{% block headtitle %}{{ page.title }}{% endblock %} | {{ site.name|default:site.domain }}{% endblock %}</title>
 
     <meta property="og:type" content="{% block og-type %}website{% endblock %}" />
     <meta property="og:image" content="http://{{ site.domain|default:"www.example.org" }}{% block og-image %}{{ STATIC_URL }}frontend/img/logo.png{% endblock %}" />
