@@ -4,8 +4,10 @@ DEBUG = False
 TEMPLATE_DEBUG = DEBUG
 COMPRESS_ENABLED = True
 
+# https only site
 # See http://ponycheckup.com/
 SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
 
 # Example:
 #

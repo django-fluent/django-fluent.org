@@ -4,6 +4,10 @@ DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 COMPRESS_ENABLED = True
 
+# https only site
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
+
 # Example:
 #
 #DATABASES = {
