@@ -25,6 +25,7 @@ urlpatterns = patterns('',
     url(r'^admin/util/tinymce/', include('tinymce.urls')),
 
     # Test pages
+    url(r'^api/ping/', include('ping.urls')),
     url(r'^500test/$', view=Http500View.as_view()),
     url(r'^403/$', 'django.views.defaults.permission_denied'),
     url(r'^404/$', 'django.views.defaults.page_not_found'),
