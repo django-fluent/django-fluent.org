@@ -1,10 +1,7 @@
 div#header {
-  background-image: none;
-}
-
-#header #branding {
   background: #909B19 url('../img/web_design/templatemo_header.jpg') 90px -302px no-repeat;
 }
+
 #header #branding h1#site-name {
   padding: 7px 0 0 0;
   color: #fff;
