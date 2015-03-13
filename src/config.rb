@@ -1,4 +1,5 @@
-require 'bootstrap-sass'
+#require 'bootstrap-sass'
+add_import_path "frontend/sass-vendor/"
 
 http_path = "/"
 css_dir = "frontend/static/frontend/css"

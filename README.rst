@@ -86,7 +86,7 @@ Compiling CSS files
 
 To compile SASS_ files::
 
-    gem install compass bootstrap-sass oily_png guard-livereload guard-compass
+    gem install compass oily_png guard-livereload guard-compass
 
     guard
 
