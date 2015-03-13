@@ -51,7 +51,6 @@ INSTALLED_APPS = (
     'django.contrib.sitemaps',
     'django.contrib.staticfiles',
     'compressor',
-    'south',
 )
 
 TEMPLATE_DIRS = (
@@ -97,6 +96,8 @@ CACHES = {
 }
 
 SESSION_ENGINE = 'django.contrib.sessions.backends.cached_db'
+
+TEST_RUNNER = 'django.test.simple.DjangoTestSuiteRunner'
 
 
 ## --- App settings

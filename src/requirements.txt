@@ -1,11 +1,11 @@
 # Install with: `pip install -r requirements.txt`
 
 # Infrastructure
-Django >= 1.6.10, < 1.7
+Django >= 1.7.4, < 1.8
 Pillow == 2.7.0
-psycopg2 == 2.5.4
+psycopg2 == 2.6.0
 python-memcached == 1.53
-raven == 5.1.1
+raven == 5.2.0
 South == 1.0.2
 
 # WSGI container, install in virtualenv to have latest features.
@@ -24,18 +24,18 @@ django-fluent-utils >= 1.1.2
 django-admin-tools == 0.5.2
 django-any-imagefield == 0.8.2
 django-any-urlfield >= 2.0.4
-django-axes >= 1.3.8
+django-axes >= 1.3.9
 django-categories == 1.2.2
 django-crispy-forms == 1.4.0
 #dashboardmods >= 0.2.2
 django-compressor == 1.4
--e git+https://github.com/clintecker/django-google-analytics.git@140787ba86ef4995b2cabf927bf0b56ec7728348#egg=google_analytics-0.2
--e git+https://github.com/smacker/django-filebrowser-no-grappelli.git@d68ffc7fa7c4096791cc6819ab2b2229b1661c68#egg=django-filebrowser-no-grappelli
+-e git+https://github.com/smacker/django-filebrowser-no-grappelli.git@911318f0e735ab60485c5783759b3f6a058f2337#egg=django-filebrowser-no-grappelli
+django-google-tools >= 1.0.0
 -e git+https://github.com/rizumu/django-ping.git@b9e228fe1f338d87b323383509a975fd9df22ef1#egg=django_ping-0.3b1
 django-singleton-admin == 0.0.4
 django-parler >= 1.2.1
 django-staff-toolbar >= 1.0
-django-taggit == 0.12.2
+django-taggit == 0.12.3
 django-taggit-autosuggest == 0.2.6
 django-threadedcomments >= 0.9.0
 django-tinymce >= 1.5.3
