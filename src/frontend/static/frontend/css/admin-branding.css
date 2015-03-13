@@ -3,7 +3,7 @@ div#header {
 }
 
 #header #branding {
-  background: #909b19 url('../img/web_design/templatemo_header.jpg') 90px -302px no-repeat;
+  background: #909B19 url('../img/web_design/templatemo_header.jpg') 90px -302px no-repeat;
 }
 #header #branding h1#site-name {
   padding: 7px 0 0 0;
@@ -14,11 +14,11 @@ div#header {
 
 .module h2, .module caption, .inline-group h2 {
   background-color: #8e991c;
-  background-image: -moz-linear-gradient(top, #8b961d, #939e1b);
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#8b961d), to(#939e1b));
-  background-image: -webkit-linear-gradient(top, #8b961d, #939e1b);
-  background-image: -o-linear-gradient(top, #8b961d, #939e1b);
-  background-image: linear-gradient(to bottom, #8b961d, #939e1b);
+  background-image: -moz-linear-gradient(top, #8B961D, #939E1B);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#8B961D), to(#939E1B));
+  background-image: -webkit-linear-gradient(top, #8B961D, #939E1B);
+  background-image: -o-linear-gradient(top, #8B961D, #939E1B);
+  background-image: linear-gradient(to bottom, #8B961D, #939E1B);
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FF8B961D', endColorstr='#FF939E1B', GradientType=0);
 }
@@ -56,19 +56,19 @@ form .aligned .as-results li {
 .button.default,
 input.default[type="submit"],
 .submit-row input.default {
-  color: white;
+  color: #fff;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
   background-color: #9fa933;
-  background-image: -moz-linear-gradient(top, #939e1b, #b2ba58);
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#939e1b), to(#b2ba58));
-  background-image: -webkit-linear-gradient(top, #939e1b, #b2ba58);
-  background-image: -o-linear-gradient(top, #939e1b, #b2ba58);
-  background-image: linear-gradient(to bottom, #939e1b, #b2ba58);
+  background-image: -moz-linear-gradient(top, #939E1B, #B2BA58);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#939E1B), to(#B2BA58));
+  background-image: -webkit-linear-gradient(top, #939E1B, #B2BA58);
+  background-image: -o-linear-gradient(top, #939E1B, #B2BA58);
+  background-image: linear-gradient(to bottom, #939E1B, #B2BA58);
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FF939E1B', endColorstr='#FFB2BA58', GradientType=0);
-  border-color: #b2ba58 #b2ba58 #858c3a;
+  border-color: #B2BA58 #B2BA58 #858c3a;
   border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
-  *background-color: #b2ba58;
+  *background-color: #B2BA58;
   /* Darken IE7 buttons by default so they stand out more given they won't have borders */
   filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
   border-width: 1px;
@@ -86,8 +86,8 @@ input.default[type="submit"][disabled],
 .submit-row input.default.active,
 .submit-row input.default.disabled,
 .submit-row input.default[disabled] {
-  color: white;
-  background-color: #b2ba58;
+  color: #fff;
+  background-color: #B2BA58;
   *background-color: #a7b049;
 }
 .button.default:active, .button.default.active,
