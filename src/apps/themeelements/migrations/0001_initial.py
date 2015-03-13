@@ -1,65 +1,80 @@
 # -*- coding: utf-8 -*-
-import datetime
-from south.db import db
-from south.v2 import SchemaMigration
-from django.db import models
+from __future__ import unicode_literals
+
+from django.db import models, migrations
+import any_urlfield.models.fields
+import fluent_contents.extensions.model_fields
+import any_imagefield.models.fields
 
 
-class Migration(SchemaMigration):
+class Migration(migrations.Migration):
 
-    def forwards(self, orm):
-        # Adding model 'PackageItem'
-        db.create_table('contentitem_themeelements_packageitem', (
-            ('contentitem_ptr', self.gf('django.db.models.fields.related.OneToOneField')(to=orm['fluent_contents.ContentItem'], unique=True, primary_key=True)),
-            ('slug', self.gf('django.db.models.fields.SlugField')(max_length=50)),
-            ('repository_url', self.gf('django.db.models.fields.URLField')(max_length=200)),
-            ('description', self.gf('django.db.models.fields.TextField')()),
-            ('homepage', self.gf('django.db.models.fields.URLField')(max_length=200, blank=True)),
-            ('rtd_html_url', self.gf('django.db.models.fields.URLField')(max_length=200, blank=True)),
-        ))
-        db.send_create_signal('themeelements', ['PackageItem'])
+    dependencies = [
+        ('fluent_contents', '0001_initial'),
+    ]
 
-
-    def backwards(self, orm):
-        # Deleting model 'PackageItem'
-        db.delete_table('contentitem_themeelements_packageitem')
-
-
-    models = {
-        'contenttypes.contenttype': {
-            'Meta': {'ordering': "('name',)", 'unique_together': "(('app_label', 'model'),)", 'object_name': 'ContentType', 'db_table': "'django_content_type'"},
-            'app_label': ('django.db.models.fields.CharField', [], {'max_length': '100'}),
-            'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
-            'model': ('django.db.models.fields.CharField', [], {'max_length': '100'}),
-            'name': ('django.db.models.fields.CharField', [], {'max_length': '100'})
-        },
-        'fluent_contents.contentitem': {
-            'Meta': {'ordering': "('placeholder', 'sort_order')", 'object_name': 'ContentItem'},
-            'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
-            'parent_id': ('django.db.models.fields.IntegerField', [], {'null': 'True'}),
-            'parent_type': ('django.db.models.fields.related.ForeignKey', [], {'to': "orm['contenttypes.ContentType']"}),
-            'placeholder': ('django.db.models.fields.related.ForeignKey', [], {'related_name': "'contentitems'", 'null': 'True', 'on_delete': 'models.SET_NULL', 'to': "orm['fluent_contents.Placeholder']"}),
-            'polymorphic_ctype': ('django.db.models.fields.related.ForeignKey', [], {'related_name': "'polymorphic_fluent_contents.contentitem_set'", 'null': 'True', 'to': "orm['contenttypes.ContentType']"}),
-            'sort_order': ('django.db.models.fields.IntegerField', [], {'default': '1', 'db_index': 'True'})
-        },
-        'fluent_contents.placeholder': {
-            'Meta': {'unique_together': "(('parent_type', 'parent_id', 'slot'),)", 'object_name': 'Placeholder'},
-            'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
-            'parent_id': ('django.db.models.fields.IntegerField', [], {'null': 'True'}),
-            'parent_type': ('django.db.models.fields.related.ForeignKey', [], {'to': "orm['contenttypes.ContentType']", 'null': 'True', 'blank': 'True'}),
-            'role': ('django.db.models.fields.CharField', [], {'default': "'m'", 'max_length': '1'}),
-            'slot': ('django.db.models.fields.SlugField', [], {'max_length': '50'}),
-            'title': ('django.db.models.fields.CharField', [], {'max_length': '255', 'blank': 'True'})
-        },
-        'themeelements.packageitem': {
-            'Meta': {'ordering': "('slug',)", 'object_name': 'PackageItem', 'db_table': "'contentitem_themeelements_packageitem'", '_ormbases': ['fluent_contents.ContentItem']},
-            'contentitem_ptr': ('django.db.models.fields.related.OneToOneField', [], {'to': "orm['fluent_contents.ContentItem']", 'unique': 'True', 'primary_key': 'True'}),
-            'description': ('django.db.models.fields.TextField', [], {}),
-            'homepage': ('django.db.models.fields.URLField', [], {'max_length': '200', 'blank': 'True'}),
-            'repository_url': ('django.db.models.fields.URLField', [], {'max_length': '200'}),
-            'rtd_html_url': ('django.db.models.fields.URLField', [], {'max_length': '200', 'blank': 'True'}),
-            'slug': ('django.db.models.fields.SlugField', [], {'max_length': '50'})
-        }
-    }
-
-    complete_apps = ['themeelements']
+    operations = [
+        migrations.CreateModel(
+            name='Col12Item',
+            fields=[
+                ('contentitem_ptr', models.OneToOneField(parent_link=True, auto_created=True, primary_key=True, serialize=False, to='fluent_contents.ContentItem')),
+                ('title', models.CharField(max_length=200, verbose_name='Title')),
+                ('icon', any_imagefield.models.fields.AnyImageField(max_length=100, verbose_name='Icon', blank=True)),
+                ('body', fluent_contents.extensions.model_fields.PluginHtmlField(verbose_name='Body')),
+            ],
+            options={
+                'db_table': 'contentitem_themeelements_col12item',
+                'verbose_name': 'Column (1/2)',
+                'verbose_name_plural': 'Columns (1/2)',
+            },
+            bases=('fluent_contents.contentitem',),
+        ),
+        migrations.CreateModel(
+            name='ContentBoxItem',
+            fields=[
+                ('contentitem_ptr', models.OneToOneField(parent_link=True, auto_created=True, primary_key=True, serialize=False, to='fluent_contents.ContentItem')),
+            ],
+            options={
+                'db_table': 'contentitem_themeelements_contentboxitem',
+                'verbose_name': 'Content box splitter',
+                'verbose_name_plural': 'Content box splitters',
+            },
+            bases=('fluent_contents.contentitem',),
+        ),
+        migrations.CreateModel(
+            name='ImageTextItem',
+            fields=[
+                ('contentitem_ptr', models.OneToOneField(parent_link=True, auto_created=True, primary_key=True, serialize=False, to='fluent_contents.ContentItem')),
+                ('title', models.CharField(max_length=200, verbose_name='Title')),
+                ('image', any_imagefield.models.fields.AnyImageField(max_length=100, verbose_name='Image')),
+                ('align', models.CharField(default=b'left', max_length=10, verbose_name='Align', choices=[(b'left', 'Left'), (b'right', 'Right')])),
+                ('body', fluent_contents.extensions.model_fields.PluginHtmlField(verbose_name='Body')),
+                ('url', any_urlfield.models.fields.AnyUrlField(max_length=300, verbose_name='URL', blank=True)),
+                ('url_text', models.CharField(max_length=200, verbose_name='Text', blank=True)),
+            ],
+            options={
+                'db_table': 'contentitem_themeelements_imagetextitem',
+                'verbose_name': 'Image+text',
+                'verbose_name_plural': 'Image+text items',
+            },
+            bases=('fluent_contents.contentitem',),
+        ),
+        migrations.CreateModel(
+            name='PackageItem',
+            fields=[
+                ('contentitem_ptr', models.OneToOneField(parent_link=True, auto_created=True, primary_key=True, serialize=False, to='fluent_contents.ContentItem')),
+                ('slug', models.SlugField(verbose_name='Slug')),
+                ('repository_url', models.URLField(verbose_name=b'Repository URL')),
+                ('description', models.TextField(verbose_name='Description')),
+                ('homepage', models.URLField(help_text='You only have to enter a homepage URL for external packages', verbose_name=b'Homepage', blank=True)),
+                ('rtd_html_url', models.URLField(verbose_name='RTD URL', editable=False, blank=True)),
+            ],
+            options={
+                'ordering': ('slug',),
+                'db_table': 'contentitem_themeelements_packageitem',
+                'verbose_name': 'Python Package item',
+                'verbose_name_plural': 'Python Package items',
+            },
+            bases=('fluent_contents.contentitem',),
+        ),
+    ]
