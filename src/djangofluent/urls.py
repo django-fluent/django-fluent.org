@@ -44,3 +44,8 @@ if settings.DEBUG:
     urlpatterns.insert(0,
         url(r'^media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.MEDIA_ROOT, 'show_indexes': True})
     )
+    if 'debug_toolbar' in settings.INSTALLED_APPS:
+        import debug_toolbar
+        urlpatterns.insert(0,
+            url(r'^__debug__/', include(debug_toolbar.urls))
+        )
