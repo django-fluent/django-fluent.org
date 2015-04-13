@@ -51,6 +51,7 @@ INSTALLED_APPS = (
     'django.contrib.sitemaps',
     'django.contrib.staticfiles',
     'compressor',
+    'south',
 )
 
 TEMPLATE_DIRS = (
