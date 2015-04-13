@@ -15,6 +15,6 @@ django-extensions >= 1.4.9
 Sphinx >= 1.2.3
 
 # Profiling
-gprof2dot == 2014.09.29
+gprof2dot >= 2015.2.3
 geordi >= 0.3
 yet-another-django-profiler >= 0.3.0
