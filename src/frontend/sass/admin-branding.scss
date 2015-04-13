@@ -4,13 +4,12 @@
 // Header color
 
 div#header {
-  background-image: none;  // Disable admin-tools image
+  // Replace admin-tools image
+  background: #909B19 image-url("web_design/templatemo_header.jpg") 90px -302px no-repeat;
 }
 
 #header {
   #branding {
-    background: #909B19 image-url("web_design/templatemo_header.jpg") 90px -302px no-repeat;
-
     h1#site-name {
       // NOTE: when updating this, also check the login page.
       // It might be needed to create an override for 'body.login <this selector>'.

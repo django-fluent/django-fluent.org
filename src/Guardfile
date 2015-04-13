@@ -13,12 +13,20 @@ notification :off
 interactor :off
 logger :level => :info
 
-guard 'compass' do
-  # Always touch screen.scss too, a workaround for compass 0.12.2
-  watch(%r{(.*)\.s[ac]ss$}) {|m| "frontend/sass/screen.scss"}
-end
+group :development do
 
-guard 'livereload', :host => '127.0.0.1' do
-  watch(%r{.+\.(css|js|html)$})
-  #watch(%r{.+\.(css|js|html|pyc)$})
+  guard 'livereload', :host => '127.0.0.1' do
+    watch(%r{.+\.(css|js|html)$})
+    #watch(%r{.+\.(css|js|html|pyc)$})
+  end
+
+  if File.exists?("./config.rb")
+    # Compile on start.
+    puts "Compiling sass files using compass:"
+    puts `compass compile --time --quiet`
+
+    guard 'compass' do
+      watch(%r{(.*)\.s[ac]ss$})
+    end
+  end
 end

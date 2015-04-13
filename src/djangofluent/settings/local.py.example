@@ -3,29 +3,44 @@ Local settings for development.
 """
 from .project import INSTALLED_APPS, MIDDLEWARE_CLASSES
 
-# Disable caching if needed
-FLUENT_CONTENTS_CACHE_OUTPUT = True
-
-# Output to console
-import logging, sys
-logging.basicConfig(level=logging.DEBUG, stream=sys.stderr)
+## -- Logging output
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
-# Debugging assistance
+# See queries
+LOGGING['loggers']['django.db']['level'] = 'DEBUG'
+
+
+## -- Output caching
+
+# Disable output caching when changing the templates all the time.
+# The default encourages testing of the live situation.
+FLUENT_CONTENTS_CACHE_OUTPUT = True
+FLUENT_CONTENTS_CACHE_PLACEHOLDER_OUTPUT = False  # Not in dev.
+
+
+## -- Extra Debugging assistance
 
 WSGI_APPLICATION = 'djangofluent.wsgi.development.application'
 
 INSTALLED_APPS += (
-    #'debug_toolbar',
-    #'django_extensions',
-    'debugtools',
+    #'debug_toolbar',      # pip install django-debug-toolbar
+    #'django_extensions',  # pip install django-extensions
+    'debugtools',          # pip install django-debugtools
 )
 
-MIDDLEWARE_CLASSES += (
-    #'debug_toolbar.middleware.DebugToolbarMiddleware',
+MIDDLEWARE_CLASSES = (
     'debugtools.middleware.XViewMiddleware',
-)
+    #'debug_toolbar.middleware.DebugToolbarMiddleware',
+
+    # Profiling, needs http://www.graphviz.org/Download_macos.php
+    # pip install --pre gprof2dot geordi
+    #'geordi.VisorMiddleware',  # use ?__geordi__ in query string
+    # pip install --pre gprof2dot yet-another-django-profiler
+    #'yet_another_django_profiler.middleware.ProfilerMiddleware',  # use ?profile in query string
+) + MIDDLEWARE_CLASSES
+
+DEBUG_TOOLBAR_PATCH_SETTINGS = False
 
 DEBUG_TOOLBAR_PANELS = (
     #'debug_toolbar.panels.versions.VersionsPanel',

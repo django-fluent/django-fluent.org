@@ -2,56 +2,56 @@
 
 # Infrastructure
 Django >= 1.6.10, < 1.7
-Pillow == 2.7.0
-psycopg2 == 2.5.4
-python-memcached == 1.53
-raven == 5.1.1
+Pillow == 2.8.1
+psycopg2 == 2.6.0
+python-memcached == 1.54
+raven == 5.2.0
 South == 1.0.2
 
 # WSGI container, install in virtualenv to have latest features.
 # Needs `export UWSGI_PROFILE=default` to build python plugin (deploy scripts do this automatically)
-uWSGI >= 2.0.9
+uWSGI >= 2.0.10
 
 # CMS libraries
-django-fluent-blogs >= 1.0b4
-django-fluent-contents[code,text,oembeditem] >= 1.0c3
-django-fluent-dashboard >= 0.4
-django-fluent-pages >= 0.9c1
-django-fluent-comments >= 1.0b1
-django-fluent-utils >= 1.1.2
+django-fluent-blogs >= 1.0
+django-fluent-contents[code,text,oembeditem] >= 1.0
+django-fluent-dashboard >= 0.5
+django-fluent-pages >= 0.9
+django-fluent-comments >= 1.0
+django-fluent-utils >= 1.1.5
 
 # Support libs
 django-admin-tools == 0.5.2
 django-any-imagefield == 0.8.2
-django-any-urlfield >= 2.0.4
-django-axes >= 1.3.8
+django-any-urlfield >= 2.1
+django-axes >= 1.3.9
 django-categories == 1.2.2
 django-crispy-forms == 1.4.0
 #dashboardmods >= 0.2.2
 django-compressor == 1.4
--e git+https://github.com/clintecker/django-google-analytics.git@140787ba86ef4995b2cabf927bf0b56ec7728348#egg=google_analytics-0.2
--e git+https://github.com/smacker/django-filebrowser-no-grappelli.git@d68ffc7fa7c4096791cc6819ab2b2229b1661c68#egg=django-filebrowser-no-grappelli
+-e git+https://github.com/smacker/django-filebrowser-no-grappelli.git@3.5.7#egg=django-filebrowser-no-grappelli
+django-google-tools >= 1.0.0
 -e git+https://github.com/rizumu/django-ping.git@b9e228fe1f338d87b323383509a975fd9df22ef1#egg=django_ping-0.3b1
 django-singleton-admin == 0.0.4
-django-parler >= 1.2.1
+django-parler >= 1.4
 django-staff-toolbar >= 1.0
-django-taggit == 0.12.2
-django-taggit-autosuggest == 0.2.6
+django-taggit == 0.13.0
+django-taggit-autosuggest == 0.2.7
 django-threadedcomments >= 0.9.0
 django-tinymce >= 1.5.3
 django-wysiwyg == 0.7.0
 html5lib >= 1.0b3
-micawber >= 0.3.1
-pytz >= 2014.10
+micawber >= 0.3.2
+pytz >= 2015.2
 sorl-thumbnail == 12.2
 
 # Dependencies
-django-mptt >= 0.6.1
-django-polymorphic >= 0.6.1
-django-polymorphic-tree >= 1.0.1
-django-tag-parser >= 2.0.1
-django-template-analyzer >= 1.4
+django-mptt >= 0.7.0
+django-polymorphic >= 0.7
+django-polymorphic-tree >= 1.1
+django-tag-parser >= 2.1
+django-template-analyzer >= 1.5
 
 # Debugging
-django-debugtools >= 1.2.1
+django-debugtools >= 1.3
 bpython >= 0.13.2

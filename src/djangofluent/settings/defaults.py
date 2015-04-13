@@ -98,6 +98,8 @@ CACHES = {
 
 SESSION_ENGINE = 'django.contrib.sessions.backends.cached_db'
 
+TEST_RUNNER = 'django.test.simple.DjangoTestSuiteRunner'
+
 
 ## --- App settings
 
