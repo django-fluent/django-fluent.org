@@ -20,7 +20,7 @@ django-fluent-blogs >= 1.0
 django-fluent-contents[code,text,oembeditem] >= 1.0
 django-fluent-dashboard >= 0.5
 django-fluent-pages >= 0.9
-django-fluent-comments >= 1.0.1
+django-fluent-comments >= 1.0.2
 django-fluent-utils >= 1.1.5
 
 # Support libs
