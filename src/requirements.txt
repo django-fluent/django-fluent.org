@@ -16,7 +16,7 @@ django-fluent-blogs >= 1.0
 django-fluent-contents[code,text,oembeditem] >= 1.0
 django-fluent-dashboard >= 0.5
 django-fluent-pages >= 0.9
-django-fluent-comments >= 1.0
+django-fluent-comments >= 1.0.1
 django-fluent-utils >= 1.1.5
 
 # Support libs
@@ -28,6 +28,7 @@ django-categories == 1.2.2
 django-crispy-forms == 1.4.0
 #dashboardmods >= 0.2.2
 django-compressor == 1.4
+-e git+https://github.com/django/django-contrib-comments.git@8a99ed810e9e94cb9dff1c362b2c4ebe2e37dead#egg=django-contrib-comments
 -e git+https://github.com/smacker/django-filebrowser-no-grappelli.git@3.5.7#egg=django-filebrowser-no-grappelli
 django-google-tools >= 1.0.0
 -e git+https://github.com/rizumu/django-ping.git@b9e228fe1f338d87b323383509a975fd9df22ef1#egg=django_ping-0.3b1
@@ -36,7 +37,7 @@ django-parler >= 1.4
 django-staff-toolbar >= 1.0
 django-taggit == 0.13.0
 django-taggit-autosuggest == 0.2.7
-django-threadedcomments >= 0.9.0
+django-threadedcomments >= 1.0b1
 django-tinymce >= 1.5.3
 django-wysiwyg == 0.7.0
 html5lib >= 1.0b3
