@@ -1,0 +1,14 @@
+{% comment %}
+  Forked the menu code temporary, to add the "draft" class.
+  This will be available in django-fluent-pages 0.9.1 or 1.0
+{% endcomment %}{% load mptt_tags %}{% if menu_items %}
+<ul>
+  {% recursetree menu_items %}{# node is a Page #}
+  <li class="{% if node.is_active %}active{% endif %}{% if node.page.is_draft %} draft{% endif %}{% if node.is_last_child %} last{% endif %}">
+    <a href="{{ node.url }}">{{ node.title }}</a>
+    {% if children %}<ul>{{ children }}</ul>{% endif %}
+  </li>{% endrecursetree %}
+</ul>
+{% else %}
+<!-- No menu items returned -->
+{% endif %}

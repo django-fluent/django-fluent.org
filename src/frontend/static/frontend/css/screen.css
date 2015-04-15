@@ -656,3 +656,7 @@ h2.title_icon {
 #templatemo_footer a {
   color: #CCCCCC;
 }
+
+#templatemo_menu li.draft a {
+  color: #999;
+}
