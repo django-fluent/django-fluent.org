@@ -1,60 +1,56 @@
 # Install with: `pip install -r requirements.txt`
 
 # Infrastructure
-Django >= 1.7.7, < 1.8
-Pillow == 2.8.1
-psycopg2 == 2.6.0
-python-memcached == 1.54
-raven == 5.2.0
+Django == 1.7.11
+Pillow == 3.0.0
+psycopg2 == 2.6.1
+python-memcached == 1.57
+raven == 5.9.2
 
 # WSGI container, install in virtualenv to have latest features.
 # Needs `export UWSGI_PROFILE=default` to build python plugin (deploy scripts do this automatically)
-uWSGI >= 2.0.10
+uWSGI == 2.0.12
 
-# Install django-contrib-comments from GitHub,
-# before django-fluent-comments or django-threadedcomments download the broken 1.5 release
--e git+https://github.com/django/django-contrib-comments.git@8a99ed810e9e94cb9dff1c362b2c4ebe2e37dead#egg=django-contrib-comments
+## Install django-contrib-comments from GitHub,
+## before django-fluent-comments or django-threadedcomments download the broken 1.5 release
+#-e git+https://github.com/django/django-contrib-comments.git@8a99ed810e9e94cb9dff1c362b2c4ebe2e37dead#egg=django-contrib-comments
 
 # CMS libraries
-django-fluent-blogs >= 1.0
-django-fluent-contents[code,text,oembeditem] >= 1.0
-django-fluent-dashboard >= 0.5
-django-fluent-pages >= 0.9
-django-fluent-comments >= 1.0.2
-django-fluent-utils >= 1.1.5
+django-fluent-blogs == 1.1
+django-fluent-comments == 1.1
+django-fluent-contents[code,text,oembeditem] == 1.1
+django-fluent-dashboard == 0.6
+django-fluent-pages == 1.0b1
 
 # Support libs
-django-admin-tools == 0.5.2
+django-admin-tools == 0.7.1
 django-any-imagefield == 0.8.2
-django-any-urlfield >= 2.1.1
-django-axes >= 1.3.9
-django-categories == 1.2.2
-django-crispy-forms == 1.4.0
-#dashboardmods >= 0.2.2
-django-compressor == 1.4
+django-any-urlfield == 2.2
+django-axes == 1.5.0
+django-categories == 1.2.3
+django-compressor == 1.6
+django-crispy-forms == 1.5.2
 -e git+https://github.com/smacker/django-filebrowser-no-grappelli.git@3.5.7#egg=django-filebrowser-no-grappelli
-django-google-tools >= 1.0.0
+django-google-tools == 1.0.0
+django-mptt == 0.7.4
+django-parler == 1.6
+django-polymorphic == 0.8.1
+django-polymorphic-tree == 1.2
 -e git+https://github.com/rizumu/django-ping.git@b9e228fe1f338d87b323383509a975fd9df22ef1#egg=django_ping-0.3b1
 django-singleton-admin == 0.0.4
-django-parler >= 1.4
-django-staff-toolbar >= 1.0
-django-taggit == 0.13.0
-django-taggit-autosuggest == 0.2.7
-django-threadedcomments >= 1.0b1
-django-tinymce >= 1.5.3
-django-wysiwyg == 0.7.0
-html5lib >= 1.0b3
-micawber >= 0.3.2
-pytz >= 2015.2
-sorl-thumbnail == 12.2
-
-# Dependencies
-django-mptt >= 0.7.0
-django-polymorphic >= 0.7
-django-polymorphic-tree >= 1.1
-django-tag-parser >= 2.1
-django-template-analyzer >= 1.5
+django-staff-toolbar == 1.0.1
+django-tag-parser == 2.1
+django-taggit == 0.17.6
+django-taggit-autosuggest == 0.2.8
+django-threadedcomments == 1.0.1
+django-tinymce == 2.2.0
+django-wysiwyg == 0.7.1
+html5lib == 1.0b8
+micawber == 0.3.3
+pytz == 2015.7
+sorl-thumbnail == 12.3
 
 # Debugging
-django-debugtools >= 1.3
-bpython >= 0.13.2
+django-debugtools == 1.4
+ipython == 4.0.1
+ptpython == 0.25
