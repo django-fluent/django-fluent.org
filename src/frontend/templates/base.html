@@ -71,7 +71,7 @@
                   {% for entry in blog_entries %}{% with entry_url=entry.get_absolute_url %}
                   <div class="sb_news_box">
                     <a href="{{ entry_url }}">{{ entry.title }}</a>
-                    <time datetime="{{ entry.publication_date|date:'Y-m-d' }}">{{ entry.publication_date|date:'FOOTER_DATE_FORMAT' }}</time>
+                    <time datetime="{{ entry.publication_date|date:'Y-m-d' }}">{{ entry.publication_date|date:'j F Y' }}</time>
                   </div>
                   {% endwith %}{% endfor %}
 
