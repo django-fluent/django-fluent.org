@@ -11,10 +11,6 @@ raven == 5.9.2
 # Needs `export UWSGI_PROFILE=default` to build python plugin (deploy scripts do this automatically)
 uWSGI == 2.0.12
 
-## Install django-contrib-comments from GitHub,
-## before django-fluent-comments or django-threadedcomments download the broken 1.5 release
-#-e git+https://github.com/django/django-contrib-comments.git@8a99ed810e9e94cb9dff1c362b2c4ebe2e37dead#egg=django-contrib-comments
-
 # CMS libraries
 django-fluent-blogs == 1.1.1
 django-fluent-comments == 1.1
@@ -29,6 +25,7 @@ django-any-urlfield == 2.2
 django-axes == 1.5.0
 django-categories == 1.2.3
 django-compressor == 1.6
+django-contrib-comments == 1.6.2
 django-crispy-forms == 1.5.2
 -e git+https://github.com/smacker/django-filebrowser-no-grappelli.git@1f82d7107849ac120522ccd336cafcc4a6ff4205#egg=django-filebrowser-no-grappelli
 django-google-tools == 1.0.0
