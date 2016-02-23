@@ -12,7 +12,7 @@ raven == 5.10.2
 uWSGI == 2.0.12
 
 # CMS libraries
-django-fluent-blogs == 1.1.2
+django-fluent-blogs == 1.2
 django-fluent-comments == 1.2
 django-fluent-contents[code,text,oembeditem] == 1.1.1
 django-fluent-dashboard == 0.6.1
@@ -32,7 +32,7 @@ django-google-tools == 1.0.0
 django-mptt == 0.8.0
 django-parler == 1.6.1
 django-polymorphic == 0.9.1
-django-polymorphic-tree == 1.2.1
+django-polymorphic-tree == 1.2.3
 -e git+https://github.com/rizumu/django-ping.git@2ff3985c762654282ba52813043a605b73896654#egg=django_ping-0.3b1
 django-slug-preview == 1.0.1
 django-singleton-admin == 0.0.4

@@ -206,6 +206,7 @@ FILEBROWSER_VERSIONS = {
 }
 
 FLUENT_BLOGS_BASE_TEMPLATE = 'base_blog.html'
+FLUENT_BLOGS_EXTRA_ADMIN_FIELDS = ('intro',)
 FLUENT_BLOGS_ENTRY_LINK_STYLE = '/{year}/{month}/{slug}/'
 FLUENT_BLOGS_INCLUDE_STATIC_FILES = False  # done in base.html by us.
 
