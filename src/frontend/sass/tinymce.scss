@@ -1,8 +1,4 @@
-body {
-  color: #666;
-  font-family: Tahoma, Geneva, sans-serif;
-  font-size: 12px;
-  line-height: 1.7em;
-}
+@import "partials/core/variables";
+@import "partials/core/mixins";
+@import "partials/core/typography";
 
-@import "partials/typography";

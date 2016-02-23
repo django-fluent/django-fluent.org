@@ -5,81 +5,13 @@ Credit: http://www.templatemo.com
 body {
   margin: 0px;
   padding: 0px;
-  color: #666;
-  font-family: Tahoma, Geneva, sans-serif;
-  font-size: 12px;
-  line-height: 1.7em;
   background: image-url("web_design/templatemo_body.jpg");
   background-color: #dbdbdd;
   background-position: top;
   background-repeat: repeat-x;
 }
 
-a {
-  color: #777700;
-  text-decoration: none;
-
-  &:link, &:visited {
-    color: #777700;
-    text-decoration: none;
-  }
-
-  &:hover {
-    color: #0066FF;
-    text-decoration: underline;
-  }
-}
-
-p {
-  margin: 0 0 10px 0;
-  padding: 0;
-}
-
-img {
-  border: none;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  color: #252323;
-  font-weight: normal;
-}
-
-h1 {
-  font-size: 34px;
-  margin: 0 0 30px 0;
-  padding: 5px 0;
-}
-
-h2 {
-  font-size: 26px;
-  margin: 0 0 30px 0;
-  padding: 0;
-}
-
-h3 {
-  font-size: 21px;
-  margin: 0 0 25px;
-  padding: 0;
-}
-
-h4 {
-  font-size: 18px;
-  margin: 0 0 15px;
-  padding: 0;
-}
-
-h5 {
-  font-size: 16px;
-  margin: 0 0 5px;
-  padding: 0;
-  color: #606711;
-}
-
-h6 {
-  font-size: 14px;
-  margin: 0 0 5px;
-  padding: 0;
-}
+// (part here moved to typography)
 
 .h10 { height: 10px }
 .h20 { height: 20px }
@@ -123,50 +55,9 @@ a.detail {
   margin: 3px 0 0 30px;
 }
 
-blockquote {
-  font-style: italic;
-  margin-left: 10px;
-}
-
-cite {
-  font-weight: bold;
-  color: #000;
-  span {
-    color: #333;
-  }
-}
-
-em {
-  color: #000;
-}
-
 .testimonial {
   font-size: 16px;
   line-height: 30px;
-}
-
-#templatemo_content ul,
-.tmo_list {
-  margin: 0 0 0 10px;
-  padding: 0;
-  list-style: none;
-
-  li {
-    color: #666;
-    margin: 0 0 2px;
-    padding: 0 0 3px 25px;
-    background: transparent image-url("web_design/templatemo_list.png") no-repeat scroll 0 3px;
-
-    /*
-    a {
-      color: #666;
-
-      &:hover {
-        color: #666;
-      }
-    }
-    */
-  }
 }
 
 #templatemo_body_wrapper {

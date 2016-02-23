@@ -1,4 +1,6 @@
-@import "partials/bootstrap_config";
+@import "partials/core/variables";
+@import "partials/core/mixins";
+@import "bootstrap/mixins";
 
 
 // Header color
@@ -76,7 +78,7 @@ form .aligned {
 .button.default,
 input.default[type="submit"],
 .submit-row input.default {
-  @include buttonBackground($btnPrimaryBackground, $btnPrimaryBackgroundHighlight);
+  @include gradient-vertical($btn-primary-bg, $btn-primary-bg2);
 
   // disable default Django colors
   border-width: 1px;
