@@ -81,7 +81,6 @@ img, a img, object {
   min-height: 0;
 }
 
-/* containers */
 h1, h2, h3, h4 {
   clear: both;
 }
@@ -93,6 +92,43 @@ h1 a:link, h1 a:visited, h2 a:link, h2 a:visited, h3 a:link, h3 a:visited, h4 a:
 }
 h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover {
   color: #0066FF;
+}
+
+.text {
+  clear: both;
+  padding-top: 1px;
+  margin-top: -1px;
+}
+.text h2, .text h3 {
+  margin-bottom: 10px;
+}
+.text h2:first-child, .text h3:first-child {
+  margin-top: 0;
+}
+.text h2:not(:first-child), .text h3:not(:first-child) {
+  margin-top: 30px;
+}
+.text ul {
+  margin: 0 0 1em 0;
+}
+.text blockquote {
+  font-style: normal;
+  margin: 2em 0 2em 2em;
+}
+.text kbd {
+  color: #888;
+}
+
+pre, code, kbd {
+  /* use something more modern then Courier New */
+  font-family: "Consolas", "Menlo", "Monaco", "Lucida Console", "Liberation Mono", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Courier New", monospace;
+}
+
+iframe {
+  border: 1px solid #ccc;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 /* ---- Overrides of Bootstrap ---- */
@@ -172,43 +208,6 @@ figure.picture.align-right {
 }
 figure.picture.align-center {
   text-align: center;
-}
-
-.text {
-  clear: both;
-  padding-top: 1px;
-  margin-top: -1px;
-}
-.text h2, .text h3 {
-  margin-bottom: 10px;
-}
-.text h2:first-child, .text h3:first-child {
-  margin-top: 0;
-}
-.text h2:not(:first-child), .text h3:not(:first-child) {
-  margin-top: 30px;
-}
-.text ul {
-  margin: 0 0 1em 0;
-}
-.text blockquote {
-  font-style: normal;
-  margin: 2em 0 2em 2em;
-}
-.text kbd {
-  color: #888;
-}
-
-pre, code, kbd {
-  /* use something more modern then Courier New */
-  font-family: "Consolas", "Menlo", "Monaco", "Lucida Console", "Liberation Mono", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Courier New", monospace;
-}
-
-iframe {
-  border: 1px solid #ccc;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
 }
 
 #forkme {

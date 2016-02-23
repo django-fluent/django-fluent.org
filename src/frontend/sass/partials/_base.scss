@@ -72,24 +72,3 @@ img, a img, object {
 
 * html .clearfix { height:     1%; }
 *+html .clearfix { min-height: 0;  }
-
-
-/* containers */
-
-h1, h2, h3, h4 {
-  clear: both;
-
-  a {
-    // for blog:
-    text-decoration: none;
-
-    &:link,
-    &:visited {
-      color: #252323;
-    }
-
-    &:hover {
-      color: #0066FF;
-    }
-  }
-}
