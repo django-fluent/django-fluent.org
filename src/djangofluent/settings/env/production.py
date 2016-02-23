@@ -1,7 +1,6 @@
 from .. import *
 
 DEBUG = False
-TEMPLATE_DEBUG = DEBUG
 COMPRESS_ENABLED = True
 
 # https only site
@@ -21,8 +20,8 @@ CSRF_COOKIE_SECURE = True
 #    },
 #}
 
-TEMPLATE_LOADERS = (
-    ('django.template.loaders.cached.Loader', TEMPLATE_LOADERS),
+TEMPLATES[0]['OPTIONS']['loaders'] = (
+    ('django.template.loaders.cached.Loader', TEMPLATES[0]['OPTIONS']['loaders']),
 )
 
 ALLOWED_HOSTS = (
@@ -30,3 +29,5 @@ ALLOWED_HOSTS = (
 )
 
 CACHES['default']['KEY_PREFIX'] = 'djangofluent.production'
+
+GOOGLE_ANALYTICS_PROPERTY_ID = 'UA-25383750-7'

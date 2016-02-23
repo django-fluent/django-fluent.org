@@ -1,7 +1,6 @@
 from .. import *
 
-DEBUG = True
-TEMPLATE_DEBUG = DEBUG
+DEBUG = False
 COMPRESS_ENABLED = True
 
 # https only site
@@ -19,8 +18,11 @@ CSRF_COOKIE_SECURE = True
 #    },
 #}
 
-TEMPLATE_LOADERS = (
-    ('django.template.loaders.cached.Loader', TEMPLATE_LOADERS),
+INSTALLED_APPS += (
+)
+
+TEMPLATES[0]['OPTIONS']['loaders'] = (
+    ('django.template.loaders.cached.Loader', TEMPLATES[0]['OPTIONS']['loaders']),
 )
 
 ALLOWED_HOSTS = (
@@ -28,5 +30,3 @@ ALLOWED_HOSTS = (
 )
 
 CACHES['default']['KEY_PREFIX'] = 'djangofluent.beta'
-
-#INSTALLED_APPS += ('gunicorn',)

@@ -24,7 +24,6 @@ DATABASES = {
         'NAME':     'django-fluent.org',
         'USER':     'djangofluent',
         'PASSWORD': 'testtest',
-        'OPTIONS':  {'autocommit': True,},   # Stop that "current transaction is aborted" error
     },
 }
 
@@ -58,21 +57,20 @@ INSTALLED_APPS += (
     'apps.wysiywg_config',
 
     # Support libs
+    'analytical',
     'any_imagefield',
     'any_urlfield',
     'axes',
-    #'categories',
-    #'categories.editor',
     'categories_i18n',
-    'django_comments',
     'crispy_forms',
+    'django_comments',
     'django_wysiwyg',
     'filebrowser',
-    'googletools',
     'mptt',
     'parler',
     'polymorphic',
     'polymorphic_tree',
+    'slug_preview',
     'staff_toolbar',
     'sorl.thumbnail',
     'taggit',
@@ -91,20 +89,27 @@ INSTALLED_APPS += (
 
 MIDDLEWARE_CLASSES += (
     'axes.middleware.FailedLoginMiddleware',
+    'fluent_contents.middleware.HttpRedirectRequestMiddleware',
 )
 
-TEMPLATE_CONTEXT_PROCESSORS += (
+TEMPLATES[0]['OPTIONS']['context_processors'] += (
     'frontend.context_processors.frontend',
 )
 
-TEMPLATE_LOADERS += (
+TEMPLATES[0]['OPTIONS']['loaders'] += (
     'admin_tools.template_loaders.Loader',
 )
 
 FORMAT_MODULE_PATH = 'djangofluent.settings.locale'  # Consistent date formatting
 
 # Avoid 600 permission for filebrowser uploads.
-FILE_UPLOAD_PERMISSIONS = 0644
+FILE_UPLOAD_PERMISSIONS = 0o644
+
+IGNORABLE_404_URLS = (
+    #re.compile(r'^/favicon.ico$'),
+    #re.compile(r'^/wp-login.php$'),
+)
+
 
 LOGGING = {
     'version': 1,
@@ -114,7 +119,7 @@ LOGGING = {
             'format': u'%(levelname)s: %(asctime)s %(process)d %(thread)d %(module)s: %(message)s',
         },
         'simple': {
-            'format': u'%(levelname)s: %(message)s',
+            'format': u'%(levelname)s:\t%(message)s',
         },
     },
     'filters': {
@@ -128,6 +133,10 @@ LOGGING = {
             'filters': ['require_debug_false'],
             'class': 'django.utils.log.AdminEmailHandler'
         },
+        'sentry': {
+            'level': 'WARNING',
+            'class': 'raven.contrib.django.handlers.SentryHandler',
+        },
         'console': {
             'level': 'DEBUG',
             'class': 'logging.StreamHandler',
@@ -135,17 +144,23 @@ LOGGING = {
         },
     },
     'loggers': {
+        'django.db': {
+            'handlers': ['console'],
+            'level': 'ERROR',  # to show queries or not.
+        },
         'django.request': {
             'handlers': ['mail_admins', 'console'],
             'level': 'ERROR',
             'propagate': True,
         },
-        'django.db': {
+        'raven': {
+            'level': 'DEBUG',
             'handlers': ['console'],
-            'level': 'ERROR',  # to show queries or not.
+            'propagate': False,
         },
     }
 }
+
 
 ## -- Third party app settings
 
@@ -153,10 +168,13 @@ ADMIN_TOOLS_INDEX_DASHBOARD = 'fluent_dashboard.dashboard.FluentIndexDashboard'
 ADMIN_TOOLS_APP_INDEX_DASHBOARD = 'fluent_dashboard.dashboard.FluentAppIndexDashboard'
 ADMIN_TOOLS_MENU = 'fluent_dashboard.menu.FluentMenu'
 
+AXES_LOGIN_FAILURE_LIMIT = 3
+AXES_COOLOFF_TIME = 1  # hours
+AXES_IP_WHITELIST = INTERNAL_IPS
+
 COMMENTS_APP = 'fluent_comments'
 
 DJANGO_WYSIWYG_FLAVOR = 'tinymce_advanced'
-#DJANGO_WYSIWYG_MEDIA_URL = STATIC_URL + 'frontend/vendor/tiny_mce/'
 
 FILEBROWSER_DIRECTORY = ''
 FILEBROWSER_EXTENSIONS = {
@@ -167,6 +185,7 @@ FILEBROWSER_EXTENSIONS = {
 }
 FILEBROWSER_EXCLUDE = ('cache', '_admin_thumbnail\.', '_big\.', '_large\.', '_medium\.', '_small\.', '_thumbnail\.')
 FILEBROWSER_MAX_UPLOAD_SIZE = 100 * 1024 * 1024  # in bytes
+FILEBROWSER_STRICT_PIL = True
 FILEBROWSER_ADMIN_VERSIONS = [
     'thumbnail',
     #'small',
@@ -203,6 +222,9 @@ FLUENT_PAGES_TEMPLATE_DIR = os.path.join(SRC_DIR, 'frontend', 'templates')
 
 FLUENT_TEXT_CLEAN_HTML = True
 FLUENT_TEXT_SANITIZE_HTML = True
+FLUENT_TEXT_PRE_FILTERS = (
+    'fluent_contents.plugins.text.filters.smartypants.smartypants_filter',
+)
 
 PING_CHECKS = (
     'ping.checks.check_database_sessions',

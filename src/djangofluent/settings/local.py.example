@@ -1,22 +1,47 @@
 """
 Local settings for development.
 """
-from .project import INSTALLED_APPS, MIDDLEWARE_CLASSES
+from .project import INSTALLED_APPS, MIDDLEWARE_CLASSES, LOGGING
+
+
+## -- Flags
+
+SITE_ID = 1
+DEBUG = True
+THUMBNAIL_DEBUG = True
+COMPRESS_ENABLED = False
+FLUENT_CONTENTS_CACHE_OUTPUT = True   # Disable caching if needed
+FLUENT_CONTENTS_CACHE_PLACEHOLDER_OUTPUT = False  # Not in dev.
+
+
+## -- Local system settings
+
+DATABASES = {
+    'default': {
+        # Choose between PostgreSQL or MySQL:
+        'ENGINE':   'django.db.backends.postgresql_psycopg2',
+        #'ENGINE':   'django.db.backends.mysql',
+        'NAME':     'django-fluent.org',
+        'USER':     'django-fluent.org',
+        'PASSWORD': 'testtest',
+    },
+}
+
 
 ## -- Logging output
-
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 # See queries
 LOGGING['loggers']['django.db']['level'] = 'DEBUG'
 
+LOGGING['handlers'].update({
+    'console': {
+        'level': 'DEBUG',
+        'class': 'logging.StreamHandler',
+        'formatter': 'simple'
+    },
+})
 
-## -- Output caching
-
-# Disable output caching when changing the templates all the time.
-# The default encourages testing of the live situation.
-FLUENT_CONTENTS_CACHE_OUTPUT = True
-FLUENT_CONTENTS_CACHE_PLACEHOLDER_OUTPUT = False  # Not in dev.
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 
 ## -- Extra Debugging assistance
@@ -50,6 +75,7 @@ DEBUG_TOOLBAR_PANELS = (
     #'debug_toolbar.panels.request.RequestPanel',
     'debug_toolbar.panels.sql.SQLPanel',
     #'debug_toolbar.panels.staticfiles.StaticFilesPanel',
+    'debugtools.panels.ViewPanel',
     'debug_toolbar.panels.templates.TemplatesPanel',
     #'debug_toolbar.panels.cache.CachePanel',
     #'debug_toolbar.panels.signals.SignalsPanel',

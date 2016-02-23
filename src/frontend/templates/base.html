@@ -1,17 +1,17 @@
-{% load fluent_pages_tags fluent_blogs_tags sharedcontent_tags staff_toolbar_tags googletools compress i18n %}<!doctype html>
-{% language 'en' %}{% get_fluent_page_vars %}{# for 404 and app pages #}
+{% load compress analytical staff_toolbar_tags fluent_pages_tags fluent_contents_tags fluent_blogs_tags sharedcontent_tags %}<!doctype html>
+{% get_fluent_page_vars %}{# for 404 and app pages #}
 <html xml:lang="{{ LANGUAGE_CODE|default:"nl" }}" lang="{{ LANGUAGE_CODE|default:"nl" }}">
-  <head>
+  <head>{% analytical_head_top %}
     <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="generator" content="Powered by Django" />
     <meta name="keywords" content="{% block meta-keywords %}{% endblock %}" />
     <meta name="description" content="{% block meta-description %}{% endblock %}" />
-    <title>{% block fullheadtitle %}{% block headtitle %}{{ page.title }}{% endblock %} | {{ site.name|default:site.domain }}{% endblock %}</title>
+    <title>{% block meta-title %}{% block headtitle %}{{ page.title }}{% endblock %} | {{ site.name|default:site.domain }}{% endblock %}</title>
 
     <meta property="og:type" content="{% block og-type %}website{% endblock %}" />
-    <meta property="og:image" content="http://{{ site.domain|default:"www.example.org" }}{% block og-image %}{{ STATIC_URL }}frontend/img/logo.png{% endblock %}" />
-    <meta property="og:url" content="http://{{ site.domain|default:"www.example.org" }}{{ request.path }}" />
+    <meta property="og:image" content="{{ site_root }}{% block og-image %}{{ STATIC_URL }}frontend/img/logo.png{% endblock %}" />
+    <meta property="og:url" content="{{ site_root }}{{ request.path }}" />
     <meta property="og:site_name" content="{{ site.name|default:site.domain }}" />
     <meta property="og:description" content="{% block og-description %}{{ page.description }}{% endblock %}" />
     {% compress css %}
@@ -27,18 +27,12 @@
     <script src="{{ STATIC_URL }}frontend/vendor/html5shiv.js"></script>
     <![endif]-->
     {% block extrahead %}{% endblock %}
-    {% compress js %}
-    <script type="text/javascript" src="{{ STATIC_URL }}frontend/vendor/jquery-1.8.3.min.js"></script>
-    <script type="text/javascript" src="{{ STATIC_URL }}frontend/vendor/colorbox/jquery.colorbox-min.js"></script>
-    <script type="text/javascript" src="{{ STATIC_URL }}fluent_comments/js/ajaxcomments.js"></script>
-    <script type="text/javascript" src="{{ STATIC_URL }}frontend/js/main.js"></script>
-    {% endcompress %}
-    {% compress js %}{% block script %}{% endblock %}{% endcompress %}{# also used by django-fluent-blogs #}
-    {% site_verification_code %}
+    {% analytical_head_bottom %}
   </head>
 
-  <body id="{% block bodyid %}page{% endblock %}" class="{% block bodyclass %}default{% endblock %}" itemscope itemtype="http://schema.org/WebPage">
+  <body id="{% block body-id %}page{% endblock %}" class="{% block body-class %}default{% endblock %}" itemscope itemtype="http://schema.org/WebPage">
     {% block staff_toolbar %}{% staff_toolbar %}{% endblock %}
+    {% analytical_body_top %}
     <div id="templatemo_body_wrapper">
       <div id="templatemo_wrapper">
 
@@ -104,8 +98,18 @@
 
     <a id="forkme" href="https://github.com/edoburu/django-fluent.org"><img src="{{ STATIC_URL }}frontend/img/forkme.png" alt="Fork me on GitHub"></a>
 
-    {% compress js %}{% block bodyscripts %}{% endblock %}{% endcompress %}
-    {% analytics_code %}
+    {% compress js %}
+      <script type="text/javascript" src="{{ STATIC_URL }}frontend/vendor/jquery-1.8.3.min.js"></script>
+      <script type="text/javascript" src="{{ STATIC_URL }}frontend/vendor/colorbox/jquery.colorbox-min.js"></script>
+      <script type="text/javascript" src="{{ STATIC_URL }}fluent_comments/js/ajaxcomments.js"></script>
+      <script type="text/javascript" src="{{ STATIC_URL }}frontend/js/main.js"></script>
+    {% endcompress %}<!-- common JS -->
+
+    {% compress js %}
+      {% block script %}{% endblock %}{# for django-fluent-blogs/comments. #}
+      {% block bodyscripts %}{% endblock %}
+      {% render_content_items_media js local %}{# for django-fluent-contents #}
+    {% endcompress %}<!-- page specific JS -->
+    {% analytical_body_bottom %}
   </body>
 </html>
-{% endlanguage %}

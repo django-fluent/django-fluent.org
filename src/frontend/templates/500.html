@@ -1,12 +1,10 @@
-{% load static %}{% get_static_prefix as STATIC_URL %}<!doctype html>
+{% load static i18n %}{% get_static_prefix as STATIC_URL %}<!doctype html>
 
-<html xml:lang="{{ LANGUAGE_CODE|default:"nl" }}" lang="{{ LANGUAGE_CODE|default:"nl" }}">
+<html xml:lang="{{ LANGUAGE_CODE|default:"en" }}" lang="{{ LANGUAGE_CODE|default:"en" }}">
   <head>
     <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="generator" content="Powered by Django" />
-    <title>Internal error!</title>
-
+    <title>{% trans 'Internal error!' %}</title>
     <link href="{{ STATIC_URL }}frontend/css/bootstrap.css" rel="stylesheet" type="text/css" />
     <link href="{{ STATIC_URL }}frontend/css/screen.css" rel="stylesheet" type="text/css" />
     <!--[if lt IE 9]>
@@ -15,14 +13,14 @@
     <![endif]-->
   </head>
 
-  <body id="{% block bodyid %}page{% endblock %}" class="{% block bodyclass %}default{% endblock %}" itemscope itemtype="http://schema.org/WebPage">
+  <body id="page" class="page500">
     <div id="templatemo_body_wrapper">
       <div id="templatemo_wrapper">
 
         <header id="tempaltemo_header">
           <div id="header_content">
             <div id="site_title">
-              <a href="/" target="_parent"><img src="{{ STATIC_URL }}frontend/img/web_design/templatemo_logo.png" alt="LOGO" /></a>
+              <a href="/" target="_parent"><img src="{{ STATIC_URL }}frontend/img/django-fluent.png" alt="LOGO" /></a>
             </div>
           </div>
         </header>
@@ -31,14 +29,13 @@
         <section id="templatemo_main" class="clearfix"><!-- id="content" -->
           <section id="templatemo_content">
 
-            <h2 class="pagetitle">Internal error</h2>
+            <h1 class="pagetitle">{% trans 'Internal error!' %}</h1>
             <div id="content" class="clearfix">
-              <p>
-                An internal error occurred. Please try again later.
-              </p>
-              <p>
-                Back to the <a href="/">home page</a>.
-              </p>
+              {% blocktrans trimmed %}
+              <p>We're sorry but something went wrong. Please try again later.</p>
+              <p>This incident has been logged and will be addressed by an engineer as soon as possible.</p>
+              {% endblocktrans %}
+              <p class="errorpage-back-link">{% trans 'Back to the <a href="/">home page</a>.' %}
             </div><!-- /content -->
 
           </section>
@@ -57,5 +54,7 @@
         Web design by <a href="http://www.templatemo.com/page/1" target="_parent">Free CSS Templates</a>
       </div>
     </footer>
+
+    <a id="forkme" href="https://github.com/edoburu/django-fluent.org"><img src="{{ STATIC_URL }}frontend/img/forkme.png" alt="Fork me on GitHub"></a>
   </body>
 </html>
