@@ -65,6 +65,7 @@ INSTALLED_APPS += (
     'crispy_forms',
     'django_comments',
     'django_wysiwyg',
+    'django.contrib.redirects',
     'filebrowser',
     'mptt',
     'parler',
@@ -89,7 +90,8 @@ INSTALLED_APPS += (
 
 MIDDLEWARE_CLASSES += (
     'axes.middleware.FailedLoginMiddleware',
-    'fluent_contents.middleware.HttpRedirectRequestMiddleware',
+    'django.contrib.redirects.middleware.RedirectFallbackMiddleware',  # on 404, try redirect fallback
+    'fluent_contents.middleware.HttpRedirectRequestMiddleware',        # allow plugin redirects
 )
 
 TEMPLATES[0]['OPTIONS']['context_processors'] += (
