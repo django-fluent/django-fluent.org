@@ -5,7 +5,7 @@ import django.views.static
 import fluent_comments.urls
 import fluent_pages.urls
 import ping.urls
-import taggit_autosuggest.urls
+import taggit_selectize.urls
 import tinymce.urls
 
 from django.conf import settings
@@ -31,7 +31,7 @@ urlpatterns = [
     # Django admin
     url(r'^admin/', include(admin.site.urls)),
     url(r'^admin/filebrowser/', include(fb_site.urls)),
-    url(r'^admin/util/tags/', include(taggit_autosuggest.urls)),
+    url(r'^admin/util/tags/', include(taggit_selectize.urls)),
     url(r'^admin/util/tinymce/', include(tinymce.urls)),
     url(r'^admin/util/tools/', include(admin_tools.urls)),
 

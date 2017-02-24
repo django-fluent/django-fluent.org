@@ -2,6 +2,7 @@
 Project specific settings
 """
 from .defaults import *
+from django.utils.translation import ugettext_lazy as _
 
 # Admins receive 500 errors, managers receive 404 errors.
 ADMINS = (
@@ -75,7 +76,7 @@ INSTALLED_APPS += (
     'staff_toolbar',
     'sorl.thumbnail',
     'taggit',
-    'taggit_autosuggest',
+    'taggit_selectize',
     'threadedcomments',
     'tinymce',
 
@@ -88,8 +89,11 @@ INSTALLED_APPS += (
     'django.contrib.admin',
 )
 
-MIDDLEWARE_CLASSES += (
-    'axes.middleware.FailedLoginMiddleware',
+
+MIDDLEWARE_CLASSES = (
+    'raven.contrib.django.middleware.SentryLogMiddleware',       # make 'request' available on all logs.
+    'raven.contrib.django.middleware.Sentry404CatchMiddleware',  # on 404, report to sentry.
+) + MIDDLEWARE_CLASSES + (
     'django.contrib.redirects.middleware.RedirectFallbackMiddleware',  # on 404, try redirect fallback
     'fluent_contents.middleware.HttpRedirectRequestMiddleware',        # allow plugin redirects
 )
@@ -99,7 +103,7 @@ TEMPLATES[0]['OPTIONS']['context_processors'] += (
 )
 
 TEMPLATES[0]['OPTIONS']['loaders'] += (
-    'admin_tools.template_loaders.Loader',
+    'admin_tools.template_loaders.Loader',  # Allow {% extends "appname:template" %}
 )
 
 FORMAT_MODULE_PATH = 'djangofluent.settings.locale'  # Consistent date formatting
@@ -174,9 +178,9 @@ AXES_LOGIN_FAILURE_LIMIT = 3
 AXES_COOLOFF_TIME = 1  # hours
 AXES_IP_WHITELIST = INTERNAL_IPS
 
-COMMENTS_APP = 'fluent_comments'
-
 CRISPY_TEMPLATE_PACK = 'bootstrap3'
+
+COMMENTS_APP = 'fluent_comments'
 
 DJANGO_WYSIWYG_FLAVOR = 'tinymce_advanced'
 
@@ -187,7 +191,7 @@ FILEBROWSER_EXTENSIONS = {
     'Document': ['.pdf', '.doc', '.xls', '.csv', '.docx', '.xlsx'],
     'Video': ['.swf', '.mp4', '.flv', '.f4v', '.mov', '.3gp'],
 }
-FILEBROWSER_EXCLUDE = ('cache', '_admin_thumbnail\.', '_big\.', '_large\.', '_medium\.', '_small\.', '_thumbnail\.')
+FILEBROWSER_EXCLUDE = ('cache', '_versions', '_admin_thumbnail\.', '_big\.', '_large\.', '_medium\.', '_small\.', '_thumbnail\.')
 FILEBROWSER_MAX_UPLOAD_SIZE = 100 * 1024 * 1024  # in bytes
 FILEBROWSER_STRICT_PIL = True
 FILEBROWSER_ADMIN_VERSIONS = [
@@ -207,21 +211,22 @@ FILEBROWSER_VERSIONS = {
     'large': {'verbose_name': 'Large', 'width': 680, 'height': '', 'opts': ''},
 }
 
-FLUENT_BLOGS_BASE_TEMPLATE = 'base_blog.html'
 FLUENT_BLOGS_EXTRA_ADMIN_FIELDS = ('intro',)
 FLUENT_BLOGS_ENTRY_LINK_STYLE = '/{year}/{month}/{slug}/'
 FLUENT_BLOGS_INCLUDE_STATIC_FILES = False  # done in base.html by us.
 
-FLUENT_CONTENTS_CACHE_OUTPUT = True
-
+FLUENT_COMMENTS_MODERATE_AFTER_DAYS = 30
 FLUENT_COMMENTS_EXCLUDE_FIELDS = ('url',)
+FLUENT_COMMENTS_FIELD_ORDER = ('comment', 'name', 'email', 'url')
+FLUENT_COMMENTS_MODERATE_AFTER_DAYS = 30
+
+FLUENT_CONTENTS_CACHE_OUTPUT = True
 
 FLUENT_DASHBOARD_APP_ICONS = {}
 FLUENT_DASHBOARD_DEFAULT_MODULE = 'ModelList'
 
 #FLUENT_OEMBED_SOURCE = 'noembed'
 
-FLUENT_PAGES_BASE_TEMPLATE = 'base_flatpage.html'  # for fluent_pages.pagetypes.flatpage
 FLUENT_PAGES_DEFAULT_IN_NAVIGATION = True
 FLUENT_PAGES_TEMPLATE_DIR = os.path.join(SRC_DIR, 'frontend', 'templates')
 
@@ -236,6 +241,9 @@ PING_CHECKS = (
     'ping.checks.check_database_sites',
     #'ping.checks.check_celery', # Fails..
 )
+
+TAGGIT_TAGS_FROM_STRING = 'taggit_selectize.utils.parse_tags'
+TAGGIT_STRING_FROM_TAGS = 'taggit_selectize.utils.join_tags'
 
 THUMBNAIL_DEBUG = False
 THUMBNAIL_FORMAT = 'JPEG'

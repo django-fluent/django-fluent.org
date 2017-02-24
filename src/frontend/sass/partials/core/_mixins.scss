@@ -12,6 +12,11 @@
     @return url("#{$fonts-url-path}#{$path}");
 }
 
+@mixin media-xs-up {
+  // Phone and up
+  @media only screen and (min-width: $screen-xs-min) { @content; }
+}
+
 @mixin media-xs-down {
   // Phone and down
   @media only screen and (max-width: $screen-xs-max) { @content; }

@@ -4,8 +4,7 @@ Place project customizations in ``project.py``.
 """
 import os, re
 
-DEBUG          = True
-TEMPLATE_STRING_IF_INVALID = ''
+DEBUG = True
 
 
 ## --- Internal settings

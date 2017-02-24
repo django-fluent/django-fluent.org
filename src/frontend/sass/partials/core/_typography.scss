@@ -1,6 +1,7 @@
 @charset "utf-8";
 
 // Place any styles here that should only be used for textual content.
+// The default styles come from: bootstrap/_type.scss
 // Also consider overriding the variables, so bootstrap styles are rendered correctly.
 
 body {
@@ -184,7 +185,19 @@ iframe {
 
 figure.picture {
   // Picture plugin in the CMS
-  margin: 1em 0;
+  margin: ($padding-base-vertical * 3) 0 ($padding-base-vertical * 3) 0;
+
+  figcaption {
+    text-align: center;
+    color: $gray-dark;
+    font-size: ($font-size-base + 1px);
+    margin: $padding-large-vertical 0;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
 
   &.align-left {
     clear: left;

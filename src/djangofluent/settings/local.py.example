@@ -31,7 +31,7 @@ DATABASES = {
 ## -- Logging output
 
 # See queries
-LOGGING['loggers']['django.db']['level'] = 'DEBUG'
+#LOGGING['loggers']['django.db']['level'] = 'DEBUG'
 
 LOGGING['handlers'].update({
     'console': {
@@ -67,6 +67,10 @@ MIDDLEWARE_CLASSES = (
 
 DEBUG_TOOLBAR_PATCH_SETTINGS = False
 
+DEBUG_TOOLBAR_CONFIG = {
+    'SHOW_TEMPLATE_CONTEXT': False
+}
+
 DEBUG_TOOLBAR_PANELS = (
     #'debug_toolbar.panels.versions.VersionsPanel',
     #'debug_toolbar.panels.timer.TimerPanel',
@@ -81,4 +85,5 @@ DEBUG_TOOLBAR_PANELS = (
     #'debug_toolbar.panels.signals.SignalsPanel',
     'debug_toolbar.panels.logging.LoggingPanel',
     #'debug_toolbar.panels.redirects.RedirectsPanel',
+    'fluent_contents.panels.ContentPluginPanel',
 )

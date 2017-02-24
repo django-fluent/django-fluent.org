@@ -12,16 +12,17 @@
  */
 'use strict';
 
-var gulp = require('gulp');
-var sass = require('gulp-sass');
-var sourcemaps = require('gulp-sourcemaps');
-var livereload = require('gulp-livereload');
-var del = require('del');
+var gulp = require('gulp'),
+    sass = require('gulp-sass'),
+    sourcemaps = require('gulp-sourcemaps'),
+    livereload = require('gulp-livereload'),
+    del = require('del'),
+    notify = require('gulp-notify');
 
 var paths = {
   sass: './frontend/sass/',
   css: './frontend/static/frontend/css/',
-}
+};
 
 paths.sass_glob = paths.sass + '**/*.scss';
 
@@ -65,3 +66,16 @@ gulp.task('clean', function (cb) {
 
 // Default actions
 gulp.task('default', ['sass:watch']);
+
+
+function handleErrors(){
+  var args = Array.prototype.slice.call(arguments);
+
+  // Send error to notification center with gulp-notify
+  notify.onError({
+    title: "Compile Error",
+    message: "<%= error.message %>"
+  }).apply(this, args);
+
+  this.emit('end');
+}
