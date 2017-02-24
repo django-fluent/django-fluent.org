@@ -1,3 +1,27 @@
+/**
+ * Extra styles to be included in the TinyMCE editor
+ */
+:focus {
+  outline: 0;
+}
+
+a[name] {
+  padding: 0;
+}
+
+textarea {
+  overflow: auto;
+}
+
+* html table {
+  font-size: 100%;
+}
+
+img, a img, object {
+  border: 0;
+  vertical-align: bottom;
+}
+
 body {
   color: #666;
   font-family: Tahoma, Geneva, sans-serif;
@@ -159,7 +183,19 @@ iframe {
 }
 
 figure.picture {
-  margin: 1em 0;
+  margin: 18px 0 18px 0;
+}
+
+figure.picture figcaption {
+  text-align: center;
+  color: #333333;
+  font-size: 15px;
+  margin: 10px 0;
+}
+
+figure.picture img {
+  max-width: 100%;
+  height: auto;
 }
 
 figure.picture.align-left {
@@ -180,6 +216,14 @@ figure.picture.align-center {
 
 figure.picture + figure.picture.align-left, figure.picture + figure.picture.align-right {
   clear: none;
+}
+
+body {
+  padding: 8px;
+}
+
+img {
+  outline: 1px dotted #eee;
 }
 
 /*# sourceMappingURL=tinymce.css.map */

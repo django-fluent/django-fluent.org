@@ -1,7 +1,7 @@
 // These mixins make it easy to write media queries for device specific CSS.
 // Usage:
 //
-//  @include media-phone-only { sass rules }
+//  @include media-xs-up { sass rules }
 //
 
 @function image-url($path) {
