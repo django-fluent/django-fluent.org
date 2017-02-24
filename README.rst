@@ -32,7 +32,7 @@ This project uses the following layout:
 * ``src/manage.py`` Django management tool
 * ``src/Guardfile`` Guard configuration
 * ``src/config.rb`` Compass configuration
-* ``src/requirements.txt`` PIP requirements file
+* ``src/requirements/*.txt`` PIP requirements files
 * ``src/apps/`` the Django apps.
 * ``src/frontend/`` all frontend templates/JS/CSS code.
 * ``src/djangofluent/`` The project folder with settings, WSGI hook and URLconf.
@@ -68,7 +68,7 @@ To setup a local development environment::
     # Create the environment:
     mkvirtualenv django-fluent.org
     cd src
-    pip install -r requirements.txt
+    pip install -r requirements/dev.txt
 
     # Configure MySQL:
     mysql -u root -p
