@@ -7,7 +7,7 @@ python:
 #- '3.4'  # broken by twitterfeed package
 
 env:
-- DJANGO_SETTINGS_MODULE=djangofluent.settings.unittest
+- DJANGO_SETTINGS_MODULE=djangofluent.settings.env.unittest
 
 install:
 - pip install -U pip wheel setuptools
