@@ -14,7 +14,7 @@ uWSGI == 2.0.15
 # CMS libraries
 django-fluent-blogs == 1.2.4
 django-fluent-comments == 1.4.1
-django-fluent-contents[code,text,oembeditem] == 1.1.11
+django-fluent-contents[text,oembeditem,code]==1.2
 django-fluent-dashboard == 1.0a1
 django-fluent-pages == 1.1.1
 django-fluent-utils >= 1.3
