@@ -3,7 +3,7 @@
 
 # Testing
 mock == 2.0.0
-coverage == 4.3.4
+coverage==4.4
 
 # Pytest (optional testrunner)
 pytest == 3.0.7
