@@ -8,7 +8,7 @@ if not settings.configured:
     os.environ.setdefault("DJANGO_SETTINGS_MODULE", "djangofluent.settings.env.unittest")
 
 DEFAULT_TEST_APPS = [
-    'apps',
+    'djangofluent',
     'frontend',
 ]
 

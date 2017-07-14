@@ -54,8 +54,8 @@ INSTALLED_APPS += (
     'fluent_contents.plugins.text',
 
     # Site parts
-    'apps.themeelements',
-    'apps.wysiywg_config',
+    'djangofluent.apps.themeelements',
+    'djangofluent.apps.wysiywg_config',
 
     # Support libs
     'analytical',
