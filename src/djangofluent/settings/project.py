@@ -112,8 +112,8 @@ FORMAT_MODULE_PATH = 'djangofluent.settings.locale'  # Consistent date formattin
 FILE_UPLOAD_PERMISSIONS = 0o644
 
 IGNORABLE_404_URLS = (
-    #re.compile(r'^/favicon.ico$'),
-    #re.compile(r'^/wp-login.php$'),
+    # re.compile(r'^/favicon.ico$'),
+    # re.compile(r'^/wp-login.php$'),
 )
 
 
@@ -168,7 +168,7 @@ LOGGING = {
 }
 
 
-## -- Third party app settings
+# -- Third party app settings
 
 ADMIN_TOOLS_INDEX_DASHBOARD = 'fluent_dashboard.dashboard.FluentIndexDashboard'
 ADMIN_TOOLS_APP_INDEX_DASHBOARD = 'fluent_dashboard.dashboard.FluentAppIndexDashboard'
@@ -248,6 +248,6 @@ THUMBNAIL_DEBUG = False
 THUMBNAIL_FORMAT = 'JPEG'
 
 
-## -- Site app settings
+# -- Site app settings
 
 PACKAGEITEM_INTERNAL_GITHUB_ORG = 'edoburu'

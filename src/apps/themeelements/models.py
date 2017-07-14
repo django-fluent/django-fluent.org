@@ -100,10 +100,8 @@ class PackageItem(ContentItem):
         verbose_name_plural = _("Python Package items")
         ordering = ('slug',)
 
-
     def __str__(self):
         return self.slug
-
 
     def save(self, *args, **kwargs):
         if not self.rtd_html_url:
@@ -112,11 +110,9 @@ class PackageItem(ContentItem):
                 self.rtd_html_url = rtd_info['subdomain']
         super(PackageItem, self).save(*args, **kwargs)
 
-
     @property
     def is_external(self):
         return not self.repository_url.startswith('https://github.com/{0}/'.format(settings.PACKAGEITEM_INTERNAL_GITHUB_ORG))
-
 
     @property
     def repository_name(self):
@@ -133,7 +129,6 @@ class PackageItem(ContentItem):
             return "Google Code"
         return _("Unknown")
 
-
     @cached_property
     def rtd_info(self):
         """
@@ -142,11 +137,9 @@ class PackageItem(ContentItem):
         cachekey = 'readthedocs.projectinfo.{0}'.format(self.slug)
         return _fetch_json(cachekey, 'http://readthedocs.org/api/v1/project/{slug}/?format=json'.format(slug=self.slug))
 
-
     @property
     def rtd_subdomain(self):
         return self.rtd_info['subdomain'] if self.rtd_info else None
-
 
     @cached_property
     def github_info(self):
@@ -160,11 +153,9 @@ class PackageItem(ContentItem):
         cachekey = 'github.repositoryinfo.{0}.{1}'.format(org, repos)
         return _fetch_json(cachekey, 'https://api.github.com/repos/{0}/{1}'.format(org, repos))
 
-
     @property
     def github_description(self):
         return self.github_info['description'] if self.github_info else None
-
 
 
 def _fetch_json(cachekey, url, ignore_status=(404,)):

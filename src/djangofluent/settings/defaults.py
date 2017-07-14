@@ -2,12 +2,13 @@
 The default settings for any Django project.
 Place project customizations in ``project.py``.
 """
-import os, re
+import os
+import re
 
 DEBUG = True
 
 
-## --- Internal settings
+# --- Internal settings
 
 SITE_ID = 1
 
@@ -21,12 +22,12 @@ SRC_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.realpath(__fil
 ROOT_DIR = os.path.dirname(SRC_DIR)
 
 # Paths
-MEDIA_ROOT   = ROOT_DIR + '/web/media/'
-MEDIA_URL    = '/media/'        # Must end with /
+MEDIA_ROOT = ROOT_DIR + '/web/media/'
+MEDIA_URL = '/media/'        # Must end with /
 ROOT_URLCONF = 'djangofluent.urls'
 
 STATIC_ROOT = ROOT_DIR + '/web/static/'
-STATIC_URL  = '/static/'
+STATIC_URL = '/static/'
 
 SESSION_COOKIE_HTTPONLY = True  # can't read cookie from JavaScript
 X_FRAME_OPTIONS = 'SAMEORIGIN'  # Prevent iframes. Can be overwritten per view using the @xframe_options_.. decorators
@@ -38,7 +39,7 @@ IGNORABLE_404_URLS = (
 )
 
 
-## --- Plugin components
+# --- Plugin components
 
 INSTALLED_APPS = (
     'django.contrib.auth',
@@ -98,7 +99,7 @@ CACHES = {
         'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',
         'KEY_PREFIX': 'djangofluent.local',
         'LOCATION': '127.0.0.1:11211',
-        'TIMEOUT': 24*3600
+        'TIMEOUT': 24 * 3600
     },
 }
 
@@ -107,7 +108,7 @@ SESSION_ENGINE = 'django.contrib.sessions.backends.cached_db'
 TEST_RUNNER = 'django.test.runner.DiscoverRunner'
 
 
-## --- App settings
+# --- App settings
 
 COMPRESS_CSS_FILTERS = (
     'compressor.filters.css_default.CssAbsoluteFilter',

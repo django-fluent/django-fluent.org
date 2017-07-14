@@ -9,7 +9,7 @@ CSRF_COOKIE_SECURE = True
 
 # Example:
 #
-#DATABASES = {
+# DATABASES = {
 #    'default': {
 #        'ENGINE':   'django.db.backends.postgresql_psycopg2',
 #        'NAME':     'beta.django-fluent.org',
