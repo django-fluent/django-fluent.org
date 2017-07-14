@@ -2,9 +2,9 @@ import admin_tools.urls
 import django.contrib.sitemaps.views
 import django.views.defaults
 import django.views.static
+import django_healthchecks.urls
 import fluent_comments.urls
 import fluent_pages.urls
-import ping.urls
 import taggit_selectize.urls
 import tinymce.urls
 
@@ -47,7 +47,7 @@ urlpatterns = [
     url(r'^robots.txt$', RobotsTxtView.as_view()),
 
     # Monitoring API's
-    url(r'^api/ping/', include(ping.urls)),
+    url(r'^api/ping/', include(django_healthchecks.urls)),
 
     # CMS modules
     url(r'^blog/comments/', include(fluent_comments.urls)),

@@ -235,11 +235,11 @@ FLUENT_TEXT_PRE_FILTERS = (
     'fluent_contents.plugins.text.filters.smartypants.smartypants_filter',
 )
 
-PING_CHECKS = (
-    'ping.checks.check_database_sessions',
-    'ping.checks.check_database_sites',
-    #'ping.checks.check_celery', # Fails..
-)
+HEALTH_CHECKS = {
+    'database': 'django_healthchecks.contrib.check_database',
+    'cache': 'django_healthchecks.contrib.check_cache_default',
+    'ip': 'django_healthchecks.contrib.check_remote_addr',
+}
 
 TAGGIT_TAGS_FROM_STRING = 'taggit_selectize.utils.parse_tags'
 TAGGIT_STRING_FROM_TAGS = 'taggit_selectize.utils.join_tags'

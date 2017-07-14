@@ -30,11 +30,11 @@ django-compressor == 2.1.1
 django-contrib-comments == 1.8.0
 django-crispy-forms == 1.6.1
 django-filebrowser-no-grappelli==3.7.2
+django-healthchecks == 1.2.0
 django-mptt == 0.8.7
 django-parler == 1.8
 django-polymorphic==1.2
 django-polymorphic-tree == 1.4
--e git+https://github.com/vdboor/django-ping.git@79f486d7becc0f58100adca22f700c7f9de235cf#egg=django_ping
 django-slug-preview == 1.0.2
 django-singleton-admin == 0.0.4
 django-staff-toolbar == 1.1.1
