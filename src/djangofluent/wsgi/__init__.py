@@ -8,7 +8,7 @@ def bootstrap_wsgi_settings(wsgi_file, env_name=None):
     Setup the base configuration:
 
     * Includes the project root to ``sys.path``
-    * Set ``DJANGO_SETTINGS_MODULE`` to ``PROJECT_NAME.settings.env.WSGI_FILENAME`` by default.
+    * Set ``DJANGO_SETTINGS_MODULE`` to ``PROJECT_NAME.settings.WSGI_FILENAME`` by default.
 
     This function assumes the ``wsgi_file`` is stored at: src_folder/project_name/settings/env/env_name.py
     """
@@ -24,7 +24,7 @@ def bootstrap_wsgi_settings(wsgi_file, env_name=None):
     # Avoid having to do this in the application server
     if src_folder not in sys.path:
         sys.path.append(src_folder)
-    os.environ.setdefault('DJANGO_SETTINGS_MODULE', project_name + '.settings.env.' + env_name)
+    os.environ.setdefault('DJANGO_SETTINGS_MODULE', project_name + '.settings.' + env_name)
 
     # Fix file upload errors
     os.environ['LC_ALL'] = "en_US.UTF-8"

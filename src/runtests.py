@@ -5,7 +5,7 @@ from django.conf import settings
 from django.core.management import execute_from_command_line
 
 if not settings.configured:
-    os.environ.setdefault("DJANGO_SETTINGS_MODULE", "djangofluent.settings.env.unittest")
+    os.environ.setdefault("DJANGO_SETTINGS_MODULE", "djangofluent.settings.unittest")
 
 DEFAULT_TEST_APPS = [
     'djangofluent',

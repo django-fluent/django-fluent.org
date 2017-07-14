@@ -14,20 +14,6 @@ FLUENT_CONTENTS_CACHE_OUTPUT = True   # Disable caching if needed
 FLUENT_CONTENTS_CACHE_PLACEHOLDER_OUTPUT = False  # Not in dev.
 
 
-## -- Local system settings
-
-DATABASES = {
-    'default': {
-        # Choose between PostgreSQL or MySQL:
-        'ENGINE':   'django.db.backends.postgresql_psycopg2',
-        #'ENGINE':   'django.db.backends.mysql',
-        'NAME':     'django-fluent.org',
-        'USER':     'django-fluent.org',
-        'PASSWORD': 'testtest',
-    },
-}
-
-
 ## -- Logging output
 
 # See queries
