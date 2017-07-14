@@ -1,0 +1,202 @@
+[
+{
+  "model": "auth.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$36000$CYJY17pQDFSG$hoOZzVh9zei9L4qt5cmTFxyhEUT87AbiSb6Y2wRJtoY=",
+    "last_login": "2017-07-15T18:55:58.664Z",
+    "is_superuser": true,
+    "username": "demo",
+    "first_name": "Demo",
+    "last_name": "User",
+    "email": "demo@example.org",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2016-05-13T14:00:57Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "sites.site",
+  "pk": 1,
+  "fields": {
+    "domain": "example.com",
+    "name": "example"
+  }
+},
+{
+  "model": "blogpage.blogpage",
+  "pk": 2,
+  "fields": {}
+},
+{
+  "model": "fluent_pages.urlnode",
+  "pk": 1,
+  "fields": {
+    "polymorphic_ctype": [
+      "fluentpage",
+      "fluentpage"
+    ],
+    "parent": null,
+    "parent_site": [
+      "example.com"
+    ],
+    "status": "p",
+    "publication_date": null,
+    "publication_end_date": null,
+    "in_navigation": false,
+    "in_sitemaps": true,
+    "key": null,
+    "author": [
+      "demo"
+    ],
+    "creation_date": "2016-05-13T14:23:29.685Z",
+    "modification_date": "2017-07-15T18:57:23.071Z",
+    "lft": 1,
+    "rght": 2,
+    "tree_id": 1,
+    "level": 0
+  }
+},
+{
+  "model": "fluent_pages.urlnode",
+  "pk": 2,
+  "fields": {
+    "polymorphic_ctype": [
+      "blogpage",
+      "blogpage"
+    ],
+    "parent": null,
+    "parent_site": [
+      "example.com"
+    ],
+    "status": "p",
+    "publication_date": null,
+    "publication_end_date": null,
+    "in_navigation": true,
+    "in_sitemaps": true,
+    "key": null,
+    "author": [
+      "demo"
+    ],
+    "creation_date": "2016-05-14T10:02:58.991Z",
+    "modification_date": "2016-05-15T13:50:50.844Z",
+    "lft": 1,
+    "rght": 2,
+    "tree_id": 2,
+    "level": 0
+  }
+},
+{
+  "model": "fluent_pages.urlnode_translation",
+  "pk": 1,
+  "fields": {
+    "language_code": "en",
+    "title": "Homepage",
+    "slug": "homepage",
+    "override_url": "/",
+    "_cached_url": "/",
+    "master": 1
+  }
+},
+{
+  "model": "fluent_pages.urlnode_translation",
+  "pk": 2,
+  "fields": {
+    "language_code": "en",
+    "title": "Blog",
+    "slug": "blog",
+    "override_url": "",
+    "_cached_url": "/blog/",
+    "master": 2
+  }
+},
+{
+  "model": "fluent_pages.htmlpagetranslation",
+  "pk": 1,
+  "fields": {
+    "language_code": "en",
+    "meta_keywords": null,
+    "meta_description": null,
+    "meta_title": null,
+    "master": 1
+  }
+},
+{
+  "model": "fluent_pages.htmlpagetranslation",
+  "pk": 2,
+  "fields": {
+    "language_code": "en",
+    "meta_keywords": "",
+    "meta_description": "",
+    "meta_title": "",
+    "master": 2
+  }
+},
+{
+  "model": "fluent_pages.pagelayout",
+  "pk": 1,
+  "fields": {
+    "key": "default",
+    "title": "Default",
+    "template_path": "pages/default.html"
+  }
+},
+{
+  "model": "fluent_pages.pagelayout",
+  "pk": 2,
+  "fields": {
+    "key": "default-sidebar",
+    "title": "Default + sidebar",
+    "template_path": "pages/default-sidebar.html"
+  }
+},
+{
+  "model": "fluentpage.fluentpage",
+  "pk": 1,
+  "fields": {
+    "layout": 1
+  }
+},
+{
+  "model": "fluent_contents.placeholder",
+  "pk": 4,
+  "fields": {
+    "slot": "main",
+    "role": "m",
+    "parent_type": [
+      "fluentpage",
+      "fluentpage"
+    ],
+    "parent_id": 1,
+    "title": "Main"
+  }
+},
+{
+  "model": "fluent_contents.contentitem",
+  "pk": 1,
+  "fields": {
+    "polymorphic_ctype": [
+      "text",
+      "textitem"
+    ],
+    "parent_type": [
+      "fluentpage",
+      "fluentpage"
+    ],
+    "parent_id": 1,
+    "language_code": "en",
+    "placeholder": 4,
+    "sort_order": 0
+  }
+},
+{
+  "model": "text.textitem",
+  "pk": 1,
+  "fields": {
+    "text": "<h2>Welcome to django-fluent.org</h2>\n<p>Flexible, powerful content management, adjustable to your needs.</p>",
+    "text_final": null
+  }
+}
+]
