@@ -58,5 +58,5 @@ python-akismet >= 0.3.0
 
 # Debugging
 django-debugtools == 1.7.2
-ipython == 5.4.1
+ipython==6.1.0
 ptpython == 0.39
