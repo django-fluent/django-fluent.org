@@ -24,7 +24,7 @@ django-analytical == 2.2.2
 django-admin-tools==0.8.1
 django-any-imagefield == 0.9
 django-any-urlfield==2.4.2
-django-axes == 2.3.2
+django-axes==2.3.3
 django-categories-i18n == 1.0
 django-compressor == 2.1.1
 django-contrib-comments == 1.8.0
