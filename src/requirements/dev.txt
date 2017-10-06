@@ -9,13 +9,13 @@
 
 # Debugging
 django-debug-toolbar==1.8
-django-extensions==1.8.1
+django-extensions==1.9.1
 
 # Documentation
-Sphinx==1.6.3
+Sphinx==1.6.4
 sphinx-rtd-theme >= 0.2.4
 
 # Profiling
-gprof2dot == 2016.10.13
+gprof2dot == 2017.9.19
 geordi == 0.3
 yet-another-django-profiler == 1.1.0
