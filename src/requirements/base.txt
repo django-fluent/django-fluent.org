@@ -46,7 +46,7 @@ django-tinymce == 2.6.0
 django-wysiwyg == 0.8.0
 html5lib == 1.0b10
 micawber == 0.3.4
-pytz == 2017.2
+pytz==2017.3
 smartypants == 2.0.0
 sorl-thumbnail == 12.4a1
 taggit-selectize == 2.3.0
