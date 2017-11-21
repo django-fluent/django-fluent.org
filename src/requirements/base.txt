@@ -1,7 +1,7 @@
 # Install with: `pip install -r requirements/base.txt`
 
 # Infrastructure
-Django == 1.11.6
+Django == 1.11.7
 Pillow == 4.3.0
 psycopg2 == 2.7.3.2
 python-memcached == 1.58
@@ -24,7 +24,7 @@ django-analytical == 2.3.0
 django-admin-tools == 0.8.1
 django-any-imagefield == 0.9
 django-any-urlfield == 2.4.2
-django-axes == 2.3.3
+django-axes == 3.0.1
 django-categories-i18n == 1.0
 django-compressor == 2.2
 django-contrib-comments == 1.8.0
@@ -33,7 +33,7 @@ django-environ == 0.4.4
 django-filebrowser-no-grappelli == 3.7.2
 django-healthchecks == 1.2.0
 django-mptt == 0.8.7
-django-parler == 1.8
+django-parler == 1.8.1
 django-polymorphic == 1.3
 django-polymorphic-tree == 1.4.1
 django-slug-preview == 1.0.2
@@ -46,9 +46,9 @@ django-tinymce == 2.6.0
 django-wysiwyg == 0.8.0
 html5lib == 1.0b10
 micawber == 0.3.4
-pytz == 2017.2
+pytz == 2017.3
 smartypants == 2.0.0
-sorl-thumbnail == 12.4a1
+sorl-thumbnail == 12.4.1
 taggit-selectize == 2.3.0
 
 # Installed dependencies
