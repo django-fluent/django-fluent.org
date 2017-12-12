@@ -5,7 +5,7 @@ Django == 1.11.7
 Pillow == 4.3.0
 psycopg2 == 2.7.3.2
 python-memcached == 1.58
-raven == 6.3.0
+raven==6.4.0
 
 # WSGI container, install in virtualenv to have latest features.
 # Needs `export UWSGI_PROFILE=default` to build python plugin (deploy scripts do this automatically)
