@@ -4,7 +4,7 @@
 Django == 1.11.7
 Pillow == 4.3.0
 psycopg2 == 2.7.3.2
-python-memcached == 1.58
+python-memcached==1.59
 raven == 6.3.0
 
 # WSGI container, install in virtualenv to have latest features.
