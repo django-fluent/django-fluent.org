@@ -47,7 +47,7 @@ django-wysiwyg == 0.8.0
 html5lib == 1.0b10
 micawber == 0.3.4
 pytz == 2017.3
-smartypants == 2.0.0
+smartypants==2.0.1
 sorl-thumbnail == 12.4.1
 taggit-selectize == 2.3.0
 
