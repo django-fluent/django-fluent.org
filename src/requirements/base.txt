@@ -33,7 +33,7 @@ django-environ == 0.4.4
 django-filebrowser-no-grappelli == 3.7.2
 django-healthchecks == 1.2.0
 django-mptt == 0.8.7
-django-parler == 1.8.1
+django-parler==1.9.2
 django-polymorphic == 1.3
 django-polymorphic-tree == 1.4.2
 django-slug-preview == 1.0.2
