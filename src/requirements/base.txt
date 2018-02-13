@@ -49,7 +49,7 @@ micawber == 0.3.4
 pytz == 2017.3
 smartypants == 2.0.0
 sorl-thumbnail == 12.4.1
-taggit-selectize == 2.3.0
+taggit-selectize==2.4.0
 
 # Installed dependencies
 beautifulsoup4 >= 4.5.3
