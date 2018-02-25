@@ -13,7 +13,7 @@ uWSGI==2.0.16
 
 # CMS libraries
 django-fluent-blogs==2.0.2
-django-fluent-comments == 1.4.3
+django-fluent-comments==2.0
 django-fluent-contents[text,oembeditem,code] == 1.2.2
 django-fluent-dashboard == 1.0a1
 django-fluent-pages == 1.1.3
