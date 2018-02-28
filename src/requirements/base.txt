@@ -20,7 +20,7 @@ django-fluent-pages==2.0.3
 django-fluent-utils >= 1.4.1
 
 # Support libs
-django-analytical == 2.3.0
+django-analytical==2.4.0
 django-admin-tools == 0.8.1
 django-any-imagefield == 0.9
 django-any-urlfield == 2.4.2
