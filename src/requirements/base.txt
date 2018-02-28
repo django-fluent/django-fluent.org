@@ -9,7 +9,7 @@ raven==6.5.0
 
 # WSGI container, install in virtualenv to have latest features.
 # Needs `export UWSGI_PROFILE=default` to build python plugin (deploy scripts do this automatically)
-uWSGI == 2.0.15
+uWSGI==2.0.17
 
 # CMS libraries
 django-fluent-blogs == 1.3
