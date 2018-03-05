@@ -1,5 +1,5 @@
 update: insecure
-schedule: "every day"
+schedule: "every week"
 branch_prefix: pyup/
 requirements:
 - src/requirements/base.txt
