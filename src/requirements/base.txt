@@ -45,7 +45,7 @@ django-threadedcomments == 1.1
 django-tinymce==2.7.0
 django-wysiwyg == 0.8.0
 html5lib==1.0.1
-micawber == 0.3.4
+micawber==0.3.5
 pytz == 2017.3
 smartypants == 2.0.0
 sorl-thumbnail == 12.4.1
