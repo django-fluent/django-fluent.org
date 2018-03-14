@@ -117,9 +117,9 @@
   "pk": 1,
   "fields": {
     "language_code": "en",
-    "meta_keywords": null,
-    "meta_description": null,
-    "meta_title": null,
+    "meta_keywords": "",
+    "meta_description": "",
+    "meta_title": "",
     "master": 1
   }
 },
