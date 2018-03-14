@@ -195,7 +195,7 @@ CACHES = {
 }
 
 DATABASES = {
-    'default': env.db(default='postgresql://djangofluent:testtest@localhost/django-fluent.org'),
+    'default': env.db(default='postgresql://djangofluent:testtest@127.0.0.1/django-fluent.org'),
 }
 
 locals().update(env.email_url(default='smtp://'))
