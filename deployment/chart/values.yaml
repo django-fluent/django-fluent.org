@@ -1,0 +1,74 @@
+# These variables can be overwritten on helm deployment:
+#
+image:
+  repository: TODO
+  tag: latest  # Replace with --set='..' on the command line!
+  pullPolicy: IfNotPresent
+  pullSecrets: {}
+
+# Overridable pod/container config:
+env: {}
+envSecret: ""
+
+service:
+  type: ClusterIP
+  port: 80
+
+replicaCount: 1
+
+securityContext: {}
+nodeSelector: {}
+tolerations: []
+affinity: {}
+
+livenessProbe:
+  enabled: true
+  initialDelaySeconds: 0
+  periodSeconds: 60
+  timeoutSeconds: 60  # default is 1
+  successThreshold: 1
+  failureThreshold: 3
+  url: /api/health/ip
+
+readinessProbe:
+  enabled: true
+  initialDelaySeconds: 0
+  periodSeconds: 10
+  timeoutSeconds: 3  # default is 1
+  successThreshold: 1
+  failureThreshold: 3
+  url: /api/ready/
+
+ingress:
+  enabled: false
+
+  ## Used to create an Ingress record.
+  # hosts:
+  #   - example.local
+
+  annotations:
+    # kubernetes.io/ingress.class: nginx
+    # kubernetes.io/tls-acme: "true"
+
+  ## Secrets must be manually created in the namespace.
+  # tls:
+  #   - secretName: chart-example-tls
+  #     hosts:
+  #       - chart-example.local
+
+persistence:
+  enabled: false
+  media:
+    accessMode: ReadWriteOnce
+    size: 100Mi
+    #existingClaim: ""
+    #storageClass: ""
+    #matchLabels: {}
+
+resources:
+  limits:
+    memory: 256Mi
+#    cpu: 100m
+  requests:
+    memory: 200Mi
+#    cpu: 100m

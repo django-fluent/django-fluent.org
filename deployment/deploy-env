@@ -1,0 +1,24 @@
+#!/bin/sh
+set -e
+cd `dirname $0`
+
+# Simulate CI variables when running manually:
+source ./deploy-env.conf
+export KUBE_NAMESPACE="${KUBE_NAMESPACE:-$PROJECT_NAMESPACE}"
+export CI_ENVIRONMENT_SLUG="${CI_ENVIRONMENT_SLUG:-$PROJECT_ENVIRONMENT_SLUG}"
+
+if [ -z "$1" ]; then
+  echo "Usage: $0 env [helm-args]" >&2
+  exit 1
+fi
+
+ENV="$1"; shift
+RELEASE_NAME="$RELEASE_NAME_PREFIX-$ENV"
+
+./create-release $RELEASE_NAME ./chart/ -f "values-$ENV.yml" "$@"
+
+if [ -z "$CI_ENVIRONMENT_URL" ]; then
+  exit 0
+fi
+
+./wait-for-release $RELEASE_NAME $CI_ENVIRONMENT_URL

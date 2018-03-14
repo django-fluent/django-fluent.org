@@ -1,20 +1,26 @@
-from djangofluent.settings.defaults import *
+from . import *
 
 # All environment settings can be overwritten with `docker run -e`
 
-ALLOWED_HOSTS = env.list('ALLOWED_HOSTS', default=('django-fluent.org', 'localhost',))
+# Don't allow all hosts
+ALLOWED_HOSTS = env.list('ALLOWED_HOSTS', default=['django-fluent.org'])
 
+# Change some defaults
 DEBUG = env.bool('DJANGO_DEBUG', default=False)
+COMPRESS_ENABLED = env.bool('COMPRESS_ENABLED', not DEBUG)
+SESSION_COOKIE_SECURE = env.bool('SESSION_COOKIE_SECURE', not DEBUG)
+CSRF_COOKIE_SECURE = env.bool('CSRF_COOKIE_SECURE', not DEBUG)
 
-if not DEBUG:
-    # Production!
-    COMPRESS_ENABLED = True
-    FLUENT_CONTENTS_CACHE_OUTPUT = True
-    FLUENT_CONTENTS_CACHE_PLACEHOLDER_OUTPUT = True
+FLUENT_CONTENTS_CACHE_OUTPUT = env.bool('FLUENT_CONTENTS_CACHE_OUTPUT', not DEBUG)
+FLUENT_CONTENTS_CACHE_PLACEHOLDER_OUTPUT = env.bool('FLUENT_CONTENTS_CACHE_PLACEHOLDER_OUTPUT', not DEBUG)
 
-    # https only site, see http://ponycheckup.com/
-    CSRF_COOKIE_SECURE = env.bool('CSRF_COOKIE_SECURE', True)
-    SESSION_COOKIE_SECURE = env.bool('SESSION_COOKIE_SECURE', True)
+# Raven is only enabled in production to avoid warnings in development
+INSTALLED_APPS += (
+    'raven.contrib.django.raven_compat',
+    #'gunicorn',
+)
 
-    # SSL settings
-    SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+# Keep templates in memory
+TEMPLATES[0]['OPTIONS']['loaders'] = (
+    ('django.template.loaders.cached.Loader', TEMPLATES[0]['OPTIONS']['loaders']),
+)

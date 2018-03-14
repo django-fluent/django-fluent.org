@@ -6,6 +6,8 @@
 *.egg-info/
 *.sql.gz
 .coverage
+*.secrets
+.cache/
 .project
 .idea/
 .pydevproject

@@ -65,7 +65,7 @@ gulp.task('clean', function (cb) {
 });
 
 // Default actions
-gulp.task('default', ['sass:watch']);
+gulp.task('default', ['sass']);
 
 
 function handleErrors(){

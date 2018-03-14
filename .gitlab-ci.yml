@@ -1,0 +1,67 @@
+---
+image: edoburu/gitlab-kubernetes-client:kubectl-1.9.2-helm-2.8.0
+
+stages:
+- package
+- deploy
+
+before_script:
+  # Allow sh substitution
+  # CI_PIPELINE_ID is useful to force redeploys on pipeline triggers
+  # CI_COMMIT_TAG is only filled for tags.
+  # CI_COMMIT_REF_NAME can be a tag or branch name
+  - export IMAGE_TAG=ci_${CI_PIPELINE_ID}_${CI_COMMIT_TAG:-git_${CI_COMMIT_REF_NAME}_$CI_COMMIT_SHA}
+  - export GIT_VERSION=${CI_COMMIT_TAG:-$CI_COMMIT_REF_NAME}@$CI_COMMIT_SHA
+
+package:
+  tags:
+  - container-builder
+  #services:
+  #- postgres:latest
+  #- redis:latest
+  stage: package
+  script:
+  - echo "data_file=/tmp/coveragerc" >> src/.coveragerc  # Fix write issues for coverage
+  - docker login -u $CI_REGISTRY_USER -p $CI_JOB_TOKEN $CI_REGISTRY
+  - docker build --pull --tag $CI_REGISTRY_IMAGE:$IMAGE_TAG --build-arg GIT_VERSION=$GIT_VERSION .
+  - docker run --rm $CI_REGISTRY_IMAGE:$IMAGE_TAG py.test --cov --nomigrations
+  - docker push $CI_REGISTRY_IMAGE:$IMAGE_TAG
+  only:
+  - tags
+  - beta
+  - triggers
+  - schedules
+
+deploy to beta:
+  stage: deploy
+  tags:
+  - container-builder
+  environment:
+    name: test
+    url: https://djangofluent.test.edoburu.nl/
+  script:
+  - ./deployment/deploy-env tst --set=image.repository=$CI_REGISTRY_IMAGE,image.tag=$IMAGE_TAG
+  only:
+  - beta
+  - triggers
+  except:
+  - master  # when part of trigger
+
+deploy to production:
+  stage: deploy
+  tags:
+  - container-builder
+  environment:
+    name: production
+    url: https://django-fluent.org/
+  script:
+    # This is a fancy way to execute:
+    # helm upgrade --install --tiller-namespace fluentdemo --namespace fluentdemo --reset-values djangofluent-prd ./deployment/chart/ -f deployment/values-prd.yml --set=...
+    # By default we'd use the docker hub registry, but override in this case with the GitLab container registry.
+  - ./deployment/deploy-env prd --set=image.repository=$CI_REGISTRY_IMAGE,image.tag=$IMAGE_TAG
+  only:
+  - tags
+  - triggers
+  - schedules
+  except:
+  - beta  # when part of trigger

@@ -13,9 +13,15 @@ django-extensions == 2.0.5
 
 # Documentation
 Sphinx == 1.7.1
-sphinx-rtd-theme >= 0.2.4
+sphinx-rtd-theme == 0.2.4
 
 # Profiling
 gprof2dot == 2017.9.19
 geordi == 0.3
 yet-another-django-profiler == 1.1.0
+
+# Debugging
+django-debugtools == 1.7.3
+ipython == 5.5.0; python_version < '3.0'  # pyup: ignore
+ipython == 6.2.1; python_version >= '3.0'
+ptpython == 0.41

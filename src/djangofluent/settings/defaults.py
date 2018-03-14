@@ -5,6 +5,7 @@ import environ
 import os
 import re
 
+import raven.exceptions
 from django.utils.translation import ugettext_lazy as _
 
 import djangofluent
@@ -50,10 +51,8 @@ EMAIL_SUBJECT_PREFIX = '[Django][djangofluent] '
 # --- Security
 
 SECRET_KEY = env.str('DJANGO_SECRET_KEY', '!k95k&wn43_8b5rp*c$+9pzcl=$w9s9o&t##x7os$3p3l%57&w')
-
 SESSION_COOKIE_HTTPONLY = True  # can't read cookie from JavaScript
 SESSION_COOKIE_SECURE = env.bool('SESSION_COOKIE_SECURE', False)
-
 CSRF_COOKIE_SECURE = env.bool('CSRF_COOKIE_SECURE', False)
 
 X_FRAME_OPTIONS = 'SAMEORIGIN'  # Prevent iframes. Can be overwritten per view using the @xframe_options_.. decorators
@@ -145,9 +144,14 @@ STATICFILES_FINDERS = (
     'compressor.finders.CompressorFinder',
 )
 
+# Generate cache-busing static file names that can have a far-future expire headers
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
 MIDDLEWARE_CLASSES = (
     'raven.contrib.django.middleware.SentryMiddleware',  # make 'request' available on all logs.
     'raven.contrib.django.middleware.Sentry404CatchMiddleware',  # on 404, report to sentry.
+    'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -202,8 +206,13 @@ locals().update(env.email_url(default='smtp://'))
 
 RAVEN_CONFIG = {
     'dsn': env.str('SENTRY_DSN', default=''),
-    'release': djangofluent.version_sha,
 }
+
+try:
+    GIT_VERSION = raven.fetch_git_sha('..')
+    RAVEN_CONFIG['release'] = GIT_VERSION
+except raven.exceptions.InvalidGitRepository:
+    pass
 
 LOGGING = {
     'version': 1,
@@ -269,6 +278,8 @@ CRISPY_TEMPLATE_PACK = 'bootstrap3'
 
 COMMENTS_APP = 'fluent_comments'
 
+COMPRESS_CSS_HASHING_METHOD = None  # WhiteNoise already hashes files. Use 'content' otherwise for multi-server setups
+
 COMPRESS_CSS_FILTERS = (
     'compressor.filters.css_default.CssAbsoluteFilter',
     'compressor.filters.cssmin.CSSMinFilter',
@@ -278,7 +289,7 @@ COMPRESS_JS_FILTERS = (
     'compressor.filters.jsmin.JSMinFilter',
 )
 
-COMPRESS_ENABLED = env.bool('COMPRESS_ENABLED', False)
+COMPRESS_ENABLED = env.bool('COMPRESS_ENABLED', not DEBUG)
 
 DJANGO_WYSIWYG_FLAVOR = 'tinymce_advanced'
 
@@ -310,6 +321,7 @@ FILEBROWSER_VERSIONS = {
     'big': {'verbose_name': 'Big', 'width': 460, 'height': '', 'opts': ''},
     'large': {'verbose_name': 'Large', 'width': 680, 'height': '', 'opts': ''},
 }
+FILEBROWSER_VERSION_QUALITY = 80  # Good enough visually, and for Google Pagespeed
 
 FLUENT_BLOGS_EXTRA_ADMIN_FIELDS = ('intro',)
 FLUENT_BLOGS_ENTRY_LINK_STYLE = '/{year}/{month}/{slug}/'
@@ -342,22 +354,23 @@ HEALTH_CHECKS = {
     'database': 'django_healthchecks.contrib.check_database',
     'cache': 'django_healthchecks.contrib.check_cache_default',
     'ip': 'django_healthchecks.contrib.check_remote_addr',
+    'git_version': 'djangofluent.lib.healthchecks.git_version',
 }
+HEALTH_CHECKS_ERROR_CODE = 503
+
+IPWARE_META_PRECEDENCE_ORDER = (
+    # Avoid IP address spoofing for django-axes. Use wsgi-unproxy instead,
+    # which tests against a fixed set of incoming sender addresses.
+    'REMOTE_ADDR',
+)
 
 TAGGIT_TAGS_FROM_STRING = 'taggit_selectize.utils.parse_tags'
 TAGGIT_STRING_FROM_TAGS = 'taggit_selectize.utils.join_tags'
 
 THUMBNAIL_DEBUG = False
 THUMBNAIL_FORMAT = 'JPEG'
+THUMBNAIL_QUALITY = 80  # default quality for mozjpeg's "cjpeg -optimize" is 75
 THUMBNAIL_ALTERNATIVE_RESOLUTIONS = [2]  # Generate 2x images for everything!
-
-if 'THUMBNAIL_REDIS_URL' in env.ENVIRON:
-    # Allow thumbnails to exist in redis cache
-    redis_cache = env.cache('THUMBNAIL_REDIS_URL')  # e.g. 'rediscache://localhost:6379:1'
-
-    THUMBNAIL_KVSTORE = 'sorl.thumbnail.kvstores.redis_kvstore.KVStore'
-    THUMBNAIL_REDIS_HOST = redis_cache['LOCATION'].split(':')[0]
-    THUMBNAIL_REDIS_DB = redis_cache['LOCATION'].split(':')[2]
 
 
 # --- Site app settings

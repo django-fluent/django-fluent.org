@@ -1,3 +1,5 @@
+from os import path
+
 import admin_tools.urls
 import django.contrib.sitemaps.views
 import django.views.defaults
@@ -9,15 +11,13 @@ import taggit_selectize.urls
 import tinymce.urls
 
 from django.conf import settings
-from django.conf.urls import url, include
+from django.conf.urls import include, url
 from django.contrib import admin
-from django.utils.functional import curry
 from filebrowser.sites import site as fb_site
 from fluent_blogs.sitemaps import EntrySitemap, CategoryArchiveSitemap, AuthorArchiveSitemap, TagArchiveSitemap
 from fluent_pages.sitemaps import PageSitemap
 from fluent_pages.views import RobotsTxtView
-from os import path
-from frontend.views import Http500View
+from frontend.views import Http500View, serve_web_file
 
 sitemaps = {
     'pages': PageSitemap,
@@ -29,25 +29,27 @@ sitemaps = {
 
 urlpatterns = [
     # Django admin
-    url(r'^admin/', include(admin.site.urls)),
-    url(r'^admin/filebrowser/', include(fb_site.urls)),
+    url(r'^admin/', admin.site.urls),
+    url(r'^admin/filebrowser/', fb_site.urls),
     url(r'^admin/util/tags/', include(taggit_selectize.urls)),
     url(r'^admin/util/tinymce/', include(tinymce.urls)),
     url(r'^admin/util/tools/', include(admin_tools.urls)),
 
     # Test pages
     url(r'^500test/$', view=Http500View.as_view()),
-    url(r'^400/$', curry(django.views.defaults.bad_request, exception=None)),
-    url(r'^403/$', curry(django.views.defaults.permission_denied, exception=None)),
-    url(r'^404/$', curry(django.views.defaults.page_not_found, exception=None)),
+    url(r'^400/$', django.views.defaults.bad_request, kwargs={'exception': None}),
+    url(r'^403/$', django.views.defaults.permission_denied, kwargs={'exception': None}),
+    url(r'^404/$', django.views.defaults.page_not_found, kwargs={'exception': None}),
     url(r'^500/$', django.views.defaults.server_error),
 
     # SEO API's
     url(r'^sitemap.xml$', django.contrib.sitemaps.views.sitemap, {'sitemaps': sitemaps}),
     url(r'^robots.txt$', RobotsTxtView.as_view()),
+    url(r'^(?P<path>(android-chrome|apple-touch|browserconfig|favicon|manifest|safari-pinned)[^/\.]*\.(json|png|ico|xml|svg))$',
+        serve_web_file),
 
     # Monitoring API's
-    url(r'^api/ping/', include(django_healthchecks.urls)),
+    url(r'^api/health/', include(django_healthchecks.urls)),
 
     # CMS modules
     url(r'^blog/comments/', include(fluent_comments.urls)),
@@ -65,6 +67,4 @@ if settings.DEBUG:
     if 'debug_toolbar' in settings.INSTALLED_APPS:
         # Debug toolbar is explicitly linked, no magic that breaks on first request errors.
         import debug_toolbar
-        urlpatterns.insert(0,
-                           url(r'^__debug__/', include(debug_toolbar.urls))
-                           )
+        urlpatterns.insert(0, url(r'^__debug__/', include(debug_toolbar.urls)))

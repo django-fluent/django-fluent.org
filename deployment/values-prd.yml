@@ -1,0 +1,37 @@
+---
+image:
+  # overwritten via --set argument
+  repository: djangofluent/django-fluent.org
+  pullSecrets:
+  - name: gitlab-registry
+envSecret: "djangofluent-prd-env"
+env:
+  ALLOWED_HOSTS: "django-fluent.org"
+  CSRF_COOKIE_SECURE: "true"
+  SESSION_COOKIE_SECURE: "true"
+persistence:
+  enabled: true
+  media:
+    matchLabels:
+      site: djangofluent-prd
+      uid: "1001"
+securityContext:
+  runAsUser: 1001  # django-fluent.org on experience
+  fsGroup: 1001  # wsgiusers on experience
+nodeSelector:
+  purpose: apps
+readinessProbe:
+  enabled: false
+livenessProbe:
+  periodSeconds: 300
+ingress:
+  enabled: true
+  hosts:
+  - django-fluent.org
+  annotations:
+    ingress.kubernetes.io/force-ssl-redirect: "true"
+    #kubernetes.io/ingress.class: nginx
+    #kubernetes.io/tls-acme: "true"
+  tls:
+  - hosts:
+    - django-fluent.org
