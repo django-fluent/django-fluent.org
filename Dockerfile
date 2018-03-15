@@ -32,7 +32,7 @@ ENV DEBIAN_FRONTEND=noninteractive \
     PIP_NO_CACHE_DIR=off \
     UWSGI_PROCESSES=1 \
     UWSGI_THREADS=10 \
-    UWSGI_OFFLOAD_THREADS=5 \
+    UWSGI_OFFLOAD_THREADS=1 \
     UWSGI_MODULE=djangofluent.wsgi.docker:application \
     DJANGO_SETTINGS_MODULE=djangofluent.settings.docker
 
