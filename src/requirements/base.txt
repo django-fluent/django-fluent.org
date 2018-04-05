@@ -1,8 +1,8 @@
 # Install with: `pip install -r requirements/base.txt`
 
 # Infrastructure
-Django == 1.11.11  # pyup: <2.0 until 2018-11-02
-Pillow == 5.0.0
+Django == 1.11.12  # pyup: <2.0 until 2018-11-02
+Pillow == 5.1.0
 psycopg2 == 2.7.4
 python-memcached == 1.59
 raven == 6.6.0
@@ -14,7 +14,7 @@ django-fluent-blogs == 2.0.2
 django-fluent-comments == 2.0
 django-fluent-contents[text,oembeditem,code] == 2.0.2
 django-fluent-dashboard == 1.0
-django-fluent-pages == 2.0.3
+django-fluent-pages == 2.0.4
 django-fluent-utils == 2.0
 
 # Support libs
@@ -41,7 +41,7 @@ django-slug-preview == 1.0.4
 django-staff-toolbar == 1.2
 django-tag-parser == 3.1
 django-taggit == 0.22.2
-django-threadedcomments == 1.1
+django-threadedcomments == 1.2
 django-tinymce == 2.7.0
 django-wysiwyg == 0.8.0
 html5lib == 1.0.1
