@@ -57,4 +57,4 @@ whitenoise == 4.0b4
 # Installed dependencies
 beautifulsoup4 >= 4.6.0
 django-template-analyzer == 1.6.1
-python-akismet == 0.3.0
+python-akismet==0.4.0
