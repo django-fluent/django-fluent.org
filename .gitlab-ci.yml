@@ -1,5 +1,5 @@
 ---
-image: edoburu/gitlab-kubernetes-client:kubectl-1.9.2-helm-2.8.0
+image: edoburu/gitlab-kubernetes-client:kubectl-1.10.1-helm-2.8.2
 
 stages:
 - package
