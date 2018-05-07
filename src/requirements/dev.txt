@@ -13,7 +13,7 @@ django-extensions == 2.0.7
 
 # Documentation
 Sphinx==1.7.4
-sphinx-rtd-theme == 0.3.0
+sphinx-rtd-theme==0.3.1
 
 # Profiling
 gprof2dot == 2017.9.19
