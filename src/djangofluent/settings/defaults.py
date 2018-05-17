@@ -349,6 +349,7 @@ FLUENT_TEXT_PRE_FILTERS = (
 )
 
 GOOGLE_ANALYTICS_PROPERTY_ID = env.str('GOOGLE_ANALYTICS_PROPERTY_ID', None)
+GOOGLE_ANALYTICS_ANONYMIZE_IP = True  # GDPR
 
 HEALTH_CHECKS = {
     'database': 'django_healthchecks.contrib.check_database',
