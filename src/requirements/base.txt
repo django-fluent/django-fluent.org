@@ -52,7 +52,7 @@ redis == 2.10.6
 smartypants == 2.0.1
 sorl-thumbnail == 12.4.1
 taggit-selectize == 2.5.0
-whitenoise == 4.0b4
+whitenoise==4.0b5
 
 # Installed dependencies
 beautifulsoup4 >= 4.6.0
