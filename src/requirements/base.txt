@@ -1,18 +1,18 @@
 # Install with: `pip install -r requirements/base.txt`
 
 # Infrastructure
-Django == 1.11.13  # pyup: <2.0 until 2018-11-02
-Pillow == 5.1.0
-psycopg2 == 2.7.4
+Django==1.11.15  # pyup: <2.0 until 2018-11-02
+Pillow==5.2.0
+psycopg2==2.7.5
 python-memcached == 1.59
-raven == 6.8.0
-uWSGI == 2.0.17
+raven==6.9.0
+uWSGI==2.0.17.1
 WsgiUnproxy == 1.0
 
 # CMS libraries
-django-fluent-blogs == 2.0.2
+django-fluent-blogs==2.0.3
 django-fluent-comments == 2.0.2
-django-fluent-contents[text,oembeditem,code] == 2.0.2
+django-fluent-contents[code,oembeditem,text]==2.0.3
 django-fluent-dashboard == 1.0
 django-fluent-pages == 2.0.4
 django-fluent-utils == 2.0
@@ -23,15 +23,15 @@ django-admin-tools == 0.8.1
 django-analytical == 2.4.0
 django-any-imagefield == 0.9
 django-any-urlfield == 2.4.2
-django-axes == 4.3.1
+django-axes==4.4.0
 django-categories-i18n == 1.1
 django-compressor == 2.2
-django-contrib-comments == 1.8.0
+django-contrib-comments==1.9.0
 django-crispy-forms == 1.7.2
-django-environ == 0.4.4
+django-environ==0.4.5
 django-filebrowser-no-grappelli == 3.7.4
 django-healthchecks == 1.4.2
-django-mptt == 0.9.0
+django-mptt==0.9.1
 django-parler == 1.9.2
 django-polymorphic == 2.0.2
 django-polymorphic-tree == 1.5
@@ -40,19 +40,19 @@ django-singleton-admin == 0.0.4
 django-slug-preview == 1.0.4
 django-staff-toolbar == 1.2
 django-tag-parser == 3.1
-django-taggit == 0.22.2
+django-taggit==0.23.0
 django-threadedcomments == 1.2
 django-tinymce == 2.7.0
 django-wysiwyg == 0.8.0
 html5lib == 1.0.1
 micawber == 0.3.5
 netaddr == 0.7.19
-pytz == 2018.4
+pytz==2018.5
 redis == 2.10.6
 smartypants == 2.0.1
 sorl-thumbnail == 12.4.1
 taggit-selectize == 2.5.0
-whitenoise == 4.0b4
+whitenoise==4.0
 
 # Installed dependencies
 beautifulsoup4 >= 4.6.0
