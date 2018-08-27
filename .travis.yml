@@ -3,8 +3,7 @@ language: python
 cache: pip
 
 python:
-- '2.7'
-#- '3.4'  # broken by twitterfeed package
+- '3.6'
 
 env:
 - DJANGO_SETTINGS_MODULE=djangofluent.settings.unittest
