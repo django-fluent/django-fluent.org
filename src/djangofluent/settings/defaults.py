@@ -147,7 +147,7 @@ STATICFILES_FINDERS = (
 # Generate cache-busing static file names that can have a far-future expire headers
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-MIDDLEWARE_CLASSES = (
+MIDDLEWARE = (
     'raven.contrib.django.middleware.SentryMiddleware',  # make 'request' available on all logs.
     'raven.contrib.django.middleware.Sentry404CatchMiddleware',  # on 404, report to sentry.
     'django.middleware.security.SecurityMiddleware',

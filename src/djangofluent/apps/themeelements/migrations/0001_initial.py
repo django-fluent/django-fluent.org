@@ -17,7 +17,7 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Col12Item',
             fields=[
-                ('contentitem_ptr', models.OneToOneField(parent_link=True, auto_created=True, primary_key=True, serialize=False, to='fluent_contents.ContentItem')),
+                ('contentitem_ptr', models.OneToOneField(parent_link=True, auto_created=True, primary_key=True, serialize=False, to='fluent_contents.ContentItem', on_delete=models.CASCADE)),
                 ('title', models.CharField(max_length=200, verbose_name='Title')),
                 ('icon', any_imagefield.models.fields.AnyImageField(max_length=100, verbose_name='Icon', blank=True)),
                 ('body', fluent_contents.extensions.model_fields.PluginHtmlField(verbose_name='Body')),
@@ -32,7 +32,7 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='ContentBoxItem',
             fields=[
-                ('contentitem_ptr', models.OneToOneField(parent_link=True, auto_created=True, primary_key=True, serialize=False, to='fluent_contents.ContentItem')),
+                ('contentitem_ptr', models.OneToOneField(parent_link=True, auto_created=True, primary_key=True, serialize=False, to='fluent_contents.ContentItem', on_delete=models.CASCADE)),
             ],
             options={
                 'db_table': 'contentitem_themeelements_contentboxitem',
@@ -44,7 +44,7 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='ImageTextItem',
             fields=[
-                ('contentitem_ptr', models.OneToOneField(parent_link=True, auto_created=True, primary_key=True, serialize=False, to='fluent_contents.ContentItem')),
+                ('contentitem_ptr', models.OneToOneField(parent_link=True, auto_created=True, primary_key=True, serialize=False, to='fluent_contents.ContentItem', on_delete=models.CASCADE)),
                 ('title', models.CharField(max_length=200, verbose_name='Title')),
                 ('image', any_imagefield.models.fields.AnyImageField(max_length=100, verbose_name='Image')),
                 ('align', models.CharField(default=b'left', max_length=10, verbose_name='Align', choices=[(b'left', 'Left'), (b'right', 'Right')])),
@@ -62,7 +62,7 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='PackageItem',
             fields=[
-                ('contentitem_ptr', models.OneToOneField(parent_link=True, auto_created=True, primary_key=True, serialize=False, to='fluent_contents.ContentItem')),
+                ('contentitem_ptr', models.OneToOneField(parent_link=True, auto_created=True, primary_key=True, serialize=False, to='fluent_contents.ContentItem', on_delete=models.CASCADE)),
                 ('slug', models.SlugField(verbose_name='Slug')),
                 ('repository_url', models.URLField(verbose_name=b'Repository URL')),
                 ('description', models.TextField(verbose_name='Description')),
