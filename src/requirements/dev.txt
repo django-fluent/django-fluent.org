@@ -8,7 +8,7 @@
 # Useful extra developer packages:
 
 # Debugging
-django-debug-toolbar == 1.9.1
+django-debug-toolbar==1.10
 django-extensions == 2.1.2
 
 # Documentation
