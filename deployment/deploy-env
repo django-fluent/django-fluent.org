@@ -15,10 +15,10 @@ fi
 ENV="$1"; shift
 RELEASE_NAME="$RELEASE_NAME_PREFIX-$ENV"
 
-./create-release $RELEASE_NAME ./chart/ -f "values-$ENV.yml" "$@"
+./utils/create-release $RELEASE_NAME ./chart/ -f "values-$ENV.yml" "$@"
 
 if [ -z "$CI_ENVIRONMENT_URL" ]; then
   exit 0
 fi
 
-./wait-for-release $RELEASE_NAME $CI_ENVIRONMENT_URL
+./utils/wait-for-release $RELEASE_NAME $CI_ENVIRONMENT_URL

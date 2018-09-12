@@ -1,0 +1,33 @@
+#!/bin/sh
+
+if [ -z "$1" ]; then
+  echo "Usage: $0 sitename" >&2
+  exit 1
+fi
+
+SITE="$1"
+KUBE_NAMESPACE="fluentdemo"
+POLICY="Retain"  # retain is default (allows binding once)
+USER_ID="1001"
+
+kubectl apply -f - <<EOF
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: $SITE-media
+  namespace: $KUBE_NAMESPACE
+  labels:
+    type: local
+    site: $SITE
+    uid: "$USER_ID"
+spec:
+spec:
+  persistentVolumeReclaimPolicy: $POLICY
+  accessModes:
+    - ReadWriteOnce
+  capacity:
+    storage: 100Mi
+  hostPath:
+    path: /srv/volumes/$SITE-media
+EOF
