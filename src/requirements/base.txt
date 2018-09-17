@@ -45,7 +45,7 @@ django-threadedcomments == 1.2
 django-tinymce == 2.7.0
 django-wysiwyg == 0.8.0
 html5lib == 1.0.1
-micawber == 0.3.5
+micawber==0.3.6
 netaddr == 0.7.19
 pytz == 2018.5
 redis == 2.10.6
