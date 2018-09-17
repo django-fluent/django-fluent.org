@@ -21,7 +21,7 @@ django-fluent-utils == 2.0.1
 brotlipy == 0.7.0
 django-admin-tools == 0.8.1
 django-analytical == 2.4.0
-django-any-imagefield == 0.9
+django-any-imagefield==1.0
 django-any-urlfield == 2.6.1
 django-axes == 4.4.0
 django-categories-i18n == 1.1
