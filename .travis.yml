@@ -12,9 +12,10 @@ install:
 - pip install -U pip wheel setuptools
 - pip install -r src/requirements/unittest.txt
 
+before_script: cd src
 script:
-- python src/manage.py check
-- coverage run --rcfile=src/.coveragerc ./src/runtests.py -v2
+- coverage run ./manage.py check
+- py.test --cov --cov-append --nomigrations --reuse-db
 
 after_success:
 - bash <(curl -s https://codecov.io/bash)
