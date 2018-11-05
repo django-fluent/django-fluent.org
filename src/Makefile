@@ -10,10 +10,11 @@ requirements: requirements/base.in
 
 upgrade:
 	pip install pip-tools pur
-	pur --skip=Django --no-recursive -r requirements/base.in -r requirements/docker.txt
+	pur --skip=Django -r requirements/base.in
+	pur --no-recursive -r requirements/docker.txt
+	pur --no-recursive -r requirements/dev.txt
 	pip-compile --upgrade --output-file requirements/base.txt requirements/base.in
 # Allow recursive upgrade with base.txt being regenerated
-	pur --skip=Django -r requirements/dev.txt
 
 node_modules:
 	npm install
