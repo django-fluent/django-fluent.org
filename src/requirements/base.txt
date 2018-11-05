@@ -45,7 +45,7 @@ django-threadedcomments==1.2
 django-tinymce==2.7.0
 django-wysiwyg==0.8.0
 django==2.1.3
-future==0.17.0            # via django-fluent-contents, django-fluent-dashboard, django-fluent-pages, django-polymorphic-tree
+future==0.17.1            # via django-fluent-contents, django-fluent-dashboard, django-fluent-pages, django-polymorphic-tree
 html5lib==1.0.1
 idna==2.7                 # via requests
 micawber==0.3.8
