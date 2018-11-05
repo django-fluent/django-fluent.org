@@ -66,7 +66,7 @@ six==1.11.0               # via django-fluent-contents, django-fluent-pages, dja
 smartypants==2.0.1
 sorl-thumbnail==12.5.0
 taggit-selectize==2.6.0
-urllib3==1.24             # via requests
+urllib3==1.24.1             # via requests
 uwsgi==2.0.17.1
 webencodings==0.5.1       # via html5lib
 whitenoise==4.1
