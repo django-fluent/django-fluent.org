@@ -10,7 +10,7 @@ env:
 
 install:
 - pip install -U pip wheel setuptools
-- pip install -r src/requirements/unittest.txt
+- pip install -r src/requirements/docker.txt
 
 before_script: cd src
 script:

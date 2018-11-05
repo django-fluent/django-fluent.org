@@ -2,7 +2,7 @@ update: insecure
 schedule: "every week"
 branch_prefix: pyup/
 requirements:
+- src/requirements/base.in
 - src/requirements/base.txt
 - src/requirements/dev.txt
 - src/requirements/docker.txt
-- src/requirements/unittest.txt
