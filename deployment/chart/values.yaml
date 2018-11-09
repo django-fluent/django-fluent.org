@@ -20,6 +20,7 @@ securityContext: {}
 nodeSelector: {}
 tolerations: []
 affinity: {}
+priorityClassName: ""
 
 livenessProbe:
   enabled: true
@@ -47,8 +48,13 @@ ingress:
   #   - example.local
 
   annotations:
+    nginx.ingress.kubernetes.io/proxy-body-size: "10m"
     # kubernetes.io/ingress.class: nginx
     # kubernetes.io/tls-acme: "true"
+
+  authExclude:
+    annotations: {}
+    paths: []
 
   ## Secrets must be manually created in the namespace.
   # tls:

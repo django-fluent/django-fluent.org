@@ -9,17 +9,15 @@ env:
   ALLOWED_HOSTS: "django-fluent.org"
   CSRF_COOKIE_SECURE: "true"
   SESSION_COOKIE_SECURE: "true"
+securityContext:
+  runAsUser: 1001  # django-fluent.org on experience
+  fsGroup: 1001  # wsgiusers on experience
 persistence:
   enabled: true
   media:
     matchLabels:
       site: djangofluent-prd
       uid: "1001"
-securityContext:
-  runAsUser: 1001  # django-fluent.org on experience
-  fsGroup: 1001  # wsgiusers on experience
-nodeSelector:
-  purpose: apps
 readinessProbe:
   enabled: false
 livenessProbe:
