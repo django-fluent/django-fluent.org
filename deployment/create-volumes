@@ -22,7 +22,6 @@ metadata:
     site: $SITE
     uid: "$USER_ID"
 spec:
-spec:
   persistentVolumeReclaimPolicy: $POLICY
   accessModes:
     - ReadWriteOnce
@@ -30,4 +29,5 @@ spec:
     storage: 100Mi
   hostPath:
     path: /srv/volumes/$SITE-media
+  volumeMode: FileSystem
 EOF
