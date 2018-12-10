@@ -61,7 +61,7 @@ python-akismet == 0.4.1
 
 # Testing
 mock == 2.0.0
-coverage == 4.5.1
+coverage==4.5.2
 
 # Pytest (optional testrunner)
 pytest == 3.9.3
