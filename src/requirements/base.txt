@@ -74,7 +74,7 @@ rcssmin==1.0.6            # via django-compressor
 redis==3.0.1
 requests==2.21.0          # via django-healthchecks, python-akismet
 rjsmin==1.0.12            # via django-compressor
-six==1.11.0               # via django-fluent-contents, django-fluent-pages, django-healthchecks, html5lib, mock, more-itertools, pytest, python-memcached
+six==1.12.0               # via django-fluent-contents, django-fluent-pages, django-healthchecks, html5lib, mock, more-itertools, pytest, python-memcached
 smartypants==2.0.1
 sorl-thumbnail==12.5.0
 taggit-selectize==2.6.0
