@@ -6,7 +6,7 @@
 #
 atomicwrites==1.2.1       # via pytest
 attrs==18.2.0             # via pytest
-beautifulsoup4==4.6.3
+beautifulsoup4==4.7.1
 brotlipy==0.7.0
 certifi==2018.10.15       # via requests
 cffi==1.11.5              # via brotlipy
