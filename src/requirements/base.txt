@@ -64,7 +64,7 @@ pycparser==2.19           # via cffi
 pygments==2.3.1           # via django-fluent-contents
 pytest-cov==2.6.1
 pytest-django==3.4.4
-pytest-sugar==0.9.1
+pytest-sugar==0.9.2
 pytest==3.9.3
 python-akismet==0.4.1
 python-memcached==1.59
