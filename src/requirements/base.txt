@@ -55,7 +55,7 @@ micawber==0.3.8
 mock==2.0.0
 more-itertools==5.0.0     # via pytest
 netaddr==0.7.19
-pbr==5.1.0                # via mock
+pbr==5.1.1                # via mock
 pillow==5.3.0
 pluggy==0.8.0             # via pytest
 psycopg2==2.7.5
