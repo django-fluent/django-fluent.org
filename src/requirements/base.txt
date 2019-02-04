@@ -23,7 +23,7 @@ django-compressor==2.2
 django-contrib-comments==1.9.0
 django-crispy-forms==1.7.2
 django-environ==0.4.5
-django-filebrowser-no-grappelli==3.7.5
+django-filebrowser-no-grappelli==3.7.7
 django-fluent-blogs==2.0.3
 django-fluent-comments==2.1
 django-fluent-contents[code,oembeditem,text]==2.0.4
