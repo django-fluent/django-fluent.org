@@ -42,7 +42,7 @@ django-staff-toolbar == 1.2
 django-tag-parser == 3.1
 django-taggit == 0.23.0
 django-threadedcomments == 1.2
-django-tinymce == 2.7.0
+django-tinymce==2.8.0
 django-wysiwyg == 0.8.0
 html5lib == 1.0.1
 micawber == 0.3.8
