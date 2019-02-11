@@ -57,7 +57,7 @@ more-itertools==5.0.0     # via pytest
 netaddr==0.7.19
 pbr==5.1.2                # via mock
 pillow==5.4.1
-pluggy==0.8.0             # via pytest
+pluggy==0.8.1             # via pytest
 psycopg2==2.7.5
 py==1.7.0                 # via pytest
 pycparser==2.19           # via cffi
