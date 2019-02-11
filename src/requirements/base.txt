@@ -80,7 +80,7 @@ sorl-thumbnail==12.5.0
 taggit-selectize==2.6.0
 termcolor==1.1.0          # via pytest-sugar
 urllib3==1.24.1           # via requests
-uwsgi==2.0.17.1
+uwsgi==2.0.18
 webencodings==0.5.1       # via html5lib
 whitenoise==4.1
 wsgiunproxy==1.0
