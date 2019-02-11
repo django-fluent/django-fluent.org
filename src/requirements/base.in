@@ -3,7 +3,7 @@
 # Infrastructure
 Django==2.1.6  # pyup: <2.1 until 2018-11-02
 Pillow==5.4.1
-psycopg2 == 2.7.5
+psycopg2==2.7.7
 python-memcached == 1.59
 raven == 6.9.0
 uWSGI == 2.0.17.1
