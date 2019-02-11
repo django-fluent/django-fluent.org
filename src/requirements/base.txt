@@ -32,7 +32,7 @@ django-fluent-pages==2.0.5
 django-fluent-utils==2.0.1
 django-healthchecks==1.4.2
 django-ipware==2.1.0      # via django-axes
-django-js-asset==1.1.0    # via django-mptt
+django-js-asset==1.2.1    # via django-mptt
 django-mptt==0.9.1
 django-parler==1.9.2
 django-polymorphic-tree==1.5
