@@ -16,7 +16,7 @@ RUN find /usr/local/lib/python3.6/site-packages/ -name '*.po' -delete && \
     find /usr/local/lib/python3.6/site-packages/tinymce/ -regextype posix-egrep -not -regex '.*/langs/(en|nl).*\.js' -wholename '*/langs/*.js' -delete
 
 ## Node builder
-FROM node:9-alpine as frontend-build
+FROM node:11-stretch as frontend-build
 RUN mkdir -p /app/src
 WORKDIR /app/src
 COPY src/package.json src/package-lock.json /app/src/
