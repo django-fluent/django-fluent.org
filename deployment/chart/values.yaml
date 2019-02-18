@@ -63,7 +63,7 @@ ingress:
   #       - chart-example.local
 
 migrate:
-  enabled: false
+  enabled: true
 
 persistence:
   enabled: false
