@@ -62,6 +62,9 @@ ingress:
   #     hosts:
   #       - chart-example.local
 
+migrate:
+  enabled: false
+
 persistence:
   enabled: false
   media:
