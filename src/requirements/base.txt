@@ -9,7 +9,7 @@ attrs==19.1.0             # via pytest
 beautifulsoup4==4.7.1
 brotlipy==0.7.0
 certifi==2018.11.29       # via requests
-cffi==1.11.5              # via brotlipy
+cffi==1.12.2              # via brotlipy
 chardet==3.0.4            # via requests
 coverage==4.5.2
 django-admin-tools==0.8.1
