@@ -82,7 +82,7 @@ sorl-thumbnail==12.5.0
 soupsieve==1.9.1          # via beautifulsoup4
 taggit-selectize==2.6.0
 termcolor==1.1.0          # via pytest-sugar
-urllib3==1.24.1           # via requests
+urllib3==1.25           # via requests
 uwsgi==2.0.18
 webencodings==0.5.1       # via html5lib
 whitenoise==4.1.2
