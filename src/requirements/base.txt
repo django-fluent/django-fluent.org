@@ -57,7 +57,7 @@ more-itertools==7.0.0     # via pytest
 netaddr==0.7.19
 packaging==19.0           # via pytest-sugar
 pbr==5.2.0                # via mock
-pillow==5.4.1
+pillow==6.0.0
 pluggy==0.8.1             # via pytest
 psycopg2==2.7.7
 py==1.7.0                 # via pytest
