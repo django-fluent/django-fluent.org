@@ -60,7 +60,7 @@ django-template-analyzer == 1.6.1
 python-akismet == 0.4.1
 
 # Testing
-mock == 2.0.0
+mock==3.0.4
 coverage==4.5.3
 
 # Pytest (optional testrunner)
