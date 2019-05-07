@@ -40,7 +40,7 @@ ENV DEBIAN_FRONTEND=noninteractive \
 # Also include gettext for now, so locale is still compiled here.
 # It avoids busting the previous cache layers on code changes.
 RUN apt-get update && \
-    mkdir -p /usr/share/man/man1/ && \
+    mkdir -p /usr/share/man/man1 /usr/share/man/man5 /usr/share/man/man7 /usr/share/man/man8 && \
     apt-get install --no-install-recommends -y \
         libxml2 \
         libpng16-16 \
