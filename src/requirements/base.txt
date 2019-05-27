@@ -52,7 +52,7 @@ future==0.17.1            # via django-fluent-contents, django-fluent-dashboard,
 html5lib==1.0.1
 idna==2.8                 # via requests
 micawber==0.4.0
-mock==2.0.0
+mock==3.0.5
 more-itertools==6.0.0     # via pytest
 netaddr==0.7.19
 packaging==19.0           # via pytest-sugar
