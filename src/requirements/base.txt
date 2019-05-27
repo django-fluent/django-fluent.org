@@ -26,7 +26,7 @@ django-environ==0.4.5
 django-filebrowser-no-grappelli==3.7.8
 django-fluent-blogs==2.0.3
 django-fluent-comments==2.1
-django-fluent-contents[code,oembeditem,text]==2.0.4
+django-fluent-contents[code,oembeditem,text]==2.0.5
 django-fluent-dashboard==1.0
 django-fluent-pages==2.0.5
 django-fluent-utils==2.0.1
