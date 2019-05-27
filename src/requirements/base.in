@@ -29,7 +29,7 @@ django-compressor == 2.2
 django-contrib-comments==1.9.1
 django-crispy-forms == 1.7.2
 django-environ == 0.4.5
-django-filebrowser-no-grappelli == 3.7.7
+django-filebrowser-no-grappelli==3.7.8
 django-healthchecks == 1.4.2
 django-mptt == 0.9.1
 django-parler == 1.9.2
