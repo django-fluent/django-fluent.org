@@ -62,7 +62,7 @@ pluggy==0.11.0             # via pytest
 psycopg2==2.8.2
 py==1.8.0                 # via pytest
 pycparser==2.19           # via cffi
-pygments==2.3.1           # via django-fluent-contents
+pygments==2.4.1           # via django-fluent-contents
 pyparsing==2.3.1          # via packaging
 pytest-cov==2.6.1
 pytest-django==3.4.7
