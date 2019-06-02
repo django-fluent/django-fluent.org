@@ -27,7 +27,9 @@ ingress:
     kubernetes.io/ingress.class: nginx
     certmanager.k8s.io/cluster-issuer: 'letsencrypt-prod'
     certmanager.k8s.io/acme-challenge-type: http01
+    nginx.ingress.kubernetes.io/server-alias: "django-fluent.com djangofluent.org djangofluent.com www.django-fluent.org www.django-fluent.com www.djangofluent.org www.djangofluent.com"
   tls:
   - secretName: djangofluent-prd-tls
     hosts:
     - django-fluent.org
+    - www.django-fluent.org
