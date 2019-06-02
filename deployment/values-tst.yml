@@ -15,10 +15,6 @@ securityContext:
   fsGroup: 1001  # wsgiusers on experience
 persistence:
   enabled: true
-  media:
-    matchLabels:
-      site: djangofluent-tst
-      uid: "1001"
 readinessProbe:
   enabled: false
 livenessProbe:

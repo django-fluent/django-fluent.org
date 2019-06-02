@@ -14,10 +14,6 @@ securityContext:
   fsGroup: 1001  # wsgiusers on experience
 persistence:
   enabled: true
-  media:
-    matchLabels:
-      site: djangofluent-prd
-      uid: "1001"
 readinessProbe:
   enabled: false
 livenessProbe:
@@ -28,8 +24,10 @@ ingress:
   - django-fluent.org
   annotations:
     ingress.kubernetes.io/force-ssl-redirect: "true"
-    #kubernetes.io/ingress.class: nginx
-    #kubernetes.io/tls-acme: "true"
+    kubernetes.io/ingress.class: nginx
+    certmanager.k8s.io/cluster-issuer: 'letsencrypt-prod'
+    certmanager.k8s.io/acme-challenge-type: http01
   tls:
-  - hosts:
+  - secretName: djangofluent-prd-tls
+    hosts:
     - django-fluent.org
