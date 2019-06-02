@@ -6,11 +6,11 @@
 
 # Debugging
 django-debug-toolbar == 1.11
-django-extensions == 2.1.5
+django-extensions == 2.1.7
 
 # Documentation
-Sphinx == 1.8.4
-sphinx-rtd-theme == 0.4.2
+Sphinx == 2.1.0
+sphinx-rtd-theme == 0.4.3
 
 # Profiling
 gprof2dot == 2017.9.19
@@ -19,5 +19,5 @@ yet-another-django-profiler == 1.1.0
 
 # Debugging
 django-debugtools == 1.7.4
-ipython == 7.2.0
+ipython == 7.5.0
 ptpython == 2.0.4

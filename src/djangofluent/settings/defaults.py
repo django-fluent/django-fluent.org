@@ -67,6 +67,11 @@ IGNORABLE_404_URLS = (
 
 # --- Plugin components
 
+AUTHENTICATION_BACKENDS = [
+    'axes.backends.AxesBackend',
+    'django.contrib.auth.backends.ModelBackend',
+]
+
 INSTALLED_APPS = (
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -160,6 +165,7 @@ MIDDLEWARE = (
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.contrib.redirects.middleware.RedirectFallbackMiddleware',  # on 404, try redirect fallback
     'fluent_contents.middleware.HttpRedirectRequestMiddleware',
+    'axes.middleware.AxesMiddleware',
 )
 
 TEMPLATES = [
@@ -196,6 +202,7 @@ ALLOWED_HOSTS = env.list('ALLOWED_HOSTS', default=[])
 
 CACHES = {
     'default': env.cache(default='memcache://127.0.0.1:11211?TIMEOUT=86400&KEY_PREFIX=djangofluent'),
+    'axes': env.cache(default='dummycache://'),
 }
 
 DATABASES = {
@@ -270,6 +277,7 @@ ADMIN_TOOLS_INDEX_DASHBOARD = 'fluent_dashboard.dashboard.FluentIndexDashboard'
 ADMIN_TOOLS_APP_INDEX_DASHBOARD = 'fluent_dashboard.dashboard.FluentAppIndexDashboard'
 ADMIN_TOOLS_MENU = 'fluent_dashboard.menu.FluentMenu'
 
+AXES_CACHE = 'axes'
 AXES_LOGIN_FAILURE_LIMIT = 3
 AXES_COOLOFF_TIME = 1  # hours
 AXES_IP_WHITELIST = INTERNAL_IPS
