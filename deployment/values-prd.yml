@@ -15,6 +15,9 @@ readinessProbe:
   enabled: false
 livenessProbe:
   periodSeconds: 300
+nodeSelector:
+  # Stay on the same host for GKE storage
+  purpose: apps
 ingress:
   enabled: true
   hosts:
