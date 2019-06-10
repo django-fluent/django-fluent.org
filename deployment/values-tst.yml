@@ -4,7 +4,7 @@ image:
   repository: djangofluent/django-fluent.org
   pullSecrets:
   - name: gitlab-registry
-envSecret: "djangofluent-tst-env"
+envSecret: "djangofluent-env-tst"
 env:
   ALLOWED_HOSTS: "djangofluent.test.edoburu.nl"
   CSRF_COOKIE_SECURE: "true"
