@@ -9,6 +9,7 @@ env:
   ALLOWED_HOSTS: "djangofluent.test.edoburu.nl"
   CSRF_COOKIE_SECURE: "true"
   SESSION_COOKIE_SECURE: "true"
+  SENTRY_ENVIRONMENT: "test"
 priorityClassName: tst-apps
 persistence:
   enabled: true

@@ -9,6 +9,7 @@ env:
   ALLOWED_HOSTS: "django-fluent.org"
   CSRF_COOKIE_SECURE: "true"
   SESSION_COOKIE_SECURE: "true"
+  SENTRY_ENVIRONMENT: "production"
 persistence:
   enabled: true
 readinessProbe:
