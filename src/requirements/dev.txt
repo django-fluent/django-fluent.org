@@ -6,7 +6,7 @@
 
 # Debugging
 django-debug-toolbar == 1.11
-django-extensions == 2.1.7
+django-extensions==2.1.9
 
 # Documentation
 Sphinx == 2.1.0
