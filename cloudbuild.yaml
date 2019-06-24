@@ -1,0 +1,16 @@
+steps:
+- name: 'gcr.io/cloud-builders/docker'
+  entrypoint: bash
+  env:
+    # User defined
+    - 'DOCKER_REGISTRY=${_DOCKER_REGISTRY}'
+  args:
+  - '-xec'
+  - |
+    export IMAGE_TAG="ci_${BUILD_ID}_${TAG_NAME:-git_${BRANCH_NAME}_$SHORT_SHA}"
+    export GIT_VERSION="${TAG_NAME:-$BRANCH_NAME}@$COMMIT_SHA"
+    export IMAGE_NAME="$${DOCKER_REGISTRY}:$$IMAGE_TAG"
+
+    echo "data_file=/tmp/coveragerc" >> src/.coveragerc  # Fix write issues for coverage
+    docker build --pull -t $$IMAGE_NAME --build-arg GIT_VERSION=$$GIT_VERSION .
+    docker run -u root --rm $$IMAGE_NAME py.test --cov --nomigrations

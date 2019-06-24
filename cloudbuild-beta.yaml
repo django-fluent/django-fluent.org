@@ -1,0 +1,37 @@
+steps:
+- name: 'gcr.io/cloud-builders/docker'
+  entrypoint: bash
+  env:
+    # User defined
+    - 'DOCKER_REGISTRY=${_DOCKER_REGISTRY}'
+  args:
+  - '-xec'
+  - |
+    export IMAGE_TAG="ci_${BUILD_ID}_${TAG_NAME:-git_${BRANCH_NAME}_$SHORT_SHA}"
+    export GIT_VERSION="${TAG_NAME:-$BRANCH_NAME}@$COMMIT_SHA"
+    export IMAGE_NAME="$${DOCKER_REGISTRY}:$$IMAGE_TAG"
+
+    echo "data_file=/tmp/coveragerc" >> src/.coveragerc  # Fix write issues for coverage
+    docker build --pull -t $$IMAGE_NAME --build-arg GIT_VERSION=$$GIT_VERSION .
+    docker run -u root --rm $$IMAGE_NAME py.test --cov --nomigrations
+    docker push $$IMAGE_NAME
+- name: 'gcr.io/$PROJECT_ID/helm'
+  entrypoint: bash
+  env:
+    # User defined
+    - 'CLOUDSDK_COMPUTE_ZONE=${_CLOUDSDK_COMPUTE_ZONE}'
+    - 'CLOUDSDK_CONTAINER_CLUSTER=${_CLOUDSDK_CONTAINER_CLUSTER}'
+    - 'DOCKER_REGISTRY=${_DOCKER_REGISTRY}'
+  args:
+  - '-xec'
+  - |
+    echo "Running from Cloud build IP: `curl -q https://canihazip.com/s`"
+    CLUSTER=$$(gcloud config get-value container/cluster)
+    PROJECT=$$(gcloud config get-value core/project)
+    ZONE=$$(gcloud config get-value compute/zone)
+    gcloud container clusters get-credentials --project "$${PROJECT}" --zone "$${ZONE}" "$${CLUSTER}"
+
+    export CI_ENVIRONMENT_SLUG=test
+    export IMAGE_TAG="ci_${BUILD_ID}_${TAG_NAME:-git_${BRANCH_NAME}_$SHORT_SHA}"
+    helm init --client-only
+    ./deployment/deploy-env tst --set=image.repository=$${DOCKER_REGISTRY},image.tag=$${IMAGE_TAG}
