@@ -7,10 +7,9 @@ steps:
   args:
   - '-xec'
   - |
-    export IMAGE_TAG="ci_${BUILD_ID}_${TAG_NAME:-git_${BRANCH_NAME}_$SHORT_SHA}"
-    export GIT_VERSION="${TAG_NAME:-$BRANCH_NAME}@$COMMIT_SHA"
+    export IMAGE_TAG="${TAG_NAME:-git_${BRANCH_NAME}_$SHORT_SHA}_ci_${BUILD_ID}"
     export IMAGE_NAME="$${DOCKER_REGISTRY}:$$IMAGE_TAG"
+    export GIT_VERSION="${TAG_NAME:-$BRANCH_NAME}@$COMMIT_SHA"
 
-    echo "data_file=/tmp/coveragerc" >> src/.coveragerc  # Fix write issues for coverage
     docker build --pull -t $$IMAGE_NAME --build-arg GIT_VERSION=$$GIT_VERSION .
     docker run -u root --rm $$IMAGE_NAME py.test --cov --nomigrations
