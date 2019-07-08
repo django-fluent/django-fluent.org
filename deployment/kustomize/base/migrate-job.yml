@@ -1,0 +1,29 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: djangofluent-migrate
+spec:
+  template:
+    metadata:
+      labels:
+        pgbouncer-client: "true"
+        redis-client: "true"
+        sentry-client: "true"
+        smtp-client: "true"
+    spec:
+      # alpha: ttlSecondsAfterFinished: 600
+      restartPolicy: OnFailure
+      containers:
+        - name: migrate
+          image: "djangofluent:latest"
+          imagePullPolicy: IfNotPresent
+          command:
+            ["/bin/sh", "-c", "manage.py check --deploy && manage.py migrate"]
+          securityContext:
+            allowPrivilegeEscalation: false
+            readOnlyRootFilesystem: true
+            capabilities:
+              drop: ["all"]
+      securityContext:
+        runAsUser: 999  # app
+        runAsGroup: 999  # app

@@ -1,0 +1,13 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: djangofluent
+spec:
+  rules:
+    - host: django-fluent.localk8s
+      http:
+        paths:
+          - path: /
+            backend:
+              serviceName: djangofluent
+              servicePort: 80

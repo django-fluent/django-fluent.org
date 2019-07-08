@@ -1,4 +1,0 @@
-apiVersion: v1
-name: django
-description: Deployment of a Django website
-version: 1.0

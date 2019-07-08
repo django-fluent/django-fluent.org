@@ -1,0 +1,26 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+commonLabels:
+  app: djangofluent
+  environment: prd
+  release: djangofluent-prd
+
+configMapGenerator:
+  - literals:
+      - ALLOWED_HOSTS=django-fluent.org
+      - CSRF_COOKIE_SECURE=true
+      - ROBOTS_TXT_DISALLOW_ALL=false
+      - SENTRY_ENVIRONMENT=production
+      - SESSION_COOKIE_SECURE=true
+    name: djangofluent-env
+
+namespace: fluentdemo
+nameSuffix: -prd
+
+patchesStrategicMerge:
+  - patches.yml
+
+resources:
+  - ../../base
+  - ingress.yml

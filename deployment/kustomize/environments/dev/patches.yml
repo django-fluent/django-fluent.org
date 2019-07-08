@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: djangofluent
+spec:
+  template:
+    spec:
+      containers:
+        - name: uwsgi
+          envFrom:
+            - configMapRef:
+                name: djangofluent-env
+#---
+#apiVersion: batch/v1
+#kind: Job
+#metadata:
+#  name: djangofluent-migrate
+#spec:
+#  template:
+#    spec:
+#      containers:
+#        - name: migrate
+#          envFrom:
+#            - configMapRef:
+#                name: djangofluent-env

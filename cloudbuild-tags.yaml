@@ -14,7 +14,7 @@ steps:
     docker build --pull -t $$IMAGE_NAME --build-arg GIT_VERSION=$$GIT_VERSION .
     docker run -u root --rm $$IMAGE_NAME py.test --cov --nomigrations
     docker push $$IMAGE_NAME
-- name: 'gcr.io/$PROJECT_ID/helm'
+- name: 'gcr.io/$PROJECT_ID/kustomize'
   entrypoint: bash
   env:
     # User defined
@@ -30,7 +30,7 @@ steps:
     ZONE=$$(gcloud config get-value compute/zone)
     gcloud container clusters get-credentials --project "$${PROJECT}" --zone "$${ZONE}" "$${CLUSTER}"
 
-    export CI_ENVIRONMENT_SLUG=production
-    export IMAGE_TAG="ci_${BUILD_ID}_${TAG_NAME:-git_${TAG_NAME}_$SHORT_SHA}"
-    helm init --client-only
-    ./deployment/deploy-env prd --set=image.repository=$${DOCKER_REGISTRY},image.tag=$${IMAGE_TAG}
+    export IMAGE_TAG="${TAG_NAME}_ci_${BUILD_ID}"
+    export IMAGE_NAME="$${DOCKER_REGISTRY}:$$IMAGE_TAG"
+    export PYTHONIOENCODING=utf-8
+    ./deployment/deploy-env.py prd djangofluent=$$IMAGE_NAME --wait-for=${COMMIT_SHA}

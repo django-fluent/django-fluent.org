@@ -1,0 +1,71 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: djangofluent
+spec:
+  replicas: 1
+  revisionHistoryLimit: 6
+  strategy:
+    rollingUpdate:
+      maxUnavailable: 0 # Avoid Terminating and ContainerCreating at the same time
+  template:
+    metadata:
+      labels:
+        ingress-upstream: "true"
+        pgbouncer-client: "true"
+        redis-client: "true"
+        sentry-client: "true"
+        smtp-client: "true"
+    spec:
+      containers:
+        - name: uwsgi
+          image: "djangofluent:latest"
+          imagePullPolicy: IfNotPresent
+          ports:
+            - name: http
+              containerPort: 8080
+            - name: stats
+              containerPort: 1717
+          volumeMounts:
+            - name: media
+              mountPath: /app/web/media
+          livenessProbe:
+            initialDelaySeconds: 0
+            periodSeconds: 300
+            timeoutSeconds: 60
+            successThreshold: 1
+            failureThreshold: 3
+            httpGet:
+              path: /api/health/ip
+              port: 8080
+              httpHeaders:
+                - name: Host
+                  value: localhost
+          lifecycle:
+            preStop:
+              exec:
+                # https://github.com/kubernetes/contrib/issues/1140
+                # This hack avoids 0% downtime during deploys.
+                # After the preStop, containers receive a SIGTERM meaning:
+                # "cleanup what you're doing and stop accepting new work".
+                # Yet traffic may still briefly be sent to it by the ingress
+                # controller. This hack delays that SIGTERM moment so the new
+                # container is already actively used to handle traffic.
+                command: ["sleep", "15"]
+          resources:
+            limits:
+              memory: 256Mi
+            requests:
+              memory: 110Mi
+          securityContext:
+            allowPrivilegeEscalation: false
+            readOnlyRootFilesystem: false  # TODO (static caches)
+            capabilities:
+              drop: ["all"]
+      securityContext:
+        runAsUser: 1017  # random id (999=app)
+        runAsGroup: 999  # app
+      volumes:
+        - name: media
+          persistentVolumeClaim:
+            claimName: djangofluent-media

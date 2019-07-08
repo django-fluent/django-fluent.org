@@ -1,0 +1,89 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: djangofluent
+  annotations:
+    certmanager.k8s.io/acme-challenge-type: http01
+    certmanager.k8s.io/cluster-issuer: letsencrypt-prod
+    kubernetes.io/ingress.class: nginx
+    ingress.kubernetes.io/force-ssl-redirect: "true"
+    ingress.kubernetes.io/proxy-body-size: 10m
+    #nginx.ingress.kubernetes.io/proxy-body-size: 10m
+    nginx.ingress.kubernetes.io/auth-realm: Auth required
+    nginx.ingress.kubernetes.io/auth-secret: sysadmins
+    nginx.ingress.kubernetes.io/auth-type: basic
+    nginx.ingress.kubernetes.io/proxy-body-size: 10m
+spec:
+  tls:
+    - secretName: test-edoburu-ssl
+      hosts:
+        - django-fluent.test.edoburu.nl
+  rules:
+    - host: django-fluent.test.edoburu.nl
+      http:
+        paths:
+          - path: /
+            backend:
+              serviceName: djangofluent
+              servicePort: http
+---
+# Extra ingress for paths that should not have auth annotations
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: djangofluent-authexclude
+spec:
+  rules:
+    - host: django-fluent.test.edoburu.nl
+      http:
+        paths:
+          - path: /api/health/
+            backend:
+              serviceName: djangofluent
+              servicePort: http
+---
+# Leverage nginx-ingress cache for /media/
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: djangofluent-media
+  annotations:
+    nginx.ingress.kubernetes.io/proxy-buffering: "on"
+    nginx.ingress.kubernetes.io/configuration-snippet: |
+      proxy_cache static-cache;
+      proxy_cache_valid 404 1m;
+      proxy_cache_use_stale error timeout updating http_404 http_500 http_502 http_503 http_504;
+      proxy_cache_bypass $http_x_purge;
+      add_header X-Cache-Status $upstream_cache_status;
+spec:
+  rules:
+    - host: django-fluent.test.edoburu.nl
+      http:
+        paths:
+          - path: /media/
+            backend:
+              serviceName: djangofluent
+              servicePort: http
+---
+# Leverage nginx-ingress cache for /static/
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: djangofluent-static
+  annotations:
+    nginx.ingress.kubernetes.io/proxy-buffering: "on"
+    nginx.ingress.kubernetes.io/configuration-snippet: |
+      proxy_cache static-cache;
+      proxy_cache_valid 404 1m;
+      proxy_cache_use_stale error timeout updating http_404 http_500 http_502 http_503 http_504;
+      proxy_cache_bypass $http_x_purge;
+      add_header X-Cache-Status $upstream_cache_status;
+spec:
+  rules:
+    - host: django-fluent.test.edoburu.nl
+      http:
+        paths:
+          - path: /static/
+            backend:
+              serviceName: djangofluent
+              servicePort: http
