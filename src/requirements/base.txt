@@ -54,7 +54,7 @@ idna==2.8                 # via requests
 importlib-metadata==0.18  # via pluggy, pytest
 micawber==0.5.0
 mock==3.0.5
-more-itertools==7.1.0     # via pytest
+more-itertools==7.2.0     # via pytest
 netaddr==0.7.19
 packaging==19.0           # via pytest, pytest-sugar
 pillow==6.1.0
