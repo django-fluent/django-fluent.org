@@ -10,16 +10,16 @@ spec:
           envFrom:
             - configMapRef:
                 name: djangofluent-env
-#---
-#apiVersion: batch/v1
-#kind: Job
-#metadata:
-#  name: djangofluent-migrate
-#spec:
-#  template:
-#    spec:
-#      containers:
-#        - name: migrate
-#          envFrom:
-#            - configMapRef:
-#                name: djangofluent-env
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: djangofluent-migrate
+spec:
+  template:
+    spec:
+      containers:
+        - name: migrate
+         envFrom:
+            - configMapRef:
+                name: djangofluent-env

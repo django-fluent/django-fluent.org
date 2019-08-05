@@ -32,37 +32,37 @@ spec:
           ip: 10.112.0.102
         - hostnames: ["redis-master.infra"]
           ip: 10.112.12.219
-#---
-#apiVersion: batch/v1
-#kind: Job
-#metadata:
-#  name: djangofluent-migrate
-#spec:
-#  template:
-#    spec:
-#      containers:
-#        - name: migrate
-#          envFrom:
-#            - configMapRef:
-#                name: djangofluent-env
-#            - secretRef:
-#                name: djangofluent-env-tst # not build in kustomize
-#
-#      affinity:
-#        nodeAffinity:
-#          preferredDuringSchedulingIgnoredDuringExecution:
-#          - preference:
-#              matchExpressions:
-#              - key: cloud.google.com/gke-preemptible
-#                operator: Exists
-#            weight: 100
-#
-#      priorityClassName: tst-apps
-#      # Speed up, remove DNS dependencies
-#      hostAliases:
-#        - hostnames: ["pgbouncer-apps.infra"]
-#          ip: 10.112.2.12
-#        - hostnames: ["postgres-apps.infra"]
-#          ip: 10.112.0.102
-#        - hostnames: ["redis-master.infra"]
-#          ip: 10.112.12.219
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: djangofluent-migrate
+spec:
+  template:
+    spec:
+      containers:
+        - name: migrate
+          envFrom:
+            - configMapRef:
+                name: djangofluent-env
+            - secretRef:
+                name: djangofluent-env-tst # not build in kustomize
+
+      affinity:
+        nodeAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+          - preference:
+              matchExpressions:
+              - key: cloud.google.com/gke-preemptible
+                operator: Exists
+            weight: 100
+
+      priorityClassName: tst-apps
+      # Speed up, remove DNS dependencies
+      hostAliases:
+        - hostnames: ["pgbouncer-apps.infra"]
+          ip: 10.112.2.12
+        - hostnames: ["postgres-apps.infra"]
+          ip: 10.112.0.102
+        - hostnames: ["redis-master.infra"]
+          ip: 10.112.12.219
