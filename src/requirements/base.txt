@@ -11,7 +11,7 @@ brotlipy==0.7.0
 certifi==2019.6.16        # via requests
 cffi==1.12.3              # via brotlipy
 chardet==3.0.4            # via requests
-coverage==4.5.3
+coverage==4.5.4
 django-admin-tools==0.8.1
 django-analytical==2.5.0
 django-any-imagefield==1.0
