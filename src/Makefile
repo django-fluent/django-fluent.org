@@ -10,7 +10,7 @@ requirements: requirements/base.in
 
 upgrade:
 	pip install pip-tools pur
-	pur --skip=Django -r requirements/base.in
+	pur --patch=Django -r requirements/base.in
 	pur --no-recursive -r requirements/docker.txt
 	pur --no-recursive -r requirements/dev.txt
 	pip-compile --upgrade --output-file requirements/base.txt requirements/base.in
