@@ -25,6 +25,10 @@ spec:
       priorityClassName: tst-apps
 
       # Speed up, remove DNS dependencies
+      dnsConfig:
+        options:
+        - name: ndots
+          value: "1"
       hostAliases:
         - hostnames: ["pgbouncer-apps.infra"]
           ip: 10.112.2.12
@@ -58,7 +62,12 @@ spec:
             weight: 100
 
       priorityClassName: tst-apps
+
       # Speed up, remove DNS dependencies
+      dnsConfig:
+        options:
+        - name: ndots
+          value: "1"
       hostAliases:
         - hostnames: ["pgbouncer-apps.infra"]
           ip: 10.112.2.12
