@@ -73,7 +73,7 @@ python-memcached==1.59
 pytz==2019.2
 raven==6.10.0
 rcssmin==1.0.6            # via django-compressor
-redis==3.3.5
+redis==3.3.6
 requests==2.22.0          # via django-healthchecks, python-akismet
 rjsmin==1.1.0             # via django-compressor
 six==1.12.0               # via django-appconf, django-fluent-contents, django-fluent-pages, django-healthchecks, html5lib, mock, packaging, python-memcached
