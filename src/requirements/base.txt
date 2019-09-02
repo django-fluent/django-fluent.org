@@ -51,7 +51,7 @@ django==2.2.5
 future==0.17.1            # via django-fluent-contents, django-fluent-dashboard, django-fluent-pages, django-polymorphic-tree
 html5lib==1.0.1
 idna==2.8                 # via requests
-importlib-metadata==0.19  # via pluggy, pytest
+importlib-metadata==0.20  # via pluggy, pytest
 micawber==0.5.0
 mock==3.0.5
 more-itertools==7.2.0     # via pytest
