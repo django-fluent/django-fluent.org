@@ -8,7 +8,7 @@ atomicwrites==1.3.0       # via pytest
 attrs==19.1.0             # via packaging, pytest
 beautifulsoup4==4.8.0
 brotlipy==0.7.0
-certifi==2019.6.16        # via requests
+certifi==2019.9.11        # via requests
 cffi==1.12.3              # via brotlipy
 chardet==3.0.4            # via requests
 coverage==4.5.4
@@ -17,7 +17,7 @@ django-analytical==2.5.0
 django-any-imagefield==1.0
 django-any-urlfield==2.6.1
 django-appconf==1.0.3     # via django-axes, django-compressor
-django-axes==5.0.11
+django-axes==5.0.13
 django-categories-i18n==1.1
 django-compressor==2.3
 django-contrib-comments==1.9.1
@@ -51,14 +51,14 @@ django==2.0.13
 future==0.17.1            # via django-fluent-contents, django-fluent-dashboard, django-fluent-pages, django-polymorphic-tree
 html5lib==1.0.1
 idna==2.8                 # via requests
-importlib-metadata==0.19  # via pluggy, pytest
+importlib-metadata==0.22  # via pluggy, pytest
 micawber==0.5.0
 mock==3.0.5
-more-itertools==7.2.0     # via pytest
+more-itertools==7.2.0     # via pytest, zipp
 netaddr==0.7.19
 packaging==19.1           # via pytest, pytest-sugar
 pillow==6.1.0
-pluggy==0.12.0            # via pytest
+pluggy==0.13.0            # via pytest
 psycopg2==2.8.3
 py==1.8.0                 # via pytest
 pycparser==2.19           # via cffi
@@ -67,19 +67,19 @@ pyparsing==2.4.2          # via packaging
 pytest-cov==2.7.1
 pytest-django==3.5.1
 pytest-sugar==0.9.2
-pytest==5.0.1
+pytest==5.1.2
 python-akismet==0.4.1
 python-memcached==1.59
 pytz==2019.2
 raven==6.10.0
 rcssmin==1.0.6            # via django-compressor
-redis==3.3.5
+redis==3.3.8
 requests==2.22.0          # via django-healthchecks, python-akismet
 rjsmin==1.1.0             # via django-compressor
 six==1.12.0               # via django-appconf, django-fluent-contents, django-fluent-pages, django-healthchecks, html5lib, mock, packaging, python-memcached
 smartypants==2.0.1
 sorl-thumbnail==12.5.0
-soupsieve==1.9.2          # via beautifulsoup4
+soupsieve==1.9.3          # via beautifulsoup4
 taggit-selectize==2.7.1
 termcolor==1.1.0          # via pytest-sugar
 urllib3==1.25.3           # via requests
@@ -88,4 +88,4 @@ wcwidth==0.1.7            # via pytest
 webencodings==0.5.1       # via html5lib
 whitenoise==4.1.3
 wsgiunproxy==1.0
-zipp==0.5.2               # via importlib-metadata
+zipp==0.6.0               # via importlib-metadata
