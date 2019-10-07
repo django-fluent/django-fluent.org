@@ -47,7 +47,7 @@ django-wysiwyg == 0.8.0
 html5lib == 1.0.1
 micawber == 0.5.0
 netaddr == 0.7.19
-pytz == 2019.2
+pytz==2019.3
 redis == 3.3.8
 smartypants == 2.0.1
 sorl-thumbnail == 12.5.0
