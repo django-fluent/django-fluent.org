@@ -5,7 +5,7 @@
 #    pip-compile --output-file=requirements/base.txt requirements/base.in
 #
 atomicwrites==1.3.0       # via pytest
-attrs==19.1.0             # via packaging, pytest
+attrs==19.3.0             # via packaging, pytest
 beautifulsoup4==4.8.0
 brotlipy==0.7.0
 certifi==2019.9.11        # via requests
