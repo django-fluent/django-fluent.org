@@ -5,19 +5,19 @@
 # Useful extra developer packages:
 
 # Debugging
-django-debug-toolbar == 2.0
+django-debug-toolbar == 2.1
 django-extensions == 2.2.5
 
 # Documentation
-Sphinx == 2.2.1
+Sphinx == 2.3.0
 sphinx-rtd-theme == 0.4.3
 
 # Profiling
-gprof2dot == 2017.9.19
+gprof2dot == 2019.11.30
 geordi == 0.3
 yet-another-django-profiler == 1.1.0
 
 # Debugging
 django-debugtools == 1.7.4
-ipython == 7.9.0
+ipython == 7.10.2
 ptpython == 2.0.6
