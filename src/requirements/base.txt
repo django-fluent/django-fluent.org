@@ -40,13 +40,13 @@ django-redis==4.11.0
 django-singleton-admin==0.0.4
 django-slug-preview==1.0.4
 django-staff-toolbar==1.2
-django-tag-parser==3.1
+django-tag-parser==3.2
 django-taggit==1.2.0
 django-template-analyzer==1.6.1
 django-threadedcomments==1.2
 django-tinymce==2.8.0
 django-wysiwyg==0.8.0
-django==2.0.13
+django==2.2.9
 future==0.18.2            # via django-fluent-contents, django-fluent-dashboard, django-fluent-pages, django-polymorphic-tree
 html5lib==1.0.1
 idna==2.8                 # via requests
@@ -79,6 +79,7 @@ six==1.13.0               # via django-appconf, django-contrib-comments, django-
 smartypants==2.0.1
 sorl-thumbnail==12.5.0
 soupsieve==1.9.5          # via beautifulsoup4
+sqlparse==0.3.0           # via django
 taggit-selectize==2.7.1
 termcolor==1.1.0          # via pytest-sugar
 urllib3==1.25.7           # via requests
