@@ -46,7 +46,7 @@ django-template-analyzer==1.6.2
 django-threadedcomments==1.2
 django-tinymce==2.8.0
 django-wysiwyg==0.8.0
-django==2.2.10
+django==3.0.3
 future==0.18.2            # via django-fluent-contents, django-fluent-dashboard, django-fluent-pages, django-polymorphic-tree
 html5lib==1.0.1
 idna==2.8                 # via requests
