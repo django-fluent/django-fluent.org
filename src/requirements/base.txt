@@ -73,7 +73,7 @@ pytz==2019.3
 raven==6.10.0
 rcssmin==1.0.6            # via django-compressor
 redis==3.4.1
-requests==2.22.0          # via django-healthchecks, python-akismet
+requests==2.23.0          # via django-healthchecks, python-akismet
 rjsmin==1.1.0             # via django-compressor
 six==1.14.0               # via django-appconf, django-compressor, django-contrib-comments, django-filebrowser-no-grappelli, django-fluent-contents, django-healthchecks, django-parler, html5lib, mock, packaging, python-memcached
 smartypants==2.0.1
