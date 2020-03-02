@@ -50,7 +50,7 @@ netaddr == 0.7.19
 pytz == 2019.3
 redis == 3.4.1
 smartypants == 2.0.1
-sorl-thumbnail == 12.6.2
+sorl-thumbnail==12.6.3
 taggit-selectize == 2.7.1
 whitenoise == 5.0.1
 
