@@ -78,7 +78,7 @@ rjsmin==1.1.0             # via django-compressor
 six==1.14.0               # via django-appconf, django-compressor, django-contrib-comments, django-filebrowser-no-grappelli, django-fluent-contents, django-healthchecks, django-parler, html5lib, mock, packaging, python-memcached
 smartypants==2.0.1
 sorl-thumbnail==12.6.3
-soupsieve==1.9.5          # via beautifulsoup4
+soupsieve==2.0          # via beautifulsoup4
 sqlparse==0.3.0           # via django
 taggit-selectize==2.7.1
 termcolor==1.1.0          # via pytest-sugar
