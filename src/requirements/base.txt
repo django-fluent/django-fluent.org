@@ -49,7 +49,7 @@ django-wysiwyg==0.8.0
 django==3.0.4
 future==0.18.2            # via django-fluent-contents, django-fluent-dashboard, django-fluent-pages, django-polymorphic-tree
 html5lib==1.0.1
-idna==2.8                 # via requests
+idna==2.9                 # via requests
 importlib-metadata==1.5.0  # via pluggy, pytest
 micawber==0.5.1
 mock==3.0.5
