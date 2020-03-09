@@ -79,7 +79,7 @@ six==1.14.0               # via django-appconf, django-compressor, django-contri
 smartypants==2.0.1
 sorl-thumbnail==12.6.3
 soupsieve==2.0          # via beautifulsoup4
-sqlparse==0.3.0           # via django
+sqlparse==0.3.1           # via django
 taggit-selectize==2.7.1
 termcolor==1.1.0          # via pytest-sugar
 urllib3==1.25.8           # via requests
