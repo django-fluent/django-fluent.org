@@ -8,19 +8,19 @@ attrs==19.3.0             # via pytest
 beautifulsoup4==4.8.2
 brotlipy==0.7.0
 certifi==2019.11.28       # via requests
-cffi==1.13.2              # via brotlipy
+cffi==1.14.0              # via brotlipy
 chardet==3.0.4            # via requests
 coverage==5.0.3
 django-admin-tools==0.9.0
 django-analytical==2.5.0
-django-any-imagefield==1.0
+django-any-imagefield==1.1
 django-any-urlfield==2.6.2
 django-appconf==1.0.3     # via django-axes, django-compressor
 django-axes==5.2.2
 django-categories-i18n==1.1.1
 django-compressor==2.4
 django-contrib-comments==1.9.2
-django-crispy-forms==1.8.1
+django-crispy-forms==1.9.0
 django-environ==0.4.5
 django-filebrowser-no-grappelli==3.8.0
 django-fluent-blogs==2.0.5
@@ -46,22 +46,22 @@ django-template-analyzer==1.6.2
 django-threadedcomments==1.2
 django-tinymce==2.8.0
 django-wysiwyg==0.8.0
-django==2.2.10
+django==3.0.4
 future==0.18.2            # via django-fluent-contents, django-fluent-dashboard, django-fluent-pages, django-polymorphic-tree
 html5lib==1.0.1
-idna==2.8                 # via requests
+idna==2.9                 # via requests
 importlib-metadata==1.5.0  # via pluggy, pytest
 micawber==0.5.1
-mock==3.0.5
+mock==4.0.1
 more-itertools==8.2.0     # via pytest
 netaddr==0.7.19
-packaging==20.1           # via pytest, pytest-sugar
+packaging==20.3           # via pytest, pytest-sugar
 pillow==7.0.0
 pluggy==0.13.1            # via pytest
 psycopg2==2.8.4
 py==1.8.1                 # via pytest
-pycparser==2.19           # via cffi
-pygments==2.5.2           # via django-fluent-contents
+pycparser==2.20           # via cffi
+pygments==2.6.1           # via django-fluent-contents
 pyparsing==2.4.6          # via packaging
 pytest-cov==2.8.1
 pytest-django==3.8.0
@@ -73,13 +73,13 @@ pytz==2019.3
 raven==6.10.0
 rcssmin==1.0.6            # via django-compressor
 redis==3.4.1
-requests==2.22.0          # via django-healthchecks, python-akismet
+requests==2.23.0          # via django-healthchecks, python-akismet
 rjsmin==1.1.0             # via django-compressor
 six==1.14.0               # via django-appconf, django-compressor, django-contrib-comments, django-filebrowser-no-grappelli, django-fluent-contents, django-healthchecks, django-parler, html5lib, mock, packaging, python-memcached
 smartypants==2.0.1
-sorl-thumbnail==12.6.2
-soupsieve==1.9.5          # via beautifulsoup4
-sqlparse==0.3.0           # via django
+sorl-thumbnail==12.6.3
+soupsieve==2.0          # via beautifulsoup4
+sqlparse==0.3.1           # via django
 taggit-selectize==2.7.1
 termcolor==1.1.0          # via pytest-sugar
 urllib3==1.25.8           # via requests
@@ -88,4 +88,4 @@ wcwidth==0.1.8            # via pytest
 webencodings==0.5.1       # via html5lib
 whitenoise==5.0.1
 wsgiunproxy==1.0
-zipp==2.1.0               # via importlib-metadata
+zipp==3.1.0               # via importlib-metadata
