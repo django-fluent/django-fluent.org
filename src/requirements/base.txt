@@ -88,4 +88,4 @@ wcwidth==0.1.8            # via pytest
 webencodings==0.5.1       # via html5lib
 whitenoise==5.0.1
 wsgiunproxy==1.0
-zipp==2.1.0               # via importlib-metadata
+zipp==3.1.0               # via importlib-metadata
