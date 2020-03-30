@@ -27,7 +27,7 @@ django-axes==5.3.1
 django-categories-i18n == 1.1.1
 django-compressor == 2.4
 django-contrib-comments == 1.9.2
-django-crispy-forms == 1.8.1
+django-crispy-forms==1.9.0
 django-environ == 0.4.5
 django-filebrowser-no-grappelli == 3.8.0
 django-healthchecks == 1.4.2
