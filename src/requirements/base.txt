@@ -16,7 +16,7 @@ django-analytical==2.5.0
 django-any-imagefield==1.1
 django-any-urlfield==2.6.2
 django-appconf==1.0.3     # via django-axes, django-compressor
-django-axes==5.2.2
+django-axes==5.3.1
 django-categories-i18n==1.1.1
 django-compressor==2.4
 django-contrib-comments==1.9.2
