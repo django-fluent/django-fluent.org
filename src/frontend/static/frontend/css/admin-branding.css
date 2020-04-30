@@ -10,7 +10,6 @@ div#header {
 }
 
 .module h2, .module caption, .inline-group h2 {
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#8B961D), to(#939E1B));
   background-image: linear-gradient(to bottom, #8B961D 0%, #939E1B 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FF8B961D', endColorstr='#FF939E1B', GradientType=0);
   background-repeat: repeat-x;
@@ -54,7 +53,6 @@ form .aligned .as-results li {
 .button.default,
 input.default[type="submit"],
 .submit-row input.default {
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#939E1B), to(#B2BA58));
   background-image: linear-gradient(to bottom, #939E1B 0%, #B2BA58 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FF939E1B', endColorstr='#FFB2BA58', GradientType=0);
   background-repeat: repeat-x;
