@@ -5,7 +5,7 @@
 #    pip-compile --output-file=requirements/base.txt requirements/base.in
 #
 attrs==19.3.0             # via pytest
-beautifulsoup4==4.8.2
+beautifulsoup4==4.9.0
 brotlipy==0.7.0
 certifi==2019.11.28       # via requests
 cffi==1.13.2              # via brotlipy
