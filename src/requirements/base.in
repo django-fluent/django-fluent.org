@@ -10,7 +10,7 @@ uWSGI == 2.0.18
 WsgiUnproxy == 1.0
 
 # CMS libraries
-django-fluent-blogs == 2.0.5
+django-fluent-blogs==2.0.6
 django-fluent-comments == 2.1
 django-fluent-contents[text,oembeditem,code] == 2.0.7
 django-fluent-dashboard == 1.0.1
