@@ -23,7 +23,7 @@ django-contrib-comments==1.9.2
 django-crispy-forms==1.9.2
 django-environ==0.4.5
 django-filebrowser-no-grappelli==3.8.0
-django-fluent-blogs==2.0.5
+django-fluent-blogs==2.0.6
 django-fluent-comments==2.1
 django-fluent-contents[code,oembeditem,text]==2.0.7
 django-fluent-dashboard==1.0.1
