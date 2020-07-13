@@ -30,7 +30,7 @@ django-fluent-dashboard==1.0.1
 django-fluent-pages==2.0.7
 django-fluent-utils==2.0.1
 django-healthchecks==1.4.2
-django-ipware==2.1.0      # via django-axes
+django-ipware==3.0.0      # via django-axes
 django-js-asset==1.2.2    # via django-mptt
 django-mptt==0.11.0
 django-parler==2.0.1
