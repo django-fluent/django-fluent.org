@@ -35,7 +35,7 @@ django-mptt == 0.11.0
 django-parler==2.1
 django-polymorphic == 2.1.2
 django-polymorphic-tree == 1.5.1
-django-redis == 4.11.0
+django-redis==4.12.1
 django-singleton-admin == 0.0.4
 django-slug-preview == 1.0.4
 django-staff-toolbar == 1.2
