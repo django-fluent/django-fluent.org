@@ -33,7 +33,7 @@ django-healthchecks==1.4.2
 django-ipware==3.0.1      # via django-axes
 django-js-asset==1.2.2    # via django-mptt
 django-mptt==0.11.0
-django-parler==2.0.1
+django-parler==2.1
 django-polymorphic-tree==1.5.1
 django-polymorphic==2.1.2
 django-redis==4.11.0
