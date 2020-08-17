@@ -7,7 +7,7 @@
 attrs==19.3.0             # via pytest
 beautifulsoup4==4.9.1
 brotlipy==0.7.0
-certifi==2019.11.28       # via requests
+certifi==2020.6.20       # via requests
 cffi==1.13.2              # via brotlipy
 chardet==3.0.4            # via requests
 coverage==5.0.3
