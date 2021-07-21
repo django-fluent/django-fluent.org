@@ -1,7 +1,7 @@
 # Install with: `pip install -r requirements/base.txt`
 
 # Infrastructure
-Django == 2.2.24
+Django == 3.2.5
 Pillow == 8.3.1
 psycopg2 == 2.9.1
 python-memcached == 1.59

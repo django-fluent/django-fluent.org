@@ -1,22 +1,15 @@
 import json
+from urllib.request import urlopen
+from urllib.error import HTTPError
 from django.conf import settings
 from django.core.cache import cache
 from django.db import models
-from django.utils.six import python_2_unicode_compatible
 from django.utils.functional import cached_property
 from django.utils.translation import ugettext_lazy as _
 from fluent_contents.extensions import PluginImageField, PluginHtmlField, PluginUrlField
 from fluent_contents.models import ContentItem
 
-try:
-    # Python 3
-    from urllib.request import urlopen
-    from urllib.error import HTTPError
-except ImportError:
-    from urllib2 import urlopen, HTTPError  # Python 2
 
-
-@python_2_unicode_compatible
 class Col12Item(ContentItem):
     """
     A column that takes 1/2 of the width
@@ -33,7 +26,6 @@ class Col12Item(ContentItem):
         return self.title
 
 
-@python_2_unicode_compatible
 class ContentBoxItem(ContentItem):
     """
     The context box includes a divider.
@@ -46,7 +38,6 @@ class ContentBoxItem(ContentItem):
         return u'splitter'
 
 
-@python_2_unicode_compatible
 class ImageTextItem(ContentItem):
     """
     A block with image + text
@@ -81,7 +72,6 @@ class ImageTextItem(ContentItem):
             return 'image_fl'
 
 
-@python_2_unicode_compatible
 class PackageItem(ContentItem):
     """
     An item on the page that describes a Python package.

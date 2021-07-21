@@ -4,6 +4,8 @@
 #
 #    pip-compile --output-file=requirements/base.txt requirements/base.in
 #
+asgiref==3.4.1
+    # via django
 attrs==21.2.0
     # via pytest
 beautifulsoup4==4.9.3
@@ -22,7 +24,7 @@ coverage==5.5
     # via
     #   -r requirements/base.in
     #   pytest-cov
-django==2.2.24
+django==3.2.5
     # via
     #   -r requirements/base.in
     #   django-appconf
