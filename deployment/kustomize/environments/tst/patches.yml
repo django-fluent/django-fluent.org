@@ -31,11 +31,11 @@ spec:
           value: "1"
       hostAliases:
         - hostnames: ["pgbouncer-apps.infra"]
-          ip: 10.112.2.12
+          ip: 10.43.242.171
         - hostnames: ["postgres-apps.infra"]
-          ip: 10.112.0.102
+          ip: 10.43.86.136
         - hostnames: ["redis-master.infra"]
-          ip: 10.112.12.219
+          ip: 10.43.26.82
 ---
 apiVersion: batch/v1
 kind: Job
@@ -70,8 +70,8 @@ spec:
           value: "1"
       hostAliases:
         - hostnames: ["pgbouncer-apps.infra"]
-          ip: 10.112.2.12
+          ip: 10.43.242.171
         - hostnames: ["postgres-apps.infra"]
-          ip: 10.112.0.102
+          ip: 10.43.86.136
         - hostnames: ["redis-master.infra"]
-          ip: 10.112.12.219
+          ip: 10.43.26.82

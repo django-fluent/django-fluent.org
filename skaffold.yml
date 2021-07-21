@@ -1,0 +1,25 @@
+apiVersion: skaffold/v2beta19
+kind: Config
+build:
+  artifacts:
+    - image: djangofluent
+      context: .
+profiles:
+  - name: dev
+    deploy:
+      kubeContext: docker-desktop
+      kustomize:
+        paths:
+          - deployment/kustomize/environments/dev
+  - name: tst
+    deploy:
+      kubeContext: k3os
+      kustomize:
+        paths:
+          - deployment/kustomize/environments/tst
+  - name: prd
+    deploy:
+      kubeContext: k3os
+      kustomize:
+        paths:
+          - deployment/kustomize/environments/prd
