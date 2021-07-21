@@ -1,6 +1,6 @@
 # Build environment has gcc and develop header files.
 # The installed files are copied to the smaller runtime container.
-FROM python:3.8-stretch as build-image
+FROM python:3.8-buster as build-image
 ENV DEBIAN_FRONTEND=noninteractive \
     PYTHONUNBUFFERED=1 \
     PIP_NO_CACHE_DIR=off
@@ -16,7 +16,7 @@ RUN find /usr/local/lib/python3.8/site-packages/ -name '*.po' -delete && \
     find /usr/local/lib/python3.8/site-packages/tinymce/ -regextype posix-egrep -not -regex '.*/langs/(en|nl).*\.js' -wholename '*/langs/*.js' -delete
 
 ## Node builder
-FROM node:12-stretch as frontend-build
+FROM node:14-buster as frontend-build
 RUN mkdir -p /app/src
 WORKDIR /app/src
 COPY src/package.json src/package-lock.json /app/src/
@@ -26,7 +26,7 @@ COPY src/frontend/ /app/src/frontend/
 RUN npm run gulp
 
 # Start runtime container
-FROM python:3.8-slim-stretch
+FROM python:3.8-slim-buster
 ENV DEBIAN_FRONTEND=noninteractive \
     PYTHONUNBUFFERED=1 \
     PIP_NO_CACHE_DIR=off \
