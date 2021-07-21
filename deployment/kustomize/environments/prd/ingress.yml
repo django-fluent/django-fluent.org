@@ -1,4 +1,4 @@
-apiVersion: networking.k8s.io/v1beta1
+apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: djangofluent
@@ -19,9 +19,12 @@ spec:
       http:
         paths:
           - path: /
+            pathType: Prefix
             backend:
-              serviceName: djangofluent
-              servicePort: http
+              service:
+                name: djangofluent
+                port:
+                  number: 80
     - host: www.django-fluent.org  # need separate host for cert-manager
       http:
         paths:
@@ -34,7 +37,7 @@ spec:
                   number: 80
 ---
 # Leverage nginx-ingress cache for /media/
-apiVersion: networking.k8s.io/v1beta1
+apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: djangofluent-media
@@ -60,7 +63,7 @@ spec:
                   number: 80
 ---
 # Leverage nginx-ingress cache for /static/
-apiVersion: networking.k8s.io/v1beta1
+apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: djangofluent-static
