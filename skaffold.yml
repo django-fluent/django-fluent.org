@@ -4,6 +4,9 @@ build:
   artifacts:
     - image: djangofluent
       context: .
+  tagPolicy:
+    gitCommit:
+      ignoreChanges: true  # no -dirty flag
 profiles:
   - name: dev
     deploy:
