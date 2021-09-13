@@ -1,8 +1,8 @@
 # Install with: `pip install -r requirements/base.txt`
 
 # Infrastructure
-Django == 3.2.5
-Pillow == 8.3.1
+Django == 3.2.7
+Pillow == 8.3.2
 psycopg2 == 2.9.1
 python-memcached == 1.59
 raven == 6.10.0
@@ -23,15 +23,15 @@ django-admin-tools == 0.9.1
 django-analytical == 3.0.0
 django-any-imagefield == 1.1
 django-any-urlfield == 2.6.2
-django-axes == 5.20.0
+django-axes == 5.24.0
 django-categories-i18n == 1.1.1
 django-compressor == 2.4.1
 django-contrib-comments == 2.1.0
 django-crispy-forms == 1.12.0
-django-environ == 0.4.5
+django-environ == 0.7.0
 django-filebrowser-no-grappelli == 3.8.0
 django-healthchecks == 1.4.2
-django-mptt == 0.12.0
+django-mptt == 0.13.3
 django-parler == 2.2
 django-polymorphic == 3.0.0
 django-polymorphic-tree == 2.0
@@ -55,7 +55,7 @@ taggit-selectize == 2.10.0
 whitenoise == 5.3.0
 
 # Installed dependencies
-beautifulsoup4 >= 4.9.3
+beautifulsoup4 >= 4.10.0
 django-template-analyzer == 1.6.2
 python-akismet == 0.4.2
 
@@ -64,7 +64,7 @@ mock == 4.0.3
 coverage == 5.5
 
 # Pytest (optional testrunner)
-pytest == 6.2.4
+pytest == 6.2.5
 pytest-django == 4.4.0
 pytest-cov == 2.12.1
 pytest-sugar == 0.9.4
