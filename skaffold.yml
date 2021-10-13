@@ -12,6 +12,10 @@ build:
   tagPolicy:
     gitCommit:
       ignoreChanges: true  # no -dirty flag
+test:
+  - image: djangofluent
+    custom:
+      - command: docker run -u root --rm $IMAGE py.test --cov --nomigrations
 profiles:
   - name: dev
     deploy:
