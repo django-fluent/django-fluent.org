@@ -137,6 +137,8 @@ INSTALLED_APPS = (
     'django.contrib.admin',
 )
 
+DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
+
 FORMAT_MODULE_PATH = 'djangofluent.settings.locale'  # Consistent date formatting
 
 LOCALE_PATHS = (
