@@ -18,7 +18,7 @@ class Command(BaseCommand):
 
         if not packages:
             if verbosity >= 1:
-                raise CommandError("No packages matching {0}\n".format(' | '.join(args)))
+                raise CommandError("No packages matching {}\n".format(' | '.join(args)))
 
         for package in packages:
             changed = False
@@ -47,4 +47,4 @@ class Command(BaseCommand):
                 package.save()
             else:
                 if verbosity >= 1:
-                    self.stderr.write("Identical: {0}.\n".format(package.slug))
+                    self.stderr.write(f"Identical: {package.slug}.\n")

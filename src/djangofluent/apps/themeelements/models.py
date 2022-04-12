@@ -35,7 +35,7 @@ class ContentBoxItem(ContentItem):
         verbose_name_plural = _("Content box splitters")
 
     def __str__(self):
-        return u'splitter'
+        return 'splitter'
 
 
 class ImageTextItem(ContentItem):
@@ -98,11 +98,11 @@ class PackageItem(ContentItem):
             rtd_info = self.rtd_info
             if rtd_info:
                 self.rtd_html_url = rtd_info['subdomain']
-        super(PackageItem, self).save(*args, **kwargs)
+        super().save(*args, **kwargs)
 
     @property
     def is_external(self):
-        return not self.repository_url.startswith('https://github.com/{0}/'.format(settings.PACKAGEITEM_INTERNAL_GITHUB_ORG))
+        return not self.repository_url.startswith(f'https://github.com/{settings.PACKAGEITEM_INTERNAL_GITHUB_ORG}/')
 
     @property
     def repository_name(self):
@@ -124,8 +124,8 @@ class PackageItem(ContentItem):
         """
         Return the information from Read the Docs.
         """
-        cachekey = 'readthedocs.projectinfo.{0}'.format(self.slug)
-        return _fetch_json(cachekey, 'http://readthedocs.org/api/v1/project/{slug}/?format=json'.format(slug=self.slug))
+        cachekey = f'readthedocs.projectinfo.{self.slug}'
+        return _fetch_json(cachekey, f'http://readthedocs.org/api/v1/project/{self.slug}/?format=json')
 
     @property
     def rtd_subdomain(self):
@@ -140,8 +140,8 @@ class PackageItem(ContentItem):
             return None
 
         org, repos = self.repository_url.split('/')[3:5]  # 'https://github.com/org/repos/'
-        cachekey = 'github.repositoryinfo.{0}.{1}'.format(org, repos)
-        return _fetch_json(cachekey, 'https://api.github.com/repos/{0}/{1}'.format(org, repos))
+        cachekey = f'github.repositoryinfo.{org}.{repos}'
+        return _fetch_json(cachekey, f'https://api.github.com/repos/{org}/{repos}')
 
     @property
     def github_description(self):

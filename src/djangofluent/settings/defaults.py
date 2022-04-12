@@ -227,10 +227,10 @@ LOGGING = {
     'disable_existing_loggers': False,
     'formatters': {
         'verbose': {
-            'format': u'%(levelname)s: %(asctime)s %(process)d %(thread)d %(module)s: %(message)s',
+            'format': '%(levelname)s: %(asctime)s %(process)d %(thread)d %(module)s: %(message)s',
         },
         'simple': {
-            'format': u'%(levelname)s:\t%(message)s',
+            'format': '%(levelname)s:\t%(message)s',
         },
     },
     'filters': {
@@ -311,7 +311,7 @@ FILEBROWSER_EXTENSIONS = {
     'Document': ['.pdf', '.doc', '.xls', '.csv', '.docx', '.xlsx'],
     'Video': ['.swf', '.mp4', '.flv', '.f4v', '.mov', '.3gp'],
 }
-FILEBROWSER_EXCLUDE = ('cache', '_versions', '_admin_thumbnail\.', '_big\.', '_large\.', '_medium\.', '_small\.', '_thumbnail\.')
+FILEBROWSER_EXCLUDE = ('cache', '_versions', r'_admin_thumbnail\.', r'_big\.', r'_large\.', r'_medium\.', r'_small\.', r'_thumbnail\.')
 FILEBROWSER_MAX_UPLOAD_SIZE = 100 * 1024 * 1024  # in bytes
 FILEBROWSER_STRICT_PIL = True
 FILEBROWSER_ADMIN_VERSIONS = [

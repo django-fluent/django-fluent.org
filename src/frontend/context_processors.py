@@ -11,5 +11,5 @@ def frontend(request):
 
     return {
         'site': site,
-        'site_root': SimpleLazyObject(lambda: "{0}{1}".format(http_scheme, site.domain)),
+        'site_root': SimpleLazyObject(lambda: f"{http_scheme}{site.domain}"),
     }

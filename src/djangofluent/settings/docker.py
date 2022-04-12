@@ -17,7 +17,7 @@ try:
     with open(SRC_DIR + '/.docker-git-version') as f:
         GIT_VERSION = f.read().strip()
     RAVEN_CONFIG['release'] = GIT_VERSION
-except IOError:
+except OSError:
     pass
 
 SILENCED_SYSTEM_CHECKS = (
