@@ -19,5 +19,5 @@ yet-another-django-profiler == 1.1.0
 
 # Debugging
 django-debugtools == 2.0
-ipython == 8.2.0
+ipython == 8.10.0
 ptpython == 3.0.20
