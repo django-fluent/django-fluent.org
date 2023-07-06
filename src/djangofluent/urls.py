@@ -1,5 +1,3 @@
-from os import path
-
 import admin_tools.urls
 import django.contrib.sitemaps.views
 import django.views.defaults
@@ -61,7 +59,7 @@ if settings.DEBUG:
     # Sass files are exported so browsers can open the Sass sources via sourcemaps.
     urlpatterns = [
         re_path(r'^media/(?P<path>.*)$', django.views.static.serve, {'document_root': settings.MEDIA_ROOT, 'show_indexes': True}),
-        re_path(r'^sass/(?P<path>.*)$', django.views.static.serve, {'document_root': path.join(settings.SRC_DIR, 'frontend', 'sass'), 'show_indexes': True}),
+        re_path(r'^sass/(?P<path>.*)$', django.views.static.serve, {'document_root': f'{settings.SRC_DIR}/frontend/sass', 'show_indexes': True}),
     ] + urlpatterns
 
     if 'debug_toolbar' in settings.INSTALLED_APPS:

@@ -1,4 +1,4 @@
-apiVersion: skaffold/v2beta19
+apiVersion: skaffold/v4beta6
 kind: Config
 build:
   artifacts:
@@ -18,20 +18,26 @@ test:
       - command: docker run -u root --rm $IMAGE py.test --cov --nomigrations
 profiles:
   - name: dev
-    deploy:
-      kubeContext: docker-desktop
+    manifests:
       kustomize:
         paths:
           - deployment/kustomize/environments/dev
-  - name: tst
     deploy:
-      kubeContext: k3os
+      kubectl: {}
+      kubeContext: docker-desktop
+  - name: tst
+    manifests:
       kustomize:
         paths:
           - deployment/kustomize/environments/tst
-  - name: prd
     deploy:
-      kubeContext: k3os
+      kubectl: {}
+      kubeContext: k3s
+  - name: prd
+    manifests:
       kustomize:
         paths:
           - deployment/kustomize/environments/prd
+    deploy:
+      kubectl: {}
+      kubeContext: k3s

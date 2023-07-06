@@ -112,6 +112,7 @@ INSTALLED_APPS = (
     'axes',
     'categories_i18n',
     'crispy_forms',
+    "crispy_bootstrap3",
     'django_comments',
     'django_wysiwyg',
     'django.contrib.redirects',
@@ -283,7 +284,7 @@ AXES_LOGIN_FAILURE_LIMIT = 3
 AXES_COOLOFF_TIME = 1  # hours
 AXES_IP_WHITELIST = INTERNAL_IPS
 
-CRISPY_TEMPLATE_PACK = 'bootstrap3'
+CRISPY_TEMPLATE_PACK = "bootstrap3"
 
 COMMENTS_APP = 'fluent_comments'
 

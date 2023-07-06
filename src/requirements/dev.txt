@@ -5,8 +5,8 @@
 # Useful extra developer packages:
 
 # Debugging
-django-debug-toolbar == 3.2.4
-django-extensions == 3.1.5
+django-debug-toolbar == 4.1.0
+django-extensions == 3.2.3
 
 # Documentation
 #Sphinx == 4.2.0
@@ -19,5 +19,5 @@ yet-another-django-profiler == 1.1.0
 
 # Debugging
 django-debugtools == 2.0
-ipython == 8.2.0
-ptpython == 3.0.20
+ipython == 8.13.0
+ptpython == 3.0.23

@@ -4,36 +4,38 @@
 #
 #    pip-compile --output-file=requirements/base.txt requirements/base.in
 #
-asgiref==3.5.0
+asgiref==3.7.2
     # via django
 async-timeout==4.0.2
     # via redis
-attrs==21.4.0
-    # via pytest
-beautifulsoup4==4.11.1
+beautifulsoup4==4.12.2
     # via
     #   -r requirements/base.in
     #   django-fluent-contents
 brotlipy==0.7.0
     # via -r requirements/base.in
-certifi==2021.10.8
-    # via requests
-cffi==1.15.0
+certifi==2023.5.7
+    # via
+    #   django-healthchecks
+    #   requests
+cffi==1.15.1
     # via brotlipy
-charset-normalizer==2.0.12
+charset-normalizer==3.1.0
     # via requests
-coverage[toml]==6.3.2
+coverage[toml]==7.2.7
     # via
     #   -r requirements/base.in
     #   pytest-cov
-deprecated==1.2.13
-    # via redis
-django==3.2.13
+crispy-bootstrap3==2022.1
+    # via -r requirements/base.in
+django==3.2.20
     # via
     #   -r requirements/base.in
+    #   crispy-bootstrap3
     #   django-appconf
     #   django-axes
     #   django-contrib-comments
+    #   django-crispy-forms
     #   django-healthchecks
     #   django-js-asset
     #   django-parler
@@ -53,24 +55,25 @@ django-any-urlfield==2.7.post1
     # via -r requirements/base.in
 django-appconf==1.0.5
     # via django-compressor
-django-axes==5.32.0
+django-axes==6.0.5
     # via -r requirements/base.in
 django-categories-i18n==2.0
     # via
     #   -r requirements/base.in
     #   django-fluent-blogs
-django-compressor==3.1
+django-compressor==4.4
     # via -r requirements/base.in
 django-contrib-comments==2.2.0
     # via
     #   -r requirements/base.in
     #   django-fluent-comments
     #   django-threadedcomments
-django-crispy-forms==1.14.0
+django-crispy-forms==2.0
     # via
     #   -r requirements/base.in
+    #   crispy-bootstrap3
     #   django-fluent-comments
-django-environ==0.8.1
+django-environ==0.10.0
     # via -r requirements/base.in
 django-filebrowser-no-grappelli==4.0.1
     # via -r requirements/base.in
@@ -84,7 +87,7 @@ django-fluent-contents[code,oembeditem,text]==3.0
     #   django-fluent-blogs
 django-fluent-dashboard==2.0
     # via -r requirements/base.in
-django-fluent-pages==3.0
+django-fluent-pages==3.0.1
     # via -r requirements/base.in
 django-fluent-utils==3.0.1
     # via
@@ -92,13 +95,11 @@ django-fluent-utils==3.0.1
     #   django-fluent-blogs
     #   django-fluent-contents
     #   django-fluent-pages
-django-healthchecks==1.4.2
+django-healthchecks==1.5.0
     # via -r requirements/base.in
-django-ipware==4.0.2
-    # via django-axes
-django-js-asset==2.0.0
+django-js-asset==2.1.0
     # via django-mptt
-django-mptt==0.13.4
+django-mptt==0.14.0
     # via
     #   -r requirements/base.in
     #   django-categories-i18n
@@ -121,7 +122,7 @@ django-polymorphic-tree==2.1
     # via
     #   -r requirements/base.in
     #   django-fluent-pages
-django-redis==5.2.0
+django-redis==5.3.0
     # via -r requirements/base.in
 django-singleton-admin==0.0.4
     # via -r requirements/base.in
@@ -140,7 +141,7 @@ django-tag-parser==3.2
     #   django-fluent-contents
     #   django-fluent-pages
     #   django-polymorphic-tree
-django-taggit==2.1.0
+django-taggit==4.0.0
     # via -r requirements/base.in
 django-template-analyzer==2.0
     # via
@@ -148,60 +149,57 @@ django-template-analyzer==2.0
     #   django-fluent-contents
 django-threadedcomments==2.0
     # via -r requirements/base.in
-django-tinymce==2.9.0
+django-tinymce==3.6.1
     # via -r requirements/base.in
 django-wysiwyg==0.8.0
     # via
     #   -r requirements/base.in
     #   django-fluent-contents
+exceptiongroup==1.1.2
+    # via pytest
 html5lib==1.1
     # via
     #   -r requirements/base.in
     #   django-fluent-contents
-idna==3.3
+idna==3.4
     # via requests
-iniconfig==1.1.1
+iniconfig==2.0.0
     # via pytest
-micawber==0.5.4
+micawber==0.5.5
     # via
     #   -r requirements/base.in
     #   django-fluent-contents
-mock==4.0.3
+mock==5.0.2
     # via -r requirements/base.in
 netaddr==0.8.0
     # via -r requirements/base.in
-packaging==21.3
+packaging==23.1
     # via
     #   pytest
     #   pytest-sugar
-    #   redis
-pillow==9.1.0
+pillow==10.0.0
     # via
     #   -r requirements/base.in
     #   django-fluent-pages
-pluggy==1.0.0
+pluggy==1.2.0
     # via pytest
-psycopg2==2.9.3
+psycopg2==2.9.6
     # via -r requirements/base.in
-py==1.11.0
-    # via pytest
 pycparser==2.21
     # via cffi
-pygments==2.11.2
+pygments==2.15.1
     # via django-fluent-contents
-pyparsing==3.0.8
-    # via packaging
-pytest==7.1.1
+pytest==7.4.0
     # via
     #   -r requirements/base.in
     #   pytest-cov
     #   pytest-django
     #   pytest-sugar
-pytest-cov==3.0.0
+pytest-cov==4.1.0
     # via -r requirements/base.in
 pytest-django==4.5.2
     # via -r requirements/base.in
-pytest-sugar==0.9.4
+pytest-sugar==0.9.7
     # via -r requirements/base.in
 python-akismet==0.4.3
     # via
@@ -209,56 +207,55 @@ python-akismet==0.4.3
     #   django-fluent-comments
 python-memcached==1.59
     # via -r requirements/base.in
-pytz==2022.1
+pytz==2023.3
     # via
     #   -r requirements/base.in
     #   django
 raven==6.10.0
     # via -r requirements/base.in
-rcssmin==1.1.0
+rcssmin==1.1.1
     # via django-compressor
-redis==4.2.2
+redis==4.6.0
     # via
     #   -r requirements/base.in
     #   django-redis
-requests==2.27.1
+requests==2.31.0
     # via
     #   django-healthchecks
     #   python-akismet
-rjsmin==1.2.0
+rjsmin==1.2.1
     # via django-compressor
 six==1.16.0
     # via
     #   django-filebrowser-no-grappelli
-    #   django-healthchecks
     #   html5lib
     #   python-memcached
 smartypants==2.0.1
     # via -r requirements/base.in
-sorl-thumbnail==12.8.0
+sorl-thumbnail==12.9.0
     # via -r requirements/base.in
-soupsieve==2.3.2
+soupsieve==2.4.1
     # via beautifulsoup4
-sqlparse==0.4.2
+sqlparse==0.4.4
     # via django
 taggit-selectize==2.11.0
     # via -r requirements/base.in
-termcolor==1.1.0
+termcolor==2.3.0
     # via pytest-sugar
 tomli==2.0.1
     # via
     #   coverage
     #   pytest
-urllib3==1.26.9
+typing-extensions==4.7.1
+    # via asgiref
+urllib3==2.0.3
     # via requests
-uwsgi==2.0.20
+uwsgi==2.0.21
     # via -r requirements/base.in
 webencodings==0.5.1
     # via html5lib
-whitenoise==6.0.0
+whitenoise==6.5.0
     # via -r requirements/base.in
-wrapt==1.14.0
-    # via deprecated
 wsgiunproxy==1.0
     # via -r requirements/base.in
 
