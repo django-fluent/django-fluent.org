@@ -58,7 +58,7 @@ RUN apt-get update && \
 # System config (done early, avoid running on every code change)
 MAINTAINER vdboor@edoburu.nl
 EXPOSE 8080 1717
-HEALTHCHECK --interval=5m --timeout=3s CMD curl -f http://localhost:8080/api/health/ || exit 1
+HEALTHCHECK --interval=5m --timeout=3s CMD curl -f http://localhost:8080/api/health/ip/ || exit 1
 
 # Install dependencies
 COPY --from=build-image /usr/local/bin/ /usr/local/bin/
