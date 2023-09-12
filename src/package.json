@@ -11,13 +11,13 @@
     "gulp": "gulp"
   },
   "dependencies": {
-    "bootstrap-sass": "^3.4.1",
-    "jquery": "^3.5.0"
+    "bootstrap-sass": "^3.4.3",
+    "jquery": "^3.7.1"
   },
   "devDependencies": {
-    "autoprefixer": "^9.7.6",
+    "autoprefixer": "^9.8.8",
     "css-mqpacker": "^7.0.0",
-    "cssnano": "^4.1.10",
+    "cssnano": "^4.1.11",
     "del": "^5.1.0",
     "files-exist": "^1.1.0",
     "gulp": "^4.0.2",
@@ -27,7 +27,7 @@
     "gulp-notify": "^3.2.0",
     "gulp-plumber": "^1.2.1",
     "gulp-postcss": "^8.0.0",
-    "gulp-sass": "^4.1.0",
+    "gulp-sass": "^4.1.1",
     "gulp-size": "^3.0.0",
     "gulp-sourcemaps": "^2.6.5",
     "gulp-uglify": "^3.0.2",
