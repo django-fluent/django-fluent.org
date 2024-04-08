@@ -20,6 +20,7 @@
 /env/
 /logs/
 /src/djangofluent/settings/local.py
+/src/frontend/static/frontend/dist/
 /src/node_modules/
 /web/media
 /stats/

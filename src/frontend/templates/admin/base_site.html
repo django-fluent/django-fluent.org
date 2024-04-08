@@ -8,7 +8,7 @@
 {% if user.is_active and user.is_staff and not is_popup %}
     {% admin_tools_render_menu_css %}
 {% endif %}
-    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}frontend/css/admin-branding.css" />
+    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}frontend/dist/admin-branding.css" />
 {% endblock %}
 
 {% block nav-global %}

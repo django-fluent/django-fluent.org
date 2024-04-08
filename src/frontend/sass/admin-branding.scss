@@ -5,7 +5,7 @@
 
 // Header color
 
-div#header {
+#header {
   // Replace admin-tools image
   background: #909B19 image-url("web_design/templatemo_header.jpg") 90px -302px no-repeat;
 }
@@ -33,6 +33,18 @@ div#header {
 
 
 // Field tweaks
+
+.flex-container:has(>.vFileBrowseField) {
+  flex-wrap: wrap;
+}
+
+a.fb_show {
+  padding: 5px;
+}
+
+.flex-container p.preview {
+  width: 100%;  // Forces new row
+}
 
 .vFileBrowseField {
   width: 20em;
@@ -90,9 +102,7 @@ input.default[type="submit"],
 
 // Footer
 
-html, body { height: 100%; }
-#container { min-height: 100%; }
-.login #container { min-height: 0; }
+#content-start { position: relative; }
 
 #footerspace {
   padding-bottom: 40px;

@@ -1,0 +1,67 @@
+{% extends "django_wysiwyg/tinymce/includes.html" %}
+
+<script>{# <- dummy element for editor formatting #}
+{% block django_wysiwyg_editor_config %}
+
+    function djangoFileBrowser(callback, value, meta) {
+        var url = "{% url 'filebrowser:fb_browse' %}?pop=5&type=" + meta.filetype;
+        tinymce.activeEditor.windowManager.openUrl({
+            title: 'Select a file',
+            url: url,
+            width: 840,
+            height: 640,
+            onMessage: function(dialogApi, details) {
+              if (details.mceAction === 'FileSelected') {
+                callback(details.content);
+                dialogApi.close();
+              }
+            },
+        });
+        return false;
+    }
+
+    var django_wysiwyg_editor_config = {
+        plugins: "advlist,autolink,lists,link,image,table,print,visualblocks,code,contextmenu,autoresize,fullscreen,paste,code",
+
+        // Behavioral settings
+        document_base_url: '/',
+        relative_urls: false,
+        branding: false,
+
+        // Toolbars and layout
+        theme: "silver",
+        menubar: false,
+        toolbar: [
+            'styleselect removeformat | link unlink | bullist numlist | undo redo | outdent indent | image charmap anchor hr | code',
+        ],
+        image_advtab: true,
+
+        // Integrate custom styling
+        content_css : "/static/frontend/dist/tinymce.css",
+        body_class: 'text',
+
+        // Define user configurable styles
+        style_formats: [
+            {title: "Header 2", block: "h2"},
+            {title: "Header 3", block: "h3"},
+            {title: "Header 4", block: "h4"},
+            {title: "Paragraph", block: "p"},
+            {title: "Quote", block: "blockquote"},
+            {title: "Citation", block: "blockquote", classes: "citation"},
+            {title: "Bold", inline: "strong"},
+            {title: "Emphasis", inline: "em"},
+            {title: "Strikethrough", inline: "s"},
+            //{title: "Highlight word", inline: "span", classes: "highlight"},
+            {title: "Small footnote", inline: "small"}
+            //{title: "Code example", block: "pre"},
+            //{title: "Code keyword", inline: "code"}
+        ],
+
+        // Define how TinyMCE formats things
+        keep_styles: false,
+
+        // Integrate filebrowser
+        file_picker_callback: djangoFileBrowser
+    };
+{% endblock %}
+</script>

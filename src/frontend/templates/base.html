@@ -21,10 +21,6 @@
     <link href="{{ STATIC_URL }}staff_toolbar/staff_toolbar.css" rel="stylesheet" type="text/css" />
     {% endcompress %}
     {% compress css %}{% block link %}{% endblock %}{% endcompress %}{# for django-fluent-blogs #}
-    <!--[if lt IE 9]>
-    <link href="{{ STATIC_URL }}frontend/css/msie.css" rel="stylesheet" type="text/css" />
-    <script src="{{ STATIC_URL }}frontend/vendor/html5shiv.js"></script>
-    <![endif]-->
     {% block extrahead %}{% endblock %}
     {% analytical_head_bottom %}
   </head>

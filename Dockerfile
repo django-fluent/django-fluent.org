@@ -1,6 +1,6 @@
 # Build environment has gcc and develop header files.
 # The installed files are copied to the smaller runtime container.
-FROM python:3.10-bullseye as build-image
+FROM python:3.12-bookworm as build-image
 ENV DEBIAN_FRONTEND=noninteractive \
     PYTHONUNBUFFERED=1 \
     PIP_NO_CACHE_DIR=off
@@ -12,21 +12,21 @@ ARG PIP_REQUIREMENTS=/app/src/requirements/docker.txt
 RUN pip install -r $PIP_REQUIREMENTS
 
 # Remove unneeded files
-RUN find /usr/local/lib/python3.10/site-packages/ -name '*.po' -delete && \
-    find /usr/local/lib/python3.10/site-packages/tinymce/ -regextype posix-egrep -not -regex '.*/langs/(en|nl).*\.js' -wholename '*/langs/*.js' -delete
+RUN find /usr/local/lib/python3.12/site-packages/ -name '*.po' -delete && \
+    find /usr/local/lib/python3.12/site-packages/tinymce/ -regextype posix-egrep -not -regex '.*/langs/(en|nl).*\.js' -wholename '*/langs/*.js' -delete
 
 ## Node builder
-FROM node:18-bullseye as frontend-build
+FROM node:20-bookworm as frontend-build
 RUN mkdir -p /app/src
 WORKDIR /app/src
 COPY src/package.json src/package-lock.json /app/src/
 RUN npm install
-COPY src/gulpfile.js /app/src/
+COPY src/webpack.config.js /app/src/
 COPY src/frontend/ /app/src/frontend/
-RUN npm run gulp
+RUN NODE_ENV=production npm run webpack
 
 # Start runtime container
-FROM python:3.10-slim-bullseye
+FROM python:3.12-slim-bookworm
 ENV DEBIAN_FRONTEND=noninteractive \
     PYTHONUNBUFFERED=1 \
     PIP_NO_CACHE_DIR=off \
@@ -46,7 +46,7 @@ RUN apt-get update && \
         libpng16-16 \
         libopenjp2-7 \
         libfreetype6 \
-        libtiff5 \
+        libtiff6 \
         curl \
         gettext \
         mime-support \
@@ -62,7 +62,7 @@ HEALTHCHECK --interval=5m --timeout=3s CMD curl -f http://localhost:8080/api/hea
 
 # Install dependencies
 COPY --from=build-image /usr/local/bin/ /usr/local/bin/
-COPY --from=build-image /usr/local/lib/python3.10/site-packages/ /usr/local/lib/python3.10/site-packages/
+COPY --from=build-image /usr/local/lib/python3.12/site-packages/ /usr/local/lib/python3.12/site-packages/
 COPY --from=frontend-build /app/src/frontend/static /app/src/frontend/static
 
 # Insert application code.

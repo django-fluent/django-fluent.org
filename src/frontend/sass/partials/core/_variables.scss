@@ -5,9 +5,9 @@
 // * node_modules/bootstrap-sass/assets/stylesheets/bootstrap/_variables.scss
 // * https://github.com/twbs/bootstrap-sass/blob/master/assets/stylesheets/bootstrap/_variables.scss
 
-// mixins
-$image-url-path: '../img/';
-$fonts-url-path: '../fonts/';
+// mixins (using webpack root)
+$image-url-path: 'frontend/img/';
+$fonts-url-path: 'frontend/fonts/';
 
 $btn-primary-bg: #939E1B;
 $btn-primary-bg2: #B2BA58;

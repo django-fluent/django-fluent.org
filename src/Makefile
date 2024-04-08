@@ -13,17 +13,17 @@ upgrade:
 	pur --patch=Django -r requirements/base.in
 	pur --no-recursive -r requirements/docker.txt
 	pur --no-recursive -r requirements/dev.txt
-	pip-compile --upgrade --output-file requirements/base.txt requirements/base.in
-# Allow recursive upgrade with base.txt being regenerated
+	pip-compile -v --upgrade --output-file requirements/base.txt requirements/base.in
 
 node_modules:
 	npm install
 
 frontend:
-	npm run gulp
+	test -e node_modules || npm install
+	npm run webpack
 
 watch:
-	npm run gulp watch
+	npm run watch
 
 messages:
 	django-admin.py compilemessages
