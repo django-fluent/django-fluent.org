@@ -75,6 +75,7 @@ COPY web /app/web
 COPY src /app/src
 COPY deployment/docker/manage.py /usr/local/bin/
 WORKDIR /app/src
+RUN pip install setuptools  # workaround
 RUN rm /app/src/*/settings/local.py* && \
     find . -name '*.pyc' -delete && \
     python -mcompileall -q */ && \
@@ -87,11 +88,9 @@ RUN rm /app/src/*/settings/local.py* && \
     chmod -R go+rw /app/web/media/ /app/web/static/CACHE /tmp/demo.db
 
 # Insert main code (still as root), then reduce permissions
-# Allow to mount the compressor cache as volume too for sharing between pods.
 COPY deployment/docker/uwsgi.ini /app/uwsgi.ini
 CMD ["/usr/local/bin/uwsgi", "--ini", "/app/uwsgi.ini"]
 VOLUME /app/web/media
-VOLUME /app/web/static/CACHE
 
 # Tag the docker image
 ARG GIT_VERSION
