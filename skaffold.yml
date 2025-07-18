@@ -24,21 +24,24 @@ profiles:
         paths:
           - deployment/kustomize/environments/dev
     deploy:
-      kubectl: {}
       kubeContext: docker-desktop
+      kubectl:
+        defaultNamespace: fluentdemo
   - name: tst
     manifests:
       kustomize:
         paths:
           - deployment/kustomize/environments/tst
     deploy:
-      kubectl: {}
       kubeContext: k3s
+      kubectl:
+        defaultNamespace: fluentdemo
   - name: prd
     manifests:
       kustomize:
         paths:
           - deployment/kustomize/environments/prd
     deploy:
-      kubectl: {}
       kubeContext: k3s
+      kubectl:
+        defaultNamespace: fluentdemo
